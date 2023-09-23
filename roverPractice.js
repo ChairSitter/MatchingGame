@@ -81,9 +81,8 @@ const boxEightChange = () => {
 }
 
 /*Called on a delay. Sets special style and ups user and computer match count for any box where background color and text match.
-Displays scores and announces winner by comparing scores*/
+Calculates and displays scores and announces winner by comparing scores*/
 const determineWinner = () => {
-    let color1 = chooseColor();
     if(color1 === color2){
         boxOne.style.fontSize = '2rem';
         boxOne.style.textTransform = 'uppercase';
@@ -145,7 +144,7 @@ const determineWinner = () => {
             body.style.backgroundColor = 'blue';
             setTimeout(() => {
                 body.style.backgroundColor = 'darkblue';
-            }, 100)
+            }, 150);
         }
     } else if (countHuman < countComputer){
         winner.innerHTML = 'Computer Wins!';
