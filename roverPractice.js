@@ -18,6 +18,9 @@ const winner = document.getElementById('winner');
 const userWins = document.getElementById('user-wins');
 const compWins = document.getElementById('comp-wins');
 
+scoreHuman.innerHTML = 0;
+scoreComputer.innerHTML = 0;
+
 //chooses a random color from a list of possible colors
 const chooseColor = () => {
     const array = ['red', 'orange', 'yellow', 'green', 'blue', 'white', 'purple'];
@@ -181,8 +184,9 @@ const determineWinner = () => {
 }
 
 //Resets special border for matches, resets score counters to 0 and displays this.
-//Calls box1 function, then calls each box function at a 1 second interval. Calls determineWinner() function along with box8 function.
-const changeColors = () => {
+const resetter = () => {
+    winner.innerHTML = '';
+
     boxOne.style.fontSize = '1.5rem';
     boxOne.style.border = '10px solid black';
     boxOne.style.textTransform = 'lowercase'; 
@@ -230,6 +234,10 @@ const changeColors = () => {
     boxEight.style.textTransform = 'lowercase'; 
     boxEight.innerHTML = "";
     boxEight.style.backgroundColor = "";
+}
+//Calls box1 function, then calls each box function at a 1 second interval. Calls determineWinner() function along with box8 function.
+const changeColors = () => {
+    resetter();
 
     countComputer = 0;
     countHuman = 0;
