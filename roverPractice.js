@@ -1,4 +1,6 @@
+//Declare constants for input button, boxes, and containers for scores and winner declaration
 const inputButton = document.getElementById('input');
+const body = document.body;
 
 const boxOne = document.getElementById('div1');
 const boxTwo = document.getElementById('div2');
@@ -14,6 +16,7 @@ const scoreHuman = document.getElementById('your-score');
 const scoreComputer = document.getElementById('computer-score');
 const winner = document.getElementById('winner');
 
+//chooses a random color from a list of possible colors
 const chooseColor = () => {
     const array = ['red', 'orange', 'yellow', 'green', 'blue', 'white', 'purple'];
     let randomColorNum = Math.floor(Math.random() * 7);
@@ -21,6 +24,7 @@ const chooseColor = () => {
     return randomColor;
 }
 
+//set color variables to random colors using chooseColor()
 let color1 = chooseColor();
 let color2 = chooseColor();
 let color3 = chooseColor();
@@ -38,38 +42,31 @@ let color14 = chooseColor();
 let color15 = chooseColor();
 let color16 = chooseColor();
 
+//sets count numbers beginning with 0
 let countHuman = 0;
 let countComputer = 0;
 
-let message = "You Win!";
-
-//Put each BOX block into individual function
-
+//functions that set background color and inner text of each box
 const boxOneChange = () => {
     boxOne.style.backgroundColor = color1;
     boxOne.innerHTML = color2;
 }
-
 const boxTwoChange = () => {
     boxTwo.style.backgroundColor = color3;
     boxTwo.innerHTML = color4;
 }
-
 const boxThreeChange = () => {
     boxThree.style.backgroundColor = color5;
     boxThree.innerHTML = color6;
 }
-
 const boxFourChange = () => {
     boxFour.style.backgroundColor = color7;
     boxFour.innerHTML = color8;
 }
-
 const boxFiveChange = () => {
     boxFive.style.backgroundColor = color9;
     boxFive.innerHTML = color10;
 }
-
 const boxSixChange = () => {
     boxSix.style.backgroundColor = color11;
     boxSix.innerHTML = color12;
@@ -83,53 +80,56 @@ const boxEightChange = () => {
     boxEight.innerHTML = color16;
 }
 
+/*Called on a delay. Sets special style and ups user and computer match count for any box where background color and text match.
+Displays scores and announces winner by comparing scores*/
 const determineWinner = () => {
+    let color1 = chooseColor();
     if(color1 === color2){
         boxOne.style.fontSize = '2rem';
         boxOne.style.textTransform = 'uppercase';
-        boxOne.style.border = "5px black dotted";
+        boxOne.style.border = "10px black dotted";
         countHuman++;
     }
     if(color3 === color4){
         boxTwo.style.fontSize = '2rem';
         boxTwo.style.textTransform = 'uppercase';
-        boxTwo.style.border = "5px black dotted";
+        boxTwo.style.border = "10px black dotted";
         countHuman++;
     }
     if(color5 === color6){
         boxThree.style.fontSize = '2rem';
         boxThree.style.textTransform = 'uppercase';
-        boxThree.style.border = "5px black dotted";
+        boxThree.style.border = "10px black dotted";
         countHuman++;
     }
     if(color7 === color8){
         boxFour.style.fontSize = '2rem';
         boxFour.style.textTransform = 'uppercase';
-        boxFour.style.border = "5px black dotted";
+        boxFour.style.border = "10px black dotted";
         countHuman++;
     }
     if(color9 === color10){
         boxFive.style.fontSize = '2rem';
         boxFive.style.textTransform = 'uppercase';
-        boxFive.style.border = "5px black dotted";
+        boxFive.style.border = "10px black dotted";
         countComputer++;
     }
     if(color11 === color12){
         boxSix.style.fontSize = '2rem';
         boxSix.style.textTransform = 'uppercase';
-        boxSix.style.border = "5px black dotted";
+        boxSix.style.border = "10px black dotted";
         countComputer++;
     }
     if(color13 === color14){
         boxSeven.style.fontSize = '2rem';
         boxSeven.style.textTransform = 'uppercase';
-        boxSeven.style.border = "5px black dotted";
+        boxSeven.style.border = "10px black dotted";
         countComputer++;
     }
     if(color15 === color16){
         boxEight.style.fontSize = '2rem';
         boxEight.style.textTransform = 'uppercase';
-        boxEight.style.border = "5px black dotted";
+        boxEight.style.border = "10px black dotted";
         countComputer++;
     }
 
@@ -137,15 +137,24 @@ const determineWinner = () => {
     scoreComputer.innerHTML = countComputer;
 
     if (countHuman > countComputer){
-        winner.innerHTML = 'Winner: You!';
+        if(countHuman === 4){
+            winner.innerHTML = 'You got a perfect score!';
+            body.style.backgroundColor = 'gold';
+        } else {
+            winner.innerHTML = 'You Win!';
+            body.style.backgroundColor = 'blue';
+            setTimeout(() => {
+                body.style.backgroundColor = 'darkblue';
+            }, 100)
+        }
     } else if (countHuman < countComputer){
-        winner.innerHTML = 'Winner: Computer!';
+        winner.innerHTML = 'Computer Wins!';
     } else {
         winner.innerHTML = 'It\'s a Tie!';
     }
 }
 
-
+//Calls box1 function, then calls each box function at a 1 second interval. Calls determineWinner() function along with box8 function.
 const changeColors = () => {
     boxOneChange();
     setTimeout(boxFiveChange, 1000);
@@ -155,7 +164,7 @@ const changeColors = () => {
     setTimeout(boxSevenChange, 5000);
     setTimeout(boxFourChange, 6000);
     setTimeout(boxEightChange, 7000);
-    setTimeout(determineWinner, 7000)
+    setTimeout(determineWinner, 8000)
 }
 
 inputButton.onclick = changeColors;
