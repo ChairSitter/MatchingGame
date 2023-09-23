@@ -12,8 +12,9 @@ const boxEight = document.getElementById('div8');
 
 const scoreHuman = document.getElementById('your-score');
 const scoreComputer = document.getElementById('computer-score');
+const winner = document.getElementById('winner');
 
-const chooseColor = () => { 
+const chooseColor = () => {
     const array = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
     let randomColorNum = Math.floor(Math.random() * 7);
     let randomColor = array[randomColorNum];
@@ -44,6 +45,7 @@ let message = "You Win!";
 
 const changeColors = () => {
 //human boxes
+
     //BOX1
     boxOne.style.backgroundColor = color1;
     boxOne.innerHTML = color2;
@@ -54,7 +56,6 @@ const changeColors = () => {
         countHuman++;
     }
 
-    
     //BOX2
     boxTwo.style.backgroundColor = color3;
     boxTwo.innerHTML = color4;
@@ -64,6 +65,7 @@ const changeColors = () => {
         boxTwo.style.border = "5px black dotted";
         countHuman++;
     }
+
     //BOX3
     boxThree.style.backgroundColor = color5;
     boxThree.innerHTML = color6;
@@ -73,6 +75,7 @@ const changeColors = () => {
         boxThree.style.border = "5px black dotted";
         countHuman++;
     }
+
     //BOX4
     boxFour.style.backgroundColor = color7;
     boxFour.innerHTML = color8;
@@ -80,7 +83,7 @@ const changeColors = () => {
         boxFour.style.fontSize = '2rem';
         boxFour.style.textTransform = 'uppercase';
         boxFour.style.border = "5px black dotted";
-        countHuman++
+        countHuman++;
     }
 //computer boxes
 
@@ -121,12 +124,19 @@ const changeColors = () => {
         boxEight.style.fontSize = '2rem';
         boxEight.style.textTransform = 'uppercase';
         boxEight.style.border = "5px black dotted";
-        countComputer++
+        countComputer++;
     }
 
     scoreHuman.innerHTML = countHuman;
     scoreComputer.innerHTML = countComputer;
 
+    if (countHuman > countComputer){
+        winner.innerHTML = 'Winner: You!';
+    } else if (countHuman < countComputer){
+        winner.innerHTML = 'Winner: Computer!';
+    } else {
+        winner.innerHTML = 'It\'s a Tie!';
+    }
 }
 
 inputButton.onclick = changeColors;
