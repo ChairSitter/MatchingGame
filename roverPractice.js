@@ -43,10 +43,9 @@ let countComputer = 0;
 
 let message = "You Win!";
 
-const changeColors = () => {
-//human boxes
+//Put each BOX block into individual function
 
-    //BOX1
+const boxOneChange = () => {
     boxOne.style.backgroundColor = color1;
     boxOne.innerHTML = color2;
     if(color1 === color2){
@@ -55,8 +54,9 @@ const changeColors = () => {
         boxOne.style.border = "5px black dotted";
         countHuman++;
     }
+}
 
-    //BOX2
+const boxTwoChange = () => {
     boxTwo.style.backgroundColor = color3;
     boxTwo.innerHTML = color4;
     if(color3 === color4){
@@ -65,8 +65,9 @@ const changeColors = () => {
         boxTwo.style.border = "5px black dotted";
         countHuman++;
     }
+}
 
-    //BOX3
+const boxThreeChange = () => {
     boxThree.style.backgroundColor = color5;
     boxThree.innerHTML = color6;
     if(color5 === color6){
@@ -75,8 +76,9 @@ const changeColors = () => {
         boxThree.style.border = "5px black dotted";
         countHuman++;
     }
+}
 
-    //BOX4
+const boxFourChange = () => {
     boxFour.style.backgroundColor = color7;
     boxFour.innerHTML = color8;
     if(color7 === color8){
@@ -85,9 +87,9 @@ const changeColors = () => {
         boxFour.style.border = "5px black dotted";
         countHuman++;
     }
-//computer boxes
+}
 
-    //BOX5
+const boxFiveChange = () => {
     boxFive.style.backgroundColor = color9;
     boxFive.innerHTML = color10;
     if(color9 === color10){
@@ -96,8 +98,9 @@ const changeColors = () => {
         boxFive.style.border = "5px black dotted";
         countComputer++;
     }
+}
 
-    //BOX6
+const boxSixChange = () => {
     boxSix.style.backgroundColor = color11;
     boxSix.innerHTML = color12;
     if(color11 === color12){
@@ -106,8 +109,8 @@ const changeColors = () => {
         boxSix.style.border = "5px black dotted";
         countComputer++;
     }
-
-    //BOX7
+}
+const boxSevenChange = () => {
     boxSeven.style.backgroundColor = color13;
     boxSeven.innerHTML = color14;
     if(color13 === color14){
@@ -116,8 +119,8 @@ const changeColors = () => {
         boxSeven.style.border = "5px black dotted";
         countComputer++;
     }
-
-    //BOX8
+}
+const boxEightChange = () => {
     boxEight.style.backgroundColor = color15;
     boxEight.innerHTML = color16;
     if(color15 === color16){
@@ -126,10 +129,9 @@ const changeColors = () => {
         boxEight.style.border = "5px black dotted";
         countComputer++;
     }
+}
 
-    scoreHuman.innerHTML = countHuman;
-    scoreComputer.innerHTML = countComputer;
-
+const determineWinner = () => {
     if (countHuman > countComputer){
         winner.innerHTML = 'Winner: You!';
     } else if (countHuman < countComputer){
@@ -137,6 +139,21 @@ const changeColors = () => {
     } else {
         winner.innerHTML = 'It\'s a Tie!';
     }
+    scoreHuman.innerHTML = countHuman;
+    scoreComputer.innerHTML = countComputer;
+}
+
+
+const changeColors = () => {
+    boxOneChange();
+    setTimeout(boxFiveChange, 1000);
+    setTimeout(boxTwoChange, 2000);
+    setTimeout(boxSixChange, 3000);
+    setTimeout(boxThreeChange, 4000);
+    setTimeout(boxSevenChange, 5000);
+    setTimeout(boxFourChange, 6000);
+    setTimeout(boxEightChange, 7000);
+    setTimeout(determineWinner, 7000)
 }
 
 inputButton.onclick = changeColors;
