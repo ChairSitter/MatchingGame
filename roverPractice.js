@@ -15,7 +15,7 @@ const scoreComputer = document.getElementById('computer-score');
 const winner = document.getElementById('winner');
 
 const chooseColor = () => {
-    const array = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+    const array = ['red', 'orange', 'yellow', 'green', 'blue', 'white', 'purple'];
     let randomColorNum = Math.floor(Math.random() * 7);
     let randomColor = array[randomColorNum];
     return randomColor;
@@ -48,90 +48,94 @@ let message = "You Win!";
 const boxOneChange = () => {
     boxOne.style.backgroundColor = color1;
     boxOne.innerHTML = color2;
+}
+
+const boxTwoChange = () => {
+    boxTwo.style.backgroundColor = color3;
+    boxTwo.innerHTML = color4;
+}
+
+const boxThreeChange = () => {
+    boxThree.style.backgroundColor = color5;
+    boxThree.innerHTML = color6;
+}
+
+const boxFourChange = () => {
+    boxFour.style.backgroundColor = color7;
+    boxFour.innerHTML = color8;
+}
+
+const boxFiveChange = () => {
+    boxFive.style.backgroundColor = color9;
+    boxFive.innerHTML = color10;
+}
+
+const boxSixChange = () => {
+    boxSix.style.backgroundColor = color11;
+    boxSix.innerHTML = color12;
+}
+const boxSevenChange = () => {
+    boxSeven.style.backgroundColor = color13;
+    boxSeven.innerHTML = color14;
+}
+const boxEightChange = () => {
+    boxEight.style.backgroundColor = color15;
+    boxEight.innerHTML = color16;
+}
+
+const determineWinner = () => {
     if(color1 === color2){
         boxOne.style.fontSize = '2rem';
         boxOne.style.textTransform = 'uppercase';
         boxOne.style.border = "5px black dotted";
         countHuman++;
     }
-}
-
-const boxTwoChange = () => {
-    boxTwo.style.backgroundColor = color3;
-    boxTwo.innerHTML = color4;
     if(color3 === color4){
         boxTwo.style.fontSize = '2rem';
         boxTwo.style.textTransform = 'uppercase';
         boxTwo.style.border = "5px black dotted";
         countHuman++;
     }
-}
-
-const boxThreeChange = () => {
-    boxThree.style.backgroundColor = color5;
-    boxThree.innerHTML = color6;
     if(color5 === color6){
         boxThree.style.fontSize = '2rem';
         boxThree.style.textTransform = 'uppercase';
         boxThree.style.border = "5px black dotted";
         countHuman++;
     }
-}
-
-const boxFourChange = () => {
-    boxFour.style.backgroundColor = color7;
-    boxFour.innerHTML = color8;
     if(color7 === color8){
         boxFour.style.fontSize = '2rem';
         boxFour.style.textTransform = 'uppercase';
         boxFour.style.border = "5px black dotted";
         countHuman++;
     }
-}
-
-const boxFiveChange = () => {
-    boxFive.style.backgroundColor = color9;
-    boxFive.innerHTML = color10;
     if(color9 === color10){
         boxFive.style.fontSize = '2rem';
         boxFive.style.textTransform = 'uppercase';
         boxFive.style.border = "5px black dotted";
         countComputer++;
     }
-}
-
-const boxSixChange = () => {
-    boxSix.style.backgroundColor = color11;
-    boxSix.innerHTML = color12;
     if(color11 === color12){
         boxSix.style.fontSize = '2rem';
         boxSix.style.textTransform = 'uppercase';
         boxSix.style.border = "5px black dotted";
         countComputer++;
     }
-}
-const boxSevenChange = () => {
-    boxSeven.style.backgroundColor = color13;
-    boxSeven.innerHTML = color14;
     if(color13 === color14){
         boxSeven.style.fontSize = '2rem';
         boxSeven.style.textTransform = 'uppercase';
         boxSeven.style.border = "5px black dotted";
         countComputer++;
     }
-}
-const boxEightChange = () => {
-    boxEight.style.backgroundColor = color15;
-    boxEight.innerHTML = color16;
     if(color15 === color16){
         boxEight.style.fontSize = '2rem';
         boxEight.style.textTransform = 'uppercase';
         boxEight.style.border = "5px black dotted";
         countComputer++;
     }
-}
 
-const determineWinner = () => {
+    scoreHuman.innerHTML = countHuman;
+    scoreComputer.innerHTML = countComputer;
+
     if (countHuman > countComputer){
         winner.innerHTML = 'Winner: You!';
     } else if (countHuman < countComputer){
@@ -139,8 +143,6 @@ const determineWinner = () => {
     } else {
         winner.innerHTML = 'It\'s a Tie!';
     }
-    scoreHuman.innerHTML = countHuman;
-    scoreComputer.innerHTML = countComputer;
 }
 
 
