@@ -113,49 +113,49 @@ Calculates and displays scores and announces winner by comparing scores*/
 const determineWinner = () => {
     if(color1 === color2){
         boxOne.style.fontSize = '2rem';
-        boxOne.style.textTransform = 'uppercase';
+        //boxOne.style.textTransform = 'uppercase';
         boxOne.style.border = "10px black dotted";
         countHuman++;
     }
     if(color3 === color4){
         boxTwo.style.fontSize = '2rem';
-        boxTwo.style.textTransform = 'uppercase';
+        //boxTwo.style.textTransform = 'uppercase';
         boxTwo.style.border = "10px black dotted";
         countHuman++;
     }
     if(color5 === color6){
         boxThree.style.fontSize = '2rem';
-        boxThree.style.textTransform = 'uppercase';
+        //boxThree.style.textTransform = 'uppercase';
         boxThree.style.border = "10px black dotted";
         countHuman++;
     }
     if(color7 === color8){
         boxFour.style.fontSize = '2rem';
-        boxFour.style.textTransform = 'uppercase';
+        //boxFour.style.textTransform = 'uppercase';
         boxFour.style.border = "10px black dotted";
         countHuman++;
     }
     if(color9 === color10){
         boxFive.style.fontSize = '2rem';
-        boxFive.style.textTransform = 'uppercase';
+        //boxFive.style.textTransform = 'uppercase';
         boxFive.style.border = "10px black dotted";
         countComputer++;
     }
     if(color11 === color12){
         boxSix.style.fontSize = '2rem';
-        boxSix.style.textTransform = 'uppercase';
+        //boxSix.style.textTransform = 'uppercase';
         boxSix.style.border = "10px black dotted";
         countComputer++;
     }
     if(color13 === color14){
         boxSeven.style.fontSize = '2rem';
-        boxSeven.style.textTransform = 'uppercase';
+        //boxSeven.style.textTransform = 'uppercase';
         boxSeven.style.border = "10px black dotted";
         countComputer++;
     }
     if(color15 === color16){
         boxEight.style.fontSize = '2rem';
-        boxEight.style.textTransform = 'uppercase';
+        //boxEight.style.textTransform = 'uppercase';
         boxEight.style.border = "10px black dotted";
         countComputer++;
     }
