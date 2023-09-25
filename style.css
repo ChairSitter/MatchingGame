@@ -172,7 +172,7 @@ h3 {
     opacity: .65;
 }
 
-@media only screen and (max-width: 400px){
+@media only screen and (max-width: 500px){
     #user-wins, #comp-wins {
         font-size: 3rem;
     }
