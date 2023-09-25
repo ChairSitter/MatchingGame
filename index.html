@@ -13,7 +13,6 @@
    <section id="changer">
         <div id="human-label">
             <h2>YOUR BOXES:</h2>
-            <h3 id="user-wins"></h3>
         </div>            
         <div id="div1" class="box"></div>
         <div id="div2" class="box"></div>
@@ -22,8 +21,7 @@
    </section>
    <section id="changer2">
         <div id="computer-label">
-            <h2>COMP BOXES:</h>   
-            <h3 id="comp-wins"></h3>         
+            <h2>COMP BOXES:</h>          
         </div>
         <div id="div5" class="box"></div>
         <div id="div6" class="box"></div>
@@ -31,27 +29,38 @@
         <div id="div8" class="box"></div>
     </section>
 
-   <div id="input">
-        <label id="input" name="input">Match more boxes than the computer. Good Luck!</label>
-        <input type="button" id="input" name="input" value="Play"></input>
-   </div>
-
-   <div id="score-human">
-        <div id="you-got">
-            <h2>Your Matches: </h2>
+    <section id="bottom">
+        <div id="bottom-left">>
+            <h3 id="user-win-label">Your wins: </h3>
+            <h3 id="user-wins"></h3>
         </div>
-        <div id="your-score"></div>
 
-   </div>
+        <div id="bottom-middle">
+            <div id="input">
+                    <label id="input" name="input">Match more boxes than the computer. Good Luck!</label>
+                    <input type="button" id="input" name="input" value="Play"></input>
+            </div>
+            <div id="score-human">
+                    <div id="you-got">
+                        <h2>Your Matches: </h2>
+                    </div>
+                    <div id="your-score"></div>
 
-   <div id="score-computer">
-        <div id="computer-got">
-            <h2>Computer's Matches: </h2>
+            </div>
+            <div id="score-computer">
+                    <div id="computer-got">
+                        <h2>Computer's Matches: </h2>
+                    </div>
+                    <div id="computer-score"></div>
+            </div >
+            <h3 id="winner"></h3>
         </div>
-        <div id="computer-score"></div>
-    </div >
 
-    <h3 id="winner"></h3>
+        <div id="bottom-right">
+            <h3 id="comp-win-label">Comp wins: </h3>
+            <h3 id="comp-wins"></h3>
+        </div>
+    </section>
 
    <script src="./roverPractice.js"></script>
 </body>

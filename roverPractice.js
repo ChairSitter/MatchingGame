@@ -20,6 +20,8 @@ const compWins = document.getElementById('comp-wins');
 
 scoreHuman.innerHTML = 0;
 scoreComputer.innerHTML = 0;
+userWins.innerHTML = 0;
+compWins.innerHTML = 0;
 
 //chooses a random color from a list of possible colors
 const chooseColor = () => {
@@ -179,12 +181,17 @@ const determineWinner = () => {
         compWinCount++;
         compWins.innerHTML =  compWinCount;
     } else {
-        winner.innerHTML = 'It\'s a Tie!';
+        winner.innerHTML = `It\'s a ${countHuman} - ${countComputer} Tie!`;
     }
 }
 
 //Resets special border for matches, resets score counters to 0 and displays this.
 const resetter = () => {
+    countComputer = 0;
+    countHuman = 0;
+    scoreHuman.innerHTML = countHuman;
+    scoreComputer.innerHTML = countComputer;
+
     winner.innerHTML = '';
 
     boxOne.style.fontSize = '1.5rem';
@@ -235,15 +242,10 @@ const resetter = () => {
     boxEight.innerHTML = "";
     boxEight.style.backgroundColor = "";
 }
-//Calls box1 function, then calls each box function at a 1 second interval. Calls determineWinner() function along with box8 function.
+
+//Calls resetter function which resets values following the initial and subsequent rounds. Calls each box changer function, then the determine winner function, on time delays.
 const changeColors = () => {
     resetter();
-
-    countComputer = 0;
-    countHuman = 0;
-    scoreHuman.innerHTML = countHuman;
-    scoreComputer.innerHTML = countComputer;
-
     boxOneChange();
     setTimeout(boxFiveChange, 1000);
     setTimeout(boxTwoChange, 2000);
@@ -255,4 +257,5 @@ const changeColors = () => {
     setTimeout(determineWinner, 8000)
 }
 
+//Sets the Play button to call the main function
 inputButton.onclick = changeColors;

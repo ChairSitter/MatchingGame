@@ -2,6 +2,7 @@ body {
     background-color: darkblue;
 }
 
+/*Healine*/
 h1 {
     font-size: 3rem;
     color: lightgray;
@@ -9,6 +10,7 @@ h1 {
     text-align: center;
 }
 
+/*User and Comp labels and boxes*/
 #human-label {
     width: 0; 
     height: 0; 
@@ -55,6 +57,7 @@ h1 {
     justify-content: center;
 }
 
+/*Bottom section*/
 #input {
     text-align: center;
     padding: 10px;
@@ -69,6 +72,14 @@ label {
     color: gold;
     font-family: Arial, Helvetica, sans-serif;
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#winner{
+    text-align: center;
+    margin: 0;
 }
 
 #you-got, #your-score, #computer-got, #computer-score {
@@ -85,5 +96,33 @@ h3 {
     color: rgb(197, 179, 20);
     font-family: Arial, Helvetica, sans-serif;
     text-transform: uppercase;
+}
+
+#bottom {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#bottom-center {
+    display: flex;
+    justify-content: center;
+}
+
+#bottom-left, #bottom-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 1 1;
+}
+
+#comp-win-label, #user-win-label {
+    margin: 0;
+    opacity: .75;
+}
+
+#user-wins, #comp-wins {
+    font-size: 13rem;
     text-align: center;
+    margin: 0;
+    opacity: .65;
 }
