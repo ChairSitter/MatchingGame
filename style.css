@@ -42,8 +42,10 @@ h1 {
 #user-small-label, #comp-small-label {
     display: none;
     text-align: center;
-    color: white;
+    color: gold;
     font-family: Arial, Helvetica, sans-serif;
+    opacity: .75;
+    margin: 0;
 }
 
 @media only screen and (max-width: 920px){
@@ -71,6 +73,8 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 @media only screen and (max-width: 650px){
@@ -85,8 +89,12 @@ h1 {
         width: 50px;
     }
 }
-
-
+@media only screen and (max-width: 400px){
+    .box {
+        height: 35px;
+        width: 35px;
+    }
+}
 
 /*Bottom section*/
 #input {
@@ -115,6 +123,12 @@ label {
 
 #you-got, #your-score, #computer-got, #computer-score {
     display: inline-block;
+}
+
+@media only screen and (max-width: 400px){
+    #you-got, #your-score, #computer-got, #computer-score {
+        font-size: .8rem;
+    }
 }
 
 #your-score, #computer-score {
@@ -156,4 +170,13 @@ h3 {
     text-align: center;
     margin: 0;
     opacity: .65;
+}
+
+@media only screen and (max-width: 400px){
+    #user-wins, #comp-wins {
+        font-size: 3rem;
+    }
+    #comp-win-label, #user-win-label {
+        font-size: 1.5rem;
+    }
 }
