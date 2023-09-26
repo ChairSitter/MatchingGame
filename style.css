@@ -19,6 +19,11 @@ h1 {
         font-size: 1.5rem;    
     }
 }
+@media only screen and (max-width: 760px) {
+    h1 {
+        font-size: 2.5rem;    
+    }
+}
 
 /*User and Comp labels and boxes*/
 #human-label {
@@ -58,7 +63,7 @@ h1 {
     margin: 0;
 }
 
-@media only screen and (max-width: 920px){
+@media only screen and (max-width: 725px){
     #human-label, #computer-label {
         display: none;
     }
@@ -87,7 +92,7 @@ h1 {
     margin-bottom: 0;
 }
 
-@media only screen and (max-width: 650px){
+@media only screen and (max-width: 850px){
     #changer, #changer2 {
         justify-content: space-between;
     }
@@ -96,18 +101,12 @@ h1 {
         width: 75px;
     }
 }
-@media only screen and (max-width: 530px){
+@media only screen and (max-width: 500px){
     .box {
         height: 50px;
         width: 50px;
     }
 }
-/*@media only screen and (max-width: 500px){
-    .box {
-        height: 35px;
-        width: 35px;
-    }
-}*/
 
 /*Bottom section*/
 #input {
@@ -165,6 +164,16 @@ h3 {
 #bottom {
     display: flex;
     justify-content: space-evenly;
+    margin-top: 40px;
+}
+
+@media only screen and (min-width: 500px) and (max-width: 890px) {
+    #bottom {
+        margin-top: 0;
+    }
+    #user-wins, #comp-wins {
+        font-size: 4rem;
+    }
 }
 
 #bottom-center {
@@ -194,7 +203,7 @@ h3 {
 }
 
 #user-wins, #comp-wins {
-    font-size: 13rem;
+    font-size: 10rem;
     text-align: center;
     margin: 0;
     opacity: .65;
