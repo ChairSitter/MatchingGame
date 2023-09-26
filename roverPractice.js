@@ -18,6 +18,8 @@ const winner = document.getElementById('winner');
 const userWins = document.getElementById('user-wins');
 const compWins = document.getElementById('comp-wins');
 
+const yourMatches = document.getElementById('your-matches');
+const compMatches = document.getElementById('comp-matches');
 scoreHuman.innerHTML = 0;
 scoreComputer.innerHTML = 0;
 userWins.innerHTML = 0;
@@ -112,51 +114,35 @@ const boxEightChange = () => {
 Calculates and displays scores and announces winner by comparing scores*/
 const determineWinner = () => {
     if(color1 === color2){
-        boxOne.style.fontSize = '2rem';
-        //boxOne.style.textTransform = 'uppercase';
-        boxOne.style.border = "10px black dotted";
+        boxOne.style.border = "5px black dotted";
         countHuman++;
     }
     if(color3 === color4){
-        boxTwo.style.fontSize = '2rem';
-        //boxTwo.style.textTransform = 'uppercase';
-        boxTwo.style.border = "10px black dotted";
+        boxTwo.style.border = "5px black dotted";
         countHuman++;
     }
     if(color5 === color6){
-        boxThree.style.fontSize = '2rem';
-        //boxThree.style.textTransform = 'uppercase';
-        boxThree.style.border = "10px black dotted";
+        boxThree.style.border = "5px black dotted";
         countHuman++;
     }
     if(color7 === color8){
-        boxFour.style.fontSize = '2rem';
-        //boxFour.style.textTransform = 'uppercase';
-        boxFour.style.border = "10px black dotted";
+        boxFour.style.border = "5px black dotted";
         countHuman++;
     }
     if(color9 === color10){
-        boxFive.style.fontSize = '2rem';
-        //boxFive.style.textTransform = 'uppercase';
-        boxFive.style.border = "10px black dotted";
+        boxFive.style.border = "5px black dotted";
         countComputer++;
     }
     if(color11 === color12){
-        boxSix.style.fontSize = '2rem';
-        //boxSix.style.textTransform = 'uppercase';
-        boxSix.style.border = "10px black dotted";
+        boxSix.style.border = "5px black dotted";
         countComputer++;
     }
     if(color13 === color14){
-        boxSeven.style.fontSize = '2rem';
-        //boxSeven.style.textTransform = 'uppercase';
-        boxSeven.style.border = "10px black dotted";
+        boxSeven.style.border = "5px black dotted";
         countComputer++;
     }
     if(color15 === color16){
-        boxEight.style.fontSize = '2rem';
-        //boxEight.style.textTransform = 'uppercase';
-        boxEight.style.border = "10px black dotted";
+        boxEight.style.border = "5px black dotted";
         countComputer++;
     }
 
@@ -165,11 +151,15 @@ const determineWinner = () => {
 
     if (countHuman > countComputer){
         if(countHuman === 4){
+            scoreHuman.style.textShadow = '1px 1px white';
+            yourMatches.style.textShadow = '1px 1px white';
             winner.innerHTML = 'You got a perfect score!';
             body.style.backgroundColor = 'gold';
         } else {
+            scoreHuman.style.textShadow = '1px 1px white';
+            yourMatches.style.textShadow = '1px 1px white';
             winner.innerHTML = 'You Win!';
-            body.style.backgroundColor = 'blue';
+            body.style.backgroundColor = 'rgb(0, 0, 165)';
             setTimeout(() => {
                 body.style.backgroundColor = 'darkblue';
             }, 150);
@@ -177,6 +167,8 @@ const determineWinner = () => {
         userWinCount++;
         userWins.innerHTML = userWinCount;
     } else if (countHuman < countComputer){
+        scoreComputer.style.textShadow = '1px 1px white';
+        compMatches.style.textShadow = '1px 1px white';
         winner.innerHTML = 'Computer Wins!';
         compWinCount++;
         compWins.innerHTML =  compWinCount;
@@ -192,52 +184,57 @@ const resetter = () => {
     scoreHuman.innerHTML = countHuman;
     scoreComputer.innerHTML = countComputer;
 
+    scoreHuman.style.textShadow = 'none';
+    yourMatches.style.textShadow = 'none';
+    scoreComputer.style.textShadow = 'none';
+    compMatches.style.textShadow = 'none';
+
     winner.innerHTML = '';
 
     boxOne.style.fontSize = '1.5rem';
-    boxOne.style.border = '10px solid black';
+    boxOne.style.border = '5px solid black';
     boxOne.style.textTransform = 'lowercase'; 
     boxOne.innerHTML = "";
     boxOne.style.backgroundColor = "";
 
     boxTwo.style.fontSize = '1.5rem';
-    boxTwo.style.border = '10px solid black';
+    boxTwo.style.border = '5px solid black';
     boxTwo.style.textTransform = 'lowercase'; 
     boxTwo.innerHTML = "";
     boxTwo.style.backgroundColor = "";
 
     boxThree.style.fontSize = '1.5rem';
-    boxThree.style.border = '10px solid black';
+    boxThree.style.border = '5px solid black';
     boxThree.style.textTransform = 'lowercase'; 
     boxThree.innerHTML = "";
     boxThree.style.backgroundColor = "";
 
     boxFour.style.fontSize = '1.5rem';
-    boxFour.style.border = '10px solid black';
+    boxFour.style.border = '5px solid black';
     boxFour.style.textTransform = 'lowercase'; 
     boxFour.innerHTML = "";
     boxFour.style.backgroundColor = "";
 
     boxFive.style.fontSize = '1.5rem';
-    boxFive.style.border = '10px solid black';
+    boxFive.style.border = '5px solid black';
     boxFive.style.textTransform = 'lowercase'; 
     boxFive.innerHTML = "";
     boxFive.style.backgroundColor = "";
 
     boxSix.style.fontSize = '1.5rem';
-    boxSix.style.border = '10px solid black';
+    boxSix.style.border = '5px solid black';
     boxSix.style.textTransform = 'lowercase'; 
     boxSix.innerHTML = "";
     boxSix.style.backgroundColor = "";
 
     boxSeven.style.fontSize = '1.5rem';
-    boxSeven.style.border = '10px solid black';
+    boxSeven.style.border = '5px solid black';
     boxSeven.style.textTransform = 'lowercase'; 
     boxSeven.innerHTML = "";
     boxSeven.style.backgroundColor = "";
 
     boxEight.style.fontSize = '1.5rem';
-    boxEight.style.border = '10px solid black';
+    boxEight.style.border = '5px solid black';
     boxEight.style.textTransform = 'lowercase'; 
     boxEight.innerHTML = "";
     boxEight.style.backgroundColor = "";
@@ -256,6 +253,21 @@ const changeColors = () => {
     setTimeout(boxEightChange, 7000);
     setTimeout(determineWinner, 8000)
 }
+
+//test function that will call functions faster
+/*
+const changeColors = () => {
+    resetter();
+    boxOneChange();
+    setTimeout(boxFiveChange, 100);
+    setTimeout(boxTwoChange, 200);
+    setTimeout(boxSixChange, 300);
+    setTimeout(boxThreeChange, 400);
+    setTimeout(boxSevenChange, 500);
+    setTimeout(boxFourChange, 600);
+    setTimeout(boxEightChange, 700);
+    setTimeout(determineWinner, 800)
+}*/
 
 //Sets the Play button to call the main function
 inputButton.onclick = changeColors;
