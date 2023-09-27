@@ -124,17 +124,17 @@ h1 {
 #input {
     display: flex;
     justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
 }
 
 #input-field {
     text-align: center;
+    color: white;
+    justify-self: start;
 }
 
 #input-button {
-    text-align: center;
     padding: 10px;
-
 }
 
 label {
