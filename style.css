@@ -135,6 +135,8 @@ h1 {
 
 #input-button {
     padding: 10px;
+    background-color: gold;
+    border-radius: 5px;
 }
 
 #score-human, #score-computer {
