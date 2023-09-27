@@ -137,10 +137,6 @@ h1 {
     padding: 10px;
 }
 
-label {
-    color: white;
-}
-
 #score-human, #score-computer {
     text-align: center;
     color: gold;
@@ -154,6 +150,7 @@ label {
 #winner {
     text-align: center;
     margin: 0;
+    font-size: 1.75rem;
 }
 
 #you-got, #your-score, #computer-got, #computer-score {
