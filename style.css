@@ -23,6 +23,7 @@ h1 {
 @media only screen and (max-width: 500px) {
     h1 {
         font-size: 1.5rem;    
+        border-radius: 5px;
     }
 }
 @media only screen and (max-width: 760px) {
@@ -115,7 +116,7 @@ h1 {
 }
 
 /*Bottom section*/
-#input {
+#inputButton {
     text-align: center;
     padding: 10px;
 }
@@ -214,14 +215,17 @@ h3 {
     text-align: center;
     margin: 0;
     opacity: .65;
+    text-shadow: 5px 5px rgb(0, 0, 90);
 }
 
 @media only screen and (max-width: 500px){
     #user-wins, #comp-wins {
         font-size: 7rem;
+        text-shadow: 5px 5px darkblue;
     }
     #comp-win-label, #user-win-label {
         font-size: 1.3rem;
         padding: 3px;
+        text-shadow: 1.5px 1.5px darkblue;
     }
 }

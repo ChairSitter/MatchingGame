@@ -1,5 +1,5 @@
 //Declare constants for input button, boxes, and containers for scores and winner declaration
-const inputButton = document.getElementById('input');
+const inputButton = document.getElementById('inputButton');
 const body = document.body;
 
 const boxOne = document.getElementById('div1');
@@ -114,35 +114,43 @@ const boxEightChange = () => {
 Calculates and displays scores and announces winner by comparing scores*/
 const determineWinner = () => {
     if(color1 === color2){
-        boxOne.style.border = "5px black dotted";
+        boxOne.style.border = "5px black dashed";
+        boxOne.style.boxShadow = "5px 5px white";
         countHuman++;
     }
     if(color3 === color4){
-        boxTwo.style.border = "5px black dotted";
+        boxTwo.style.border = "5px black dashed";
+        boxTwo.style.boxShadow = "5px 5px white";
         countHuman++;
     }
     if(color5 === color6){
-        boxThree.style.border = "5px black dotted";
+        boxThree.style.border = "5px black dashed";
+        boxThree.style.boxShadow = "5px 5px white";
         countHuman++;
     }
     if(color7 === color8){
-        boxFour.style.border = "5px black dotted";
+        boxFour.style.border = "5px black dashed";
+        boxFour.style.boxShadow = "5px 5px white";
         countHuman++;
     }
     if(color9 === color10){
-        boxFive.style.border = "5px black dotted";
+        boxFive.style.border = "5px black dashed";
+        boxFive.style.boxShadow = "5px 5px white";
         countComputer++;
     }
     if(color11 === color12){
-        boxSix.style.border = "5px black dotted";
+        boxSix.style.border = "5px black dashed";
+        boxSix.style.boxShadow = "5px 5px white";
         countComputer++;
     }
     if(color13 === color14){
-        boxSeven.style.border = "5px black dotted";
+        boxSeven.style.border = "5px black dashed";
+        boxSeven.style.boxShadow = "5px 5px white";
         countComputer++;
     }
     if(color15 === color16){
-        boxEight.style.border = "5px black dotted";
+        boxEight.style.border = "5px black dashed";
+        boxEight.style.boxShadow = "5px 5px white";
         countComputer++;
     }
 
@@ -151,13 +159,13 @@ const determineWinner = () => {
 
     if (countHuman > countComputer){
         if(countHuman === 4){
-            scoreHuman.style.textShadow = '1px 1px white';
-            yourMatches.style.textShadow = '1px 1px white';
+            scoreHuman.style.textShadow = '1.5px 1.5px white';
+            yourMatches.style.textShadow = '1.5px 1.5px white';
             winner.innerHTML = 'You got a perfect score!';
             body.style.backgroundColor = 'gold';
         } else {
-            scoreHuman.style.textShadow = '1px 1px white';
-            yourMatches.style.textShadow = '1px 1px white';
+            scoreHuman.style.textShadow = '1.5px 1.5px white';
+            yourMatches.style.textShadow = '1.5px 1.5px white';
             winner.innerHTML = 'You Win!';
             body.style.backgroundColor = 'rgb(0, 0, 165)';
             setTimeout(() => {
@@ -167,13 +175,15 @@ const determineWinner = () => {
         userWinCount++;
         userWins.innerHTML = userWinCount;
     } else if (countHuman < countComputer){
-        scoreComputer.style.textShadow = '1px 1px white';
-        compMatches.style.textShadow = '1px 1px white';
+        scoreComputer.style.textShadow = '1.5px 1.5px white';
+        compMatches.style.textShadow = '1.5px 1.5px white';
         winner.innerHTML = 'Computer Wins!';
         compWinCount++;
         compWins.innerHTML =  compWinCount;
     } else {
         winner.innerHTML = `It\'s a ${countHuman} - ${countComputer} Tie!`;
+        scoreComputer.style.textShadow = '1.5px 1.5px white';
+        scoreHuman.style.textShadow = '1.5px 1.5px white';
     }
 }
 
@@ -196,52 +206,61 @@ const resetter = () => {
     boxOne.style.textTransform = 'lowercase'; 
     boxOne.innerHTML = "";
     boxOne.style.backgroundColor = "";
+    boxOne.style.boxShadow = 'none';
 
     boxTwo.style.fontSize = '1.5rem';
     boxTwo.style.border = '5px solid black';
     boxTwo.style.textTransform = 'lowercase'; 
     boxTwo.innerHTML = "";
     boxTwo.style.backgroundColor = "";
+    boxTwo.style.boxShadow = 'none';
 
     boxThree.style.fontSize = '1.5rem';
     boxThree.style.border = '5px solid black';
     boxThree.style.textTransform = 'lowercase'; 
     boxThree.innerHTML = "";
     boxThree.style.backgroundColor = "";
+    boxThree.style.boxShadow = 'none';
 
     boxFour.style.fontSize = '1.5rem';
     boxFour.style.border = '5px solid black';
     boxFour.style.textTransform = 'lowercase'; 
     boxFour.innerHTML = "";
     boxFour.style.backgroundColor = "";
+    boxFour.style.boxShadow = 'none';
 
     boxFive.style.fontSize = '1.5rem';
     boxFive.style.border = '5px solid black';
     boxFive.style.textTransform = 'lowercase'; 
     boxFive.innerHTML = "";
     boxFive.style.backgroundColor = "";
+    boxFive.style.boxShadow = 'none';
 
     boxSix.style.fontSize = '1.5rem';
     boxSix.style.border = '5px solid black';
     boxSix.style.textTransform = 'lowercase'; 
     boxSix.innerHTML = "";
     boxSix.style.backgroundColor = "";
+    boxSix.style.boxShadow = 'none';
 
     boxSeven.style.fontSize = '1.5rem';
     boxSeven.style.border = '5px solid black';
     boxSeven.style.textTransform = 'lowercase'; 
     boxSeven.innerHTML = "";
     boxSeven.style.backgroundColor = "";
+    boxSeven.style.boxShadow = 'none';
 
     boxEight.style.fontSize = '1.5rem';
     boxEight.style.border = '5px solid black';
     boxEight.style.textTransform = 'lowercase'; 
     boxEight.innerHTML = "";
     boxEight.style.backgroundColor = "";
+    boxEight.style.boxShadow = 'none';
 }
 
 //Calls resetter function which resets values following the initial and subsequent rounds. Calls each box changer function, then the determine winner function, on time delays.
 const changeColors = () => {
+    document.getElementById('inputButton').disabled = true;
     resetter();
     boxOneChange();
     setTimeout(boxFiveChange, 1000);
@@ -251,7 +270,10 @@ const changeColors = () => {
     setTimeout(boxSevenChange, 5000);
     setTimeout(boxFourChange, 6000);
     setTimeout(boxEightChange, 7000);
-    setTimeout(determineWinner, 8000)
+    setTimeout(determineWinner, 8000);
+    setTimeout(() => {
+        document.getElementById('inputButton').disabled = false;
+    }, 8000);
 }
 
 //test function that will call functions faster
