@@ -1,5 +1,5 @@
 //Declare constants for input button, boxes, and containers for scores and winner declaration
-const inputButton = document.getElementById('inputButton');
+const inputButton = document.getElementById('input-button');
 const body = document.body;
 
 const boxOne = document.getElementById('div1');
@@ -260,7 +260,7 @@ const resetter = () => {
 
 //Calls resetter function which resets values following the initial and subsequent rounds. Calls each box changer function, then the determine winner function, on time delays.
 const changeColors = () => {
-    document.getElementById('inputButton').disabled = true;
+    document.getElementById('input-button').disabled = true;
     resetter();
     boxOneChange();
     setTimeout(boxFiveChange, 1000);
@@ -272,7 +272,7 @@ const changeColors = () => {
     setTimeout(boxEightChange, 7000);
     setTimeout(determineWinner, 8000);
     setTimeout(() => {
-        document.getElementById('inputButton').disabled = false;
+        document.getElementById('input-button').disabled = false;
     }, 8000);
 }
 

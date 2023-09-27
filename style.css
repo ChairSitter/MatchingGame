@@ -1,3 +1,8 @@
+/*
+* {
+    border: red solid 1px;
+}*/
+
 body {
     background-color: darkblue;
 }
@@ -116,9 +121,20 @@ h1 {
 }
 
 /*Bottom section*/
-#inputButton {
+#input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#input-field {
+    text-align: center;
+}
+
+#input-button {
     text-align: center;
     padding: 10px;
+
 }
 
 label {
@@ -181,11 +197,6 @@ h3 {
     #user-wins, #comp-wins {
         font-size: 4rem;
     }
-}
-
-#bottom-center {
-    display: flex;
-    justify-content: center;
 }
 
 #bottom-left, #bottom-right {
