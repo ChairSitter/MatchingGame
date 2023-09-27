@@ -160,12 +160,12 @@ const determineWinner = () => {
     if (countHuman > countComputer){
         if(countHuman === 4){
             scoreHuman.style.textShadow = '1.5px 1.5px white';
-            yourMatches.style.textShadow = '1.5px 1.5px white';
+            yourMatches.style.textShadow = '1px 1px white';
             winner.innerHTML = 'You got a perfect score!';
             body.style.backgroundColor = 'gold';
         } else {
             scoreHuman.style.textShadow = '1.5px 1.5px white';
-            yourMatches.style.textShadow = '1.5px 1.5px white';
+            yourMatches.style.textShadow = '1px 1px white';
             winner.innerHTML = 'You Win!';
             body.style.backgroundColor = 'rgb(0, 0, 165)';
             setTimeout(() => {
@@ -176,7 +176,7 @@ const determineWinner = () => {
         userWins.innerHTML = userWinCount;
     } else if (countHuman < countComputer){
         scoreComputer.style.textShadow = '1.5px 1.5px white';
-        compMatches.style.textShadow = '1.5px 1.5px white';
+        compMatches.style.textShadow = '1px 1px white';
         winner.innerHTML = 'Computer Wins!';
         compWinCount++;
         compWins.innerHTML =  compWinCount;
