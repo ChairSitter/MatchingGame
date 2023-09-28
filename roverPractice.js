@@ -115,42 +115,42 @@ Calculates and displays scores and announces winner by comparing scores*/
 const determineWinner = () => {
     if(color1 === color2){
         boxOne.style.border = "5px black dashed";
-        boxOne.style.boxShadow = "5px 5px white";
+        boxOne.style.boxShadow = "3px 3px white";
         countHuman++;
     }
     if(color3 === color4){
         boxTwo.style.border = "5px black dashed";
-        boxTwo.style.boxShadow = "5px 5px white";
+        boxTwo.style.boxShadow = "3px 3px white";
         countHuman++;
     }
     if(color5 === color6){
         boxThree.style.border = "5px black dashed";
-        boxThree.style.boxShadow = "5px 5px white";
+        boxThree.style.boxShadow = "3px 3px white";
         countHuman++;
     }
     if(color7 === color8){
         boxFour.style.border = "5px black dashed";
-        boxFour.style.boxShadow = "5px 5px white";
+        boxFour.style.boxShadow = "3px 3px white";
         countHuman++;
     }
     if(color9 === color10){
         boxFive.style.border = "5px black dashed";
-        boxFive.style.boxShadow = "5px 5px white";
+        boxFive.style.boxShadow = "3px 3px white";
         countComputer++;
     }
     if(color11 === color12){
         boxSix.style.border = "5px black dashed";
-        boxSix.style.boxShadow = "5px 5px white";
+        boxSix.style.boxShadow = "3px 3px white";
         countComputer++;
     }
     if(color13 === color14){
         boxSeven.style.border = "5px black dashed";
-        boxSeven.style.boxShadow = "5px 5px white";
+        boxSeven.style.boxShadow = "3px 3px white";
         countComputer++;
     }
     if(color15 === color16){
         boxEight.style.border = "5px black dashed";
-        boxEight.style.boxShadow = "5px 5px white";
+        boxEight.style.boxShadow = "3px 3px white";
         countComputer++;
     }
 
