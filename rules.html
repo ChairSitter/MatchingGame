@@ -8,33 +8,83 @@
 </head>
 <body>
    <h1>
-        Color and Word Matching Game 
+        <a href="./index.html">Return to the Game</a>
    </h1>
    <h2 id="rules">
         Rules:
    </h2>
    <p id="explanation">
-    This is a game of luck in which you play against the computer to 25 points.<br/>
+    Press "Play" and hope for good luck!<br/>
+    Score more points than the computer by matching colors in boxes and making scoring combinations.<br/>
     You have 4 boxes and so does the computer. <br/>
-    Each round, the boxes are assigned a randomly generated background color and text color one-by-one.<br/>
-    Points are awarded after each round as follows:
+    Each round, the boxes are assigned a random background color and text color.<br/>
+    Points are awarded for the single highest scoring combination each round:
     </p>
-    <ul id="rule-list">
-        <li>   Win the Round: <br/>
-        +1 point to the side with more matches (background color matches text color of a box)
-        </li> 
-        <li>Loose straight:<br/>
-    +3 point bonus if all 4 of your boxes have a color in common (background color OR text)
-        </li>
-        <li>Strict straight:<br/>
-    +5 point bonus if all 4 boxes have the same background color, or the same text color
-        </li>
-        <li>Four matches:<br/>
-    +10 point bonus if all 4 boxes contain matches
-        </li>
-        <li>Perfect round:<br/>
-    +Automatic win if all background and text colors are the same (perfect round)
-        </li>
+    <p class="rule-list">
+        Perfect Round (25 pts):<br/>
+        The text and background color is the exact same color across all of your boxes
+    </p>
+        <section id="changerEx1">        
+            <div id="Ex1box1" class="ExBox"><p class="ExP">red</p></div>
+            <div id="Ex1box2" class="ExBox"><p class="ExP">red</p></div>
+            <div id="Ex1box3" class="ExBox"><p class="ExP">red</p></div>
+            <div id="Ex1box4" class="ExBox"><p class="ExP">red</p></div>
+       </section>
+       <p class="rule-list">4 matches (10 pts):<br/>
+            The text color matches the background color in all of your boxes
+       </p>
+        <section id="changerEx2">        
+            <div id="Ex2box1" class="ExBox"><p class="ExP">red</p></div>
+            <div id="Ex2box2" class="ExBox"><p class="ExP">orange</p></div>
+            <div id="Ex2box3" class="ExBox"><p class="ExP">green</p></div>
+            <div id="Ex2box4" class="ExBox"><p class="ExP">blue</p></div>
+       </section>
+       <p class="rule-list">Strict straight (5 pts):<br/>
+            All of your boxes have the same background color, or all of your boxes have the same text color
+       </p>
+        <section id="changerEx3">        
+            <div id="Ex3box1" class="ExBox"><p class="ExP">purple</p></div>
+            <div id="Ex3box2" class="ExBox"><p class="ExP">yellow</p></div>
+            <div id="Ex3box3" class="ExBox"><p class="ExP">white</p></div>
+            <div id="Ex3box4" class="ExBox"><p class="ExP">green</p></div>
+       </section>
+       <p class="rule-list">OR:</p>
+       <section id="changerEx32">        
+        <div id="Ex32box1" class="ExBox"><p class="ExP">white</p></div>
+        <div id="Ex32box2" class="ExBox"><p class="ExP">white</p></div>
+        <div id="Ex32box3" class="ExBox"><p class="ExP">white</p></div>
+        <div id="Ex32box4" class="ExBox"><p class="ExP">white</p></div>
+   </section>
+       <p class="rule-list">Loose straight (3 pts):<br/>
+            All of your boxes have a background OR text color in common
+       </p>
+        <section id="changerEx4">        
+            <div id="Ex4box1" class="ExBox"><p class="ExP">yellow</p></div>
+            <div id="Ex4box2" class="ExBox"><p class="ExP">purple</p></div>
+            <div id="Ex4box3" class="ExBox"><p class="ExP">yellow</p></div>
+            <div id="Ex4box4" class="ExBox"><p class="ExP">orange</p></div>
+       </section>
+       <p class="rule-list">   Win the Round (1 pt): <br/>
+            If no larger combination is scored, the side with more boxes with text-background matches receives a point.
+       </p>
+       <p class="rule-list">YOUR BOXES:</p>
+        <section id="changerEx5">        
+            <div id="Ex5box1" class="ExBox"><p class="ExP">green</p></div>
+            <div id="Ex5box2" class="ExBox"><p class="ExP">yellow</p></div>
+            <div id="Ex5box3" class="ExBox"><p class="ExP">orange</p></div>
+            <div id="Ex5box4" class="ExBox"><p class="ExP">white</p></div>
+       </section>
+       <p class="rule-list">COMPUTER BOXES:</p>
+       <section id="changerEx6">        
+            <div id="Ex6box1" class="ExBox"><p class="ExP">red</p></div>
+            <div id="Ex6box2" class="ExBox"><p class="ExP">blue</p></div>
+            <div id="Ex6box3" class="ExBox"><p class="ExP">white</p></div>
+            <div id="Ex6box4" class="ExBox"><p class="ExP">blue</p></div>
+        </section>
+        <p class="rule-list">Computer wins this round with 2 matches to 1, winning 1 point.</p>
+
+
+
     </ul>
 </body>
 </html>

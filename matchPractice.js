@@ -1,15 +1,9 @@
-let first = 3;
-let second = 2;
-let third = 2;
-let fourth = 4;
-let fifth = 5;
-let sixth = 2;
-let seventh = 3;
-let eighth = 2;
+let first = false;
+let second = false;
+let third = false;
+let fourth = true;
 
-if((first === (third || fourth)) && (first === (fifth || sixth)) && (first === (seventh || eighth))){
-    console.log(true);
-} else if ((second === (third || fourth)) && (second === (fifth || sixth)) && (second === (seventh || eighth))){
+if(first === true || second === true || third === true || fourth === true){
     console.log(true);
 } else {
     console.log(false);
