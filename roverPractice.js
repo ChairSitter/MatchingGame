@@ -268,13 +268,13 @@ const determineWinner = () => {
             userChanger.style.backgroundColor = 'rgb(197, 179, 20)';
             compChanger.style.backgroundColor = 'rgb(197, 179, 20)';
         } else {
-            userPtsCount = userPtsCount + 20;
-            winnerU.innerHTML = "Perfect<br/>round<br/>+20";
+            userPtsCount = userPtsCount + 25;
+            winnerU.innerHTML = "Perfect<br/>round<br/>+25";
             userChanger.style.backgroundColor = 'rgb(197, 179, 20)';
         }  
     } else if(compPerfectRound === true){
-        compPtsCount = compPtsCount + 20;
-        winnerC.innerHTML = "Perfect<br/>round<br/>+20";
+        compPtsCount = compPtsCount + 25;
+        winnerC.innerHTML = "Perfect<br/>round<br/>+25";
         compChanger.style.backgroundColor = 'rgb(197, 179, 20)';
     } else if(userAllMatches === true){
         if(compAllMatches === true){
