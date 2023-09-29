@@ -13,7 +13,7 @@ body {
     }
 }
 
-/*Headline*/
+/*Header*/
 h1 {
     font-size: 3rem;
     color: lightgray;
@@ -237,3 +237,27 @@ h3 {
         text-shadow: 1.5px 1.5px darkblue;
     }
 }
+#rules-link {
+    text-align: center;
+}
+
+/*Rules page*/
+#rules {
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+}
+
+#explanation {
+    color: gold;
+    margin: 20px 100px 20px 100px;
+    font-size: 1.5rem;
+}
+
+#rule-list {
+    color: lightgrey;
+    font-size: 1.5rem;
+    margin-left: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+

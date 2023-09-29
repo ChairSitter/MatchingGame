@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color and Word Matching Game</title>
+    <link href="./style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+   <h1>
+        Color and Word Matching Game 
+   </h1>
+   <h2 id="rules">
+        Rules:
+   </h2>
+   <p id="explanation">
+    This is a game of luck in which you play against the computer to 25 points.<br/>
+    You have 4 boxes and so does the computer. <br/>
+    Each round, the boxes are assigned a randomly generated background color and text color one-by-one.<br/>
+    Points are awarded after each round as follows:
+    </p>
+    <ul id="rule-list">
+        <li>   Win the Round: <br/>
+        +1 point to the side with more matches (background color matches text color of a box)
+        </li> 
+        <li>Loose straight:<br/>
+    +3 point bonus if all 4 of your boxes have a color in common (background color OR text)
+        </li>
+        <li>Strict straight:<br/>
+    +5 point bonus if all 4 boxes have the same background color, or the same text color
+        </li>
+        <li>Four matches:<br/>
+    +10 point bonus if all 4 boxes contain matches
+        </li>
+        <li>Perfect round:<br/>
+    +Automatic win if all background and text colors are the same (perfect round)
+        </li>
+    </ul>
+</body>
+</html>

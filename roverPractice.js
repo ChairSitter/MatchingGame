@@ -17,13 +17,20 @@ const scoreComputer = document.getElementById('computer-score');
 const winner = document.getElementById('winner');
 const userWins = document.getElementById('user-wins');
 const compWins = document.getElementById('comp-wins');
-
 const yourMatches = document.getElementById('your-matches');
 const compMatches = document.getElementById('comp-matches');
+
+//sets original 0 number for score and win numbers, as they are otherwise not defined until assigned by functions
 scoreHuman.innerHTML = 0;
 scoreComputer.innerHTML = 0;
 userWins.innerHTML = 0;
 compWins.innerHTML = 0;
+
+//sets count numbers beginning with 0
+let countHuman = 0;
+let countComputer = 0;
+let userWinCount = 0;
+let compWinCount = 0;
 
 //chooses a random color from a list of possible colors
 const chooseColor = () => {
@@ -50,12 +57,6 @@ let color13;
 let color14;
 let color15;
 let color16;
-
-//sets count numbers beginning with 0
-let countHuman = 0;
-let countComputer = 0;
-let userWinCount = 0;
-let compWinCount = 0;
 
 //functions that set background color and inner text of each box
 const boxOneChange = () => {
@@ -110,9 +111,9 @@ const boxEightChange = () => {
     boxEight.innerHTML = color16;
 }
 
-/*Called on a delay. Sets special style and ups user and computer match count for any box where background color and text match.
-Calculates and displays scores and announces winner by comparing scores*/
-const determineWinner = () => {
+//checks if the two colors of each box matches. Assigns special styling to boxes with matches and ups the countHuman or countComputer score by one.
+const checkMatches = () => {
+    //Check if boxes match. Change styles and calculate match total for round
     if(color1 === color2){
         boxOne.style.border = "5px black dashed";
         boxOne.style.boxShadow = "3px 3px white";
@@ -153,11 +154,18 @@ const determineWinner = () => {
         boxEight.style.boxShadow = "3px 3px white";
         countComputer++;
     }
-
+    //display number of matches for round
     scoreHuman.innerHTML = countHuman;
     scoreComputer.innerHTML = countComputer;
+}
 
-    if (countHuman > countComputer){
+/*Sets special styles and ups user and computer match count for any box where background color and text match.
+Calculates and displays scores and announces winner by comparing scores*/
+const determineWinner = () => {
+    checkMatches();
+
+    //check who won, update win displays and style of match displays
+    if (countHuman > countComputer){ //if human wins
         if(countHuman === 4){
             scoreHuman.style.textShadow = '1.5px 1.5px white';
             yourMatches.style.textShadow = '1px 1px white';
@@ -174,13 +182,13 @@ const determineWinner = () => {
         }
         userWinCount++;
         userWins.innerHTML = userWinCount;
-    } else if (countHuman < countComputer){
+    } else if (countHuman < countComputer){ //if computer wins
         scoreComputer.style.textShadow = '1.5px 1.5px white';
         compMatches.style.textShadow = '1px 1px white';
         winner.innerHTML = 'Computer Wins!';
         compWinCount++;
         compWins.innerHTML =  compWinCount;
-    } else {
+    } else { //if tied
         winner.innerHTML = `It\'s a ${countHuman} - ${countComputer} Tie!`;
         scoreComputer.style.textShadow = '1.5px 1.5px white';
         scoreHuman.style.textShadow = '1.5px 1.5px white';
@@ -259,7 +267,7 @@ const resetter = () => {
 }
 
 //Calls resetter function which resets values following the initial and subsequent rounds. Calls each box changer function, then the determine winner function, on time delays.
-const changeColors = () => {
+/*const changeColors = () => {
     document.getElementById('input-button').disabled = true;
     resetter();
     boxOneChange();
@@ -274,11 +282,11 @@ const changeColors = () => {
     setTimeout(() => {
         document.getElementById('input-button').disabled = false;
     }, 8000);
-}
+}*/
 
 //test function that will call functions faster
-/*
 const changeColors = () => {
+    document.getElementById('input-button').disabled = true;
     resetter();
     boxOneChange();
     setTimeout(boxFiveChange, 100);
@@ -288,8 +296,11 @@ const changeColors = () => {
     setTimeout(boxSevenChange, 500);
     setTimeout(boxFourChange, 600);
     setTimeout(boxEightChange, 700);
-    setTimeout(determineWinner, 800)
-}*/
+    setTimeout(determineWinner, 800);
+        setTimeout(() => {
+        document.getElementById('input-button').disabled = false;
+    }, 800);
+}
 
 //Sets the Play button to call the main function
 inputButton.onclick = changeColors;
