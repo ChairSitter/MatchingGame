@@ -52,7 +52,7 @@ let compPtsCount = 0;
 
 //chooses a random color from a list of possible colors
 const chooseColor = () => {
-    const array = ['red', 'orange', 'yellow', 'green', 'blue', 'white'];
+    const array = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
     let randomColorNum = Math.floor(Math.random() * 6);
     let randomColor = array[randomColorNum];
     return randomColor;
