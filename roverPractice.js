@@ -44,13 +44,12 @@ scoreComputer.innerHTML = 0;
 userPts.innerHTML = 0;
 compPts.innerHTML = 0;
 
-//sets count numbers beginning with 0
 let countHuman = 0;
 let countComputer = 0;
 let userPtsCount = 0;
 let compPtsCount = 0;
 
-//chooses a random color from a list of possible colors
+//chooses a random color from a list of 6 possible colors
 const chooseColor = () => {
     const array = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
     let randomColorNum = Math.floor(Math.random() * 6);
@@ -458,7 +457,7 @@ const resetter = () => {
 }
 
 //Calls resetter function which resets values following the initial and subsequent rounds. Calls each box changer function, then the determine winner function, on time delays.
-const changeColors = () => {
+const runFunctions = () => {
     document.getElementById('input-button').disabled = true;
     resetter();
     boxOneChange();
@@ -476,7 +475,7 @@ const changeColors = () => {
 };
 
 //test function that will call functions faster
-/*const changeColors = () => {
+/*const runFunctions = () => {
     document.getElementById('input-button').disabled = true;
     resetter();
     boxOneChange();
@@ -494,4 +493,4 @@ const changeColors = () => {
 }*/
 
 //Sets the Play button to call the main function
-inputButton.onclick = changeColors;
+inputButton.onclick = runFunctions;
