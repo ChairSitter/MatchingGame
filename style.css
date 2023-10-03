@@ -234,7 +234,7 @@ h3 {
 @media only screen and (max-width: 500px){
     #user-pts, #comp-pts {
         font-size: 3.5rem;
-        text-shadow: 5px 5px darkblue;
+        text-shadow: 3px 3px darkblue;
         border-radius: 5px;
     }
     #comp-pts-label, #user-pts-label {
