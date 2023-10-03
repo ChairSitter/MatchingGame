@@ -41,7 +41,7 @@ let detectMatch = false;
 
 let countdown = 5;
 let multiplier = 1;
-multButton.innerHTML = `MULTIPLY X${countdown}`;
+multButton.innerHTML = `MULTIPLY x${countdown}`;
 let multipliedScore;
 
 //sets original 0 number for score and win numbers, as they are otherwise not defined until assigned by functions
@@ -267,7 +267,7 @@ const determineWinner = () => {
     checkMatches();
 
     countdown = 5;
-    multButton.innerHTML = `MULTIPLY X${countdown}`;
+    multButton.innerHTML = `MULTIPLY x${countdown}`;
 
     if(userPerfectRound === true){
         if(compPerfectRound === true){
@@ -466,7 +466,7 @@ const resetter = () => {
     scoreComputer.innerHTML = countComputer;
     countdown = 5;
     multButton.style.display = 'block';
-    multButton.innerHTML = `MULTIPLY X${countdown}`;
+    multButton.innerHTML = `MULTIPLY x${countdown}`;
     multMessage.style.display = 'none';
     multiplier = 1;
 
@@ -551,15 +551,15 @@ const resetter = () => {
 const multiplierCountdown = () => {
     setTimeout(() => {
         countdown = 4;
-        multButton.innerHTML = `MULTIPLY X${countdown}`;
+        multButton.innerHTML = `MULTIPLY x${countdown}`;
     }, 2000);
     setTimeout(() => {
         countdown = 3;
-        multButton.innerHTML = `MULTIPLY X${countdown}`;
+        multButton.innerHTML = `MULTIPLY x${countdown}`;
     }, 4000);
     setTimeout(() => {
         countdown = 2;
-        multButton.innerHTML = `MULTIPLY X${countdown}`;
+        multButton.innerHTML = `MULTIPLY x${countdown}`;
     }, 6000);
 };
 
@@ -568,7 +568,7 @@ const multiply = () => {
     multButton.style.display = 'none';
     multiplier = countdown;
     multMessage.style.display = 'flex';
-    multMessage.innerHTML = `Multiplied X${multiplier}!`;
+    multMessage.innerHTML = `Multiplied x${multiplier}`;
     multMessage.style.fontFamily = 'Arial, Helvetica, sans-serif'
 };
 
