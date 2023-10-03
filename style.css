@@ -138,6 +138,13 @@ h1 {
     padding: 10px;
 }
 
+#mult-message {
+    display: none;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+    color: white;
+}
+
 #score-human, #score-computer {
     text-align: center;
     color: gold;
@@ -267,6 +274,10 @@ h3 {
     font-size: 1rem;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     padding: 4px;
+}
+
+#multiplier-explanation {
+    text-align: center;
 }
 
 .rule-list {

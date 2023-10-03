@@ -1,5 +1,9 @@
 //Declare constants for input button, boxes, and containers for scores and winner declaration
 const inputButton = document.getElementById('input-button');
+const multButton = document.getElementById('mult-button');
+const multMessage = document.getElementById('mult-message');
+document.getElementById('mult-button').disabled = true;
+
 const body = document.body;
 
 const boxOne = document.getElementById('div1');
@@ -34,6 +38,11 @@ let compStrict = false;
 let userLoose = false;
 let compLoose = false;
 let detectMatch = false;
+
+let countdown = 5;
+let multiplier = 1;
+multButton.innerHTML = `MULTIPY X${countdown}`;
+let multipliedScore;
 
 //sets original 0 number for score and win numbers, as they are otherwise not defined until assigned by functions
 scoreHuman.innerHTML = 0;
@@ -257,6 +266,9 @@ const determineWinner = () => {
     checkLooseStraight();
     checkMatches();
 
+    countdown = 5;
+    multButton.innerHTML = `MULTIPLY X${countdown}`;
+
     if(userPerfectRound === true){
         if(compPerfectRound === true){
             winnerU.innerHTML = "Perfect<br/>round<br/>Tie!";
@@ -264,29 +276,53 @@ const determineWinner = () => {
             userChanger.style.backgroundColor = 'rgb(197, 179, 20)';
             compChanger.style.backgroundColor = 'rgb(197, 179, 20)';
         } else {
-            userPtsCount = userPtsCount + 25;
-            winnerU.innerHTML = "Perfect<br/>round<br/>+25";
-            userChanger.style.backgroundColor = 'rgb(197, 179, 20)';
+            userPtsCount = userPtsCount + (25 * multiplier); // HERE
+            if(multiplier != 1){
+                multipliedScore = (25 * multiplier);
+                winnerU.innerHTML = `Perfect<br/>round<br/><br/>25 x ${multiplier} = ${multipliedScore}`;
+                userChanger.style.backgroundColor = 'rgb(197, 179, 20)';
+            } else {
+                winnerU.innerHTML = "Perfect<br/>round<br/>+25";
+                userChanger.style.backgroundColor = 'rgb(197, 179, 20)';
+            };
         }  
     } else if(compPerfectRound === true){
-        compPtsCount = compPtsCount + 25;
-        winnerC.innerHTML = "Perfect<br/>round<br/>+25";
-        compChanger.style.backgroundColor = 'rgb(197, 179, 20)';
+        compPtsCount = compPtsCount + (25 * multiplier); // HERE
+        if(multiplier != 1){
+            multipliedScore = (25 * multiplier);
+            winnerC.innerHTML = `Perfect<br/>round<br/>25 x ${multiplier} = ${multipliedScore}`;
+            compChanger.style.backgroundColor = 'rgb(197, 179, 20)';
+        } else {
+            winnerC.innerHTML = "Perfect<br/>round<br/>+25";
+            compChanger.style.backgroundColor = 'rgb(197, 179, 20)';
+        }
     } else if(userAllMatches === true){
         if(compAllMatches === true){
-            winnerU.innerHTML = "4 matches<br/>Tie!";
-            winnerC.innerHTML = "4 matches<br/>Tie!";
+            winnerU.innerHTML = "4 Matches<br/>Tie!";
+            winnerC.innerHTML = "4 Matches<br/>Tie!";
             userChanger.style.backgroundColor = 'rgb(197, 179, 20)';
             compChanger.style.backgroundColor = 'rgb(197, 179, 20)';
         } else {
-            userPtsCount = userPtsCount + 10;
-            winnerU.innerHTML = "4 matches<br/>+10";
-            userChanger.style.backgroundColor = 'rgb(197, 179, 20)';
+            userPtsCount = userPtsCount + (10 * multiplier); // HERE
+            if(multiplier != 1){
+                multipliedScore = (10 * multiplier);
+                winnerU.innerHTML = `4 Matches<br/>10 x ${multiplier} = ${multipliedScore}`;
+                userChanger.style.backgroundColor = 'rgb(197, 179, 20)';
+            } else {
+                winnerU.innerHTML = "4 Matches<br/>+10";
+                userChanger.style.backgroundColor = 'rgb(197, 179, 20)';
+            }
         }
     } else if(compAllMatches === true){
-        compPtsCount = compPtsCount + 10;
-        winnerC.innerHTML = "4 matches<br/>+10";
-        compChanger.style.backgroundColor = 'rgb(197, 179, 20)';
+        compPtsCount = compPtsCount + (10 * multiplier); // HERE
+        if(multiplier != 1){
+            multipliedScore = (10 * multiplier);
+            winnerC.innerHTML = `4 Matches<br/>10 x ${multiplier} = ${multipliedScore}`;
+            compChanger.style.backgroundColor = 'rgb(197, 179, 20)';
+        } else {
+            winnerC.innerHTML = "4 Matches<br/>+10";
+            compChanger.style.backgroundColor = 'rgb(197, 179, 20)';
+        }
     } else if(userStrict === true){
         if(compStrict === true){
             winnerU.innerHTML = "Strict<br/>straight<br/>Tie!";
@@ -294,14 +330,26 @@ const determineWinner = () => {
             userChanger.style.backgroundColor = 'rgb(197, 179, 20)';
             compChanger.style.backgroundColor = 'rgb(197, 179, 20)';
         } else {
-            userPtsCount = userPtsCount + 5;
-            winnerU.innerHTML = "Strict<br/>straight<br/>+5";
-            userChanger.style.backgroundColor = 'rgb(197, 179, 20)';
+            userPtsCount = userPtsCount + (5 * multiplier); // HERE
+            if(multiplier != 1){
+                multipliedScore = (10 * multiplier);
+                winnerU.innerHTML = `Strict<br/>Straight<br/>5 x ${multiplier} = ${multipliedScore}`;
+                userChanger.style.backgroundColor = 'rgb(197, 179, 20)';
+            } else {
+                winnerU.innerHTML = "Strict<br/>Straight<br/>+10";
+                userChanger.style.backgroundColor = 'rgb(197, 179, 20)';
+            }
         }
     } else if(compStrict === true){
-        compPtsCount = compPtsCount + 5;
-        winnerC.innerHTML = "Strict<br/>straight<br/>+5";
-        compChanger.style.backgroundColor = 'rgb(197, 179, 20)';
+        compPtsCount = compPtsCount + (5 * multiplier); // HERE
+        if(multiplier != 1){
+            multipliedScore = (5 * multiplier);
+            winnerC.innerHTML = `Strict<br/>Straight<br/>5 x ${multiplier} = ${multipliedScore}`;
+            compChanger.style.backgroundColor = 'rgb(197, 179, 20)';
+        } else {
+            winnerC.innerHTML = "Strict<br/>Straight<br/>+5";
+            compChanger.style.backgroundColor = 'rgb(197, 179, 20)';
+        }
     } else if(userLoose === true){
         if(compLoose === true){
             winnerU.innerHTML = "Loose<br/>straight<br/>Tie!";
@@ -309,47 +357,91 @@ const determineWinner = () => {
             userChanger.style.backgroundColor = 'rgb(197, 179, 20)';
             compChanger.style.backgroundColor = 'rgb(197, 179, 20)';
         } else {
-            userPtsCount = userPtsCount + 3;
-            winnerU.innerHTML = "Loose<br/>straight<br/>+3";
-            userChanger.style.backgroundColor = 'rgb(197, 179, 20)';
+            userPtsCount = userPtsCount + (3 * multiplier); //HERE
+            if(multiplier != 1){
+                multipliedScore = (3 * multiplier);
+                winnerU.innerHTML = `Loose<br/>straight<br/>3 x ${multiplier} = ${multipliedScore}`;
+                userChanger.style.backgroundColor = 'rgb(197, 179, 20)';
+            } else {
+                winnerU.innerHTML = "Loose<br/>straight<br/>+3";
+                userChanger.style.backgroundColor = 'rgb(197, 179, 20)';
+            }
         }
     } else if(compLoose === true){
-        compPtsCount = compPtsCount + 3;
-        winnerC.innerHTML = "Loose<br/>straight<br/>+3";
-        compChanger.style.backgroundColor = 'rgb(197, 179, 20)';
+        compPtsCount = compPtsCount + (3 * multiplier); //HERE
+        if(multiplier != 1){
+            multipliedScore = (3 * multiplier);
+            winnerC.innerHTML = `Loose<br/>Straight<br/>3 x ${multiplier} = ${multipliedScore}`;
+            compChanger.style.backgroundColor = 'rgb(197, 179, 20)';
+        } else {
+            winnerC.innerHTML = "Loose<br/>straight<br/>+3";
+            compChanger.style.backgroundColor = 'rgb(197, 179, 20)';
+        }
     } else if(detectMatch === true){
         if (countHuman > countComputer){
             scoreHuman.style.textShadow = '1.5px 1.5px white';
             yourMatches.style.textShadow = '1px 1px white';
-            if(countHuman === 1){
-                winnerU.innerHTML = `${countHuman} match<br/>+1`;
-                winnerC.innerHTML = `${countComputer} matches`;
-            } else if(countComputer === 1){
-                winnerU.innerHTML = `${countHuman} matches<br/>+1`;
-                winnerC.innerHTML = `${countComputer} match`;
+            if(multiplier != 1){
+                if(countHuman === 1){
+                    multipliedScore = multiplier;
+                    winnerU.innerHTML = `${countHuman} match<br/>1 x ${multiplier} = ${multipliedScore}`;
+                    winnerC.innerHTML = `${countComputer} matches`;
+                } else if(countComputer === 1){
+                    multipliedScore = multiplier;
+                    winnerU.innerHTML = `${countHuman} matches<br/>1 x ${multiplier} = ${multipliedScore}`;
+                    winnerC.innerHTML = `${countComputer} match`;
+                } else {
+                    multipliedScore = multiplier;
+                    winnerU.innerHTML = `${countHuman} matches<br/>1 x ${multiplier} = ${multipliedScore}`;
+                    winnerC.innerHTML = `${countComputer} matches`;
+                }  
             } else {
-                winnerU.innerHTML = `${countHuman} matches<br/>+1`;
-                winnerC.innerHTML = `${countComputer} matches`;
-            }  
+                if(countHuman === 1){
+                    winnerU.innerHTML = `${countHuman} match <br/>+1`;
+                    winnerC.innerHTML = `${countComputer} matches`;
+                } else if(countComputer === 1){
+                    winnerU.innerHTML = `${countHuman} matches<br/>+1`;
+                    winnerC.innerHTML = `${countComputer} match`;
+                } else {
+                    winnerU.innerHTML = `${countHuman} matches<br/>+1`;
+                    winnerC.innerHTML = `${countComputer} matches`;
+                }  
+            }
             body.style.backgroundColor = 'rgb(0, 0, 165)';
             setTimeout(() => {
                 body.style.backgroundColor = 'darkblue';
             }, 150);
-            userPtsCount++;
+            userPtsCount = userPtsCount + multiplier; //HERE
         } else if (countHuman < countComputer){
             scoreComputer.style.textShadow = '1.5px 1.5px white';
             compMatches.style.textShadow = '1px 1px white';
-            if(countComputer === 1){
-                winnerU.innerHTML = `${countHuman} matches`;
-                winnerC.innerHTML = `${countComputer} match<br/>+1`;
-            } else if(countHuman === 1){
-                winnerU.innerHTML = `${countHuman} match`;
-                winnerC.innerHTML = `${countComputer} matches<br/>+1`;
+            if(multiplier != 1){
+                if(countComputer === 1){
+                    multipliedScore = multiplier;
+                    winnerU.innerHTML = `${countHuman} matches`;
+                    winnerC.innerHTML = `${countComputer} match<br/>1 x ${multiplier} = ${multipliedScore}`;
+                } else if(countHuman === 1){
+                    multipliedScore = multiplier;
+                    winnerU.innerHTML = `${countHuman} match`;
+                    winnerC.innerHTML = `${countComputer} matches<br/>1 x ${multiplier} = ${multipliedScore}`;
+                } else {
+                    multipliedScore = multiplier;
+                    winnerU.innerHTML = `${countHuman} matches`;
+                    winnerC.innerHTML = `${countComputer} matches<br/>1 x ${multiplier} = ${multipliedScore}`;
+                };
             } else {
-                winnerU.innerHTML = `${countHuman} matches`;
-                winnerC.innerHTML = `${countComputer} matches<br/>+1`;
-            };
-            compPtsCount++;
+                    if(countComputer === 1){
+                    winnerU.innerHTML = `${countHuman} matches`;
+                    winnerC.innerHTML = `${countComputer} match<br/>+1`;
+                } else if(countHuman === 1){
+                    winnerU.innerHTML = `${countHuman} match`;
+                    winnerC.innerHTML = `${countComputer} matches<br/>+1`;
+                } else {
+                    winnerU.innerHTML = `${countHuman} matches`;
+                    winnerC.innerHTML = `${countComputer} matches<br/>+1`;
+                };
+            }
+            compPtsCount = compPtsCount + multiplier; //HERE
         } else { 
             if(countHuman === 1){
                 winnerU.innerHTML = `${countHuman} match<br/>Tie!`;
@@ -372,6 +464,11 @@ const resetter = () => {
     countHuman = 0;
     scoreHuman.innerHTML = countHuman;
     scoreComputer.innerHTML = countComputer;
+    countdown = 5;
+    multButton.style.display = 'block';
+    multButton.innerHTML = `MULTIPY X${countdown}`;
+    multMessage.style.display = 'none';
+    multiplier = 1;
 
     userPerfectRound = false;
     compPerfectRound = false;
@@ -451,9 +548,35 @@ const resetter = () => {
     boxEight.style.boxShadow = 'none';
 }
 
+const multiplierCountdown = () => {
+    setTimeout(() => {
+        countdown = 4;
+        multButton.innerHTML = `MULTIPY X${countdown}`;
+    }, 2000);
+    setTimeout(() => {
+        countdown = 3;
+        multButton.innerHTML = `MULTIPY X${countdown}`;
+    }, 4000);
+    setTimeout(() => {
+        countdown = 2;
+        multButton.innerHTML = `MULTIPY X${countdown}`;
+    }, 6000);
+};
+
+const multiply = () => {
+    document.getElementById('mult-button').disabled = true;
+    multButton.style.display = 'none';
+    multiplier = countdown;
+    multMessage.style.display = 'flex';
+    multMessage.innerHTML = `Multiplied X${multiplier}!`;
+    multMessage.style.fontFamily = 'Arial, Helvetica, sans-serif'
+};
+
 //Calls resetter function which resets values following the initial and subsequent rounds. Calls each box changer function, then the determine winner function, on time delays.
 const runFunctions = () => {
     document.getElementById('input-button').disabled = true;
+    document.getElementById('mult-button').disabled = false;
+    multiplierCountdown();
     resetter();
     boxOneChange();
     setTimeout(boxFiveChange, 1000);
@@ -466,6 +589,9 @@ const runFunctions = () => {
     setTimeout(determineWinner, 8000);
     setTimeout(() => {
         document.getElementById('input-button').disabled = false;
+    }, 8000);
+    setTimeout(() => {
+        document.getElementById('mult-button').disabled = true;
     }, 8000);
 };
 
@@ -489,3 +615,5 @@ const runFunctions = () => {
 
 //Sets the Play button to call the main function
 inputButton.onclick = runFunctions;
+
+multButton.onclick = multiply;
