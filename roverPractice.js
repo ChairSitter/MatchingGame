@@ -332,7 +332,7 @@ const determineWinner = () => {
         } else {
             userPtsCount = userPtsCount + (5 * multiplier); // HERE
             if(multiplier != 1){
-                multipliedScore = (10 * multiplier);
+                multipliedScore = (5 * multiplier);
                 winnerU.innerHTML = `Strict<br/>Straight<br/>5 x ${multiplier} = ${multipliedScore}`;
                 userChanger.style.backgroundColor = 'rgb(197, 179, 20)';
             } else {
