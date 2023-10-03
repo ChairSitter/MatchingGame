@@ -551,15 +551,15 @@ const resetter = () => {
 const multiplierCountdown = () => {
     setTimeout(() => {
         countdown = 4;
-        multButton.innerHTML = `MULTIPY X${countdown}`;
+        multButton.innerHTML = `MULTIPLY X${countdown}`;
     }, 2000);
     setTimeout(() => {
         countdown = 3;
-        multButton.innerHTML = `MULTIPY X${countdown}`;
+        multButton.innerHTML = `MULTIPLY X${countdown}`;
     }, 4000);
     setTimeout(() => {
         countdown = 2;
-        multButton.innerHTML = `MULTIPY X${countdown}`;
+        multButton.innerHTML = `MULTIPLY X${countdown}`;
     }, 6000);
 };
 
