@@ -41,7 +41,7 @@ let detectMatch = false;
 
 let countdown = 5;
 let multiplier = 1;
-multButton.innerHTML = `MULTIPY X${countdown}`;
+multButton.innerHTML = `MULTIPLY X${countdown}`;
 let multipliedScore;
 
 //sets original 0 number for score and win numbers, as they are otherwise not defined until assigned by functions
@@ -466,7 +466,7 @@ const resetter = () => {
     scoreComputer.innerHTML = countComputer;
     countdown = 5;
     multButton.style.display = 'block';
-    multButton.innerHTML = `MULTIPY X${countdown}`;
+    multButton.innerHTML = `MULTIPLY X${countdown}`;
     multMessage.style.display = 'none';
     multiplier = 1;
 
