@@ -35,9 +35,6 @@ let userLoose = false;
 let compLoose = false;
 let detectMatch = false;
 
-let userDiff = 0;
-let compDigg = 0;
-
 //sets original 0 number for score and win numbers, as they are otherwise not defined until assigned by functions
 scoreHuman.innerHTML = 0;
 scoreComputer.innerHTML = 0;
@@ -367,8 +364,6 @@ const determineWinner = () => {
     }
     compPts.innerHTML = compPtsCount;
     userPts.innerHTML = userPtsCount;
-    //check who won, update win displays and style of match displays
-
 }
 
 //Resets special border for matches, resets score counters to 0 and displays this.
