@@ -24,8 +24,14 @@ const compMatches = document.getElementById('comp-matches');
 const userChanger = document.getElementById('changer');
 const compChanger = document.getElementById('changer2');
 
+const bottomLeft = document.getElementById('bottom-left');
+const bottomRight = document.getElementById('bottom-right');
+
 const winnerU = document.getElementById('winnerU');
 const winnerC = document.getElementById('winnerC');
+
+let difference = 0;
+let restart = false;
 
 let userPerfectRound = false;
 let compPerfectRound = false;
@@ -480,7 +486,32 @@ const determineWinner = () => {
     }
     compPts.innerHTML = compPtsCount;
     userPts.innerHTML = userPtsCount;
+    limit50();
 }
+
+const limit50 = () => {
+    if (userPtsCount >= 50){
+        if(userPtsCount > 50){
+            userPtsCount = 50;
+            userPts.innerHTML = userPtsCount;
+        }
+        difference = userPtsCount - compPtsCount;
+        winnerU.innerHTML = `You won<br/>by ${difference} pts!`;
+        winnerC.innerHTML = '';
+        bottomLeft.style.boxShadow = '5px 5px yellow';
+        restart = true;
+    } else if (compPtsCount >= 50){
+        if(compPtsCount > 50){
+            compPtsCount = 50;
+            compPts.innerHTML = compPtsCount;
+        }
+        difference = compPtsCount - userPtsCount;
+        winnerC.innerHTML = `Comp won<br/>by ${difference} pts!`;
+        winnerU.innerHTML = '';
+        bottomRight.style.boxShadow = '5px 5px yellow';
+        restart = true;
+    };
+};
 
 //Resets special border for matches, resets score counters to 0 and displays this.
 const resetter = () => {
@@ -493,6 +524,14 @@ const resetter = () => {
     multButton.innerHTML = `MULTIPLY x${countdown}`;
     multMessage.style.display = 'none';
     multiplier = 1;
+
+    if(restart === true){
+        userPtsCount = 0;
+        userPts.innerHTML = userPtsCount;
+        compPtsCount = 0;
+        compPts.innerHTML = compPtsCount;
+        restart = false;
+    };
 
     userPerfectRound = false;
     compPerfectRound = false;
@@ -508,6 +547,9 @@ const resetter = () => {
     yourMatches.style.textShadow = 'none';
     scoreComputer.style.textShadow = 'none';
     compMatches.style.textShadow = 'none';
+
+    bottomLeft.style.boxShadow = 'none';
+    bottomRight.style.boxShadow = 'none';
 
     winnerU.innerHTML = '';
     winnerC.innerHTML = '';
