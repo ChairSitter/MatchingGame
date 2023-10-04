@@ -16,13 +16,15 @@
      <div id="explanation-container">
           <ul id="explanation">
                <li>Press "Play" and hope for good luck!</li>
-               <li>Score more points than the computer by matching colors and making scoring combinations.</li>
                <li>You have 4 boxes and so does the computer.</li>
                <li>Each round, boxes are assigned a random background color and text color.</li>
                <li>The side with the most valuable scoring combination receives the corresponding point value at the end of the round.</li>
-               <li>Boost your score by using the multiply button wisely, but be careful!</li>
+               <li>Use the multiply button to boost your score, but be careful not to boost the computer's score!</li>
           </ul>
      </div>
+     <h2 id="rules">
+          Scoring Combinations:
+     </h2>
     <p class="rule-list">
         Perfect Round (25 pts):<br/>
         The text and background color is the exact same color across all of your boxes
@@ -33,7 +35,7 @@
           <div id="Ex1box3" class="ExBox"><p class="ExP">red</p></div>
           <div id="Ex1box4" class="ExBox"><p class="ExP">red</p></div>
      </section>
-     <p class="rule-list">4 matches (10 pts):<br/>
+     <p class="rule-list">4 Matches (10 pts):<br/>
           The text color matches the background color in all of your boxes
      </p>
      <section id="changerEx2">        
@@ -42,7 +44,7 @@
           <div id="Ex2box3" class="ExBox"><p class="ExP">green</p></div>
           <div id="Ex2box4" class="ExBox"><p class="ExP">blue</p></div>
      </section>
-     <p class="rule-list">Strict straight (5 pts):<br/>
+     <p class="rule-list">Strict Straight (5 pts):<br/>
           All of your boxes have the same background color, or all of your boxes have the same text color
      </p>
      <section id="changerEx3">        
@@ -58,7 +60,7 @@
           <div id="Ex32box3" class="ExBox"><p class="ExP">purple</p></div>
           <div id="Ex32box4" class="ExBox"><p class="ExP">purple</p></div>
      </section>
-     <p class="rule-list">Loose straight (3 pts):<br/>
+     <p class="rule-list">Loose Straight (3 pts):<br/>
           All of your boxes have a background OR text color in common
      </p>
      <section id="changerEx4">        
@@ -86,11 +88,16 @@
      </section>
      <p class="rule-list">Computer wins this round 2 matches to 1, winning 1 point.</p><br/>
      <section id="multiplier-explanation">
-          <p class="rule-list">Multiply Button:</p><br/>
+          <h2 id="rules">
+               The Multiply Button:
+          </h2>
           <button id="mult-button-ex" name="mult-ex">MULTIPLY x5</button>
-          <p class="rule-list">Pressing Play activates the multiply button. <br/>Its value will count down  from x5 to x2, and it will disable between rounds. 
-               <br/>If you click the multiply button, the round's point payout will be multiplied by the value shown on the button when clicked. 
-               <br/>If used wisely you can boost your score, but be careful or you might boost the computer's score instead! <br/><br/>One more thing: if you multiply and the round ends in a tie, the computer gets 1 bonus point. Click carefully!</p>
+          <p class="rule-list">
+               The multiply button adds a betting challenge to the game.
+               <br/>If you click it, any points scored during the round will be multiplied by the number shown on the button. 
+               <br/>If you win the round this will boost your score, but be careful- if you lose you will boost the computer's score instead! 
+               <br/><br/>One more thing: if you multiply and the round ends in a tie, the computer gets 1 point. Click carefully to avoid this penalty!
+          </p>
      </section>
 </body>
 </html>
