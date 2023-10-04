@@ -275,12 +275,12 @@ const determineWinner = () => {
 
     if(userPerfectRound === true){
         if(compPerfectRound === true){
-            winnerU.innerHTML = "Perfect<br/>round<br/>Tie!";
+            winnerU.innerHTML = "Perfect<br/>round<br/>Tie";
                 if(multiplier != 1){
-                    winnerC.innerHTML = "Perfect<br/>round<br/>Tie!<br/>Penalty +1"
+                    winnerC.innerHTML = "Perfect<br/>round<br/>Tie<br/>Penalty +1"
                     compPtsCount++;
                 } else { 
-                    winnerC.innerHTML = "Perfect<br/>round<br/>Tie!";
+                    winnerC.innerHTML = "Perfect<br/>round<br/>Tie";
                 }
             userChanger.style.backgroundColor = 'rgb(197, 179, 20)';
             compChanger.style.backgroundColor = 'rgb(197, 179, 20)';
@@ -307,12 +307,12 @@ const determineWinner = () => {
         }
     } else if(userAllMatches === true){
         if(compAllMatches === true){
-            winnerU.innerHTML = "4 Matches<br/>Tie!";
+            winnerU.innerHTML = "4 Matches<br/>Tie";
             if(multiplier != 1){
-                winnerC.innerHTML = "4 Matches<br/>Tie!<br/>Penalty +1";
+                winnerC.innerHTML = "4 Matches<br/>Tie<br/>Penalty +1";
                 compPtsCount++;
             } else { 
-                winnerC.innerHTML = "4 Matches<br/>Tie!";
+                winnerC.innerHTML = "4 Matches<br/>Tie";
             }
             userChanger.style.backgroundColor = 'rgb(197, 179, 20)';
             compChanger.style.backgroundColor = 'rgb(197, 179, 20)';
@@ -339,12 +339,12 @@ const determineWinner = () => {
         }
     } else if(userStrict === true){
         if(compStrict === true){
-            winnerU.innerHTML = "Strict<br/>straight<br/>Tie!";
+            winnerU.innerHTML = "Strict<br/>straight<br/>Tie";
             if(multiplier != 1){
-                winnerC.innerHTML = "Strict<br/>straight<br/>Tie!<br/>Penalty +1";
+                winnerC.innerHTML = "Strict<br/>straight<br/>Tie<br/>Penalty +1";
                 compPtsCount++;
             } else { 
-                winnerC.innerHTML = "Strict<br/>straight<br/>Tie!";
+                winnerC.innerHTML = "Strict<br/>straight<br/>Tie";
             }
             userChanger.style.backgroundColor = 'rgb(197, 179, 20)';
             compChanger.style.backgroundColor = 'rgb(197, 179, 20)';
@@ -371,12 +371,12 @@ const determineWinner = () => {
         }
     } else if(userLoose === true){
         if(compLoose === true){
-            winnerU.innerHTML = "Loose<br/>straight<br/>Tie!";
+            winnerU.innerHTML = "Loose<br/>straight<br/>Tie";
             if(multiplier != 1){
-                winnerC.innerHTML = "Loose<br/>straight<br/>Tie!<br/>Penalty +1";
+                winnerC.innerHTML = "Loose<br/>straight<br/>Tie<br/>Penalty +1";
                 compPtsCount++;
             } else { 
-                winnerC.innerHTML = "Loose<br/>straight<br/>Tie!";
+                winnerC.innerHTML = "Loose<br/>straight<br/>Tie";
             }
             userChanger.style.backgroundColor = 'rgb(197, 179, 20)';
             compChanger.style.backgroundColor = 'rgb(197, 179, 20)';
@@ -464,20 +464,20 @@ const determineWinner = () => {
             compPtsCount = compPtsCount + multiplier;
         } else { 
             if(countHuman === 1){
-                winnerU.innerHTML = `${countHuman} match<br/>Tie!`;
+                winnerU.innerHTML = `${countHuman} match<br/>Tie`;
                 if(multiplier != 1){
-                    winnerC.innerHTML = `${countComputer} match<br/>Tie!<br/>Penalty +1`;
+                    winnerC.innerHTML = `${countComputer} match<br/>Tie<br/>Penalty +1`;
                     compPtsCount++;
                 } else { 
-                    winnerC.innerHTML = `${countComputer} match<br/>Tie!`;
+                    winnerC.innerHTML = `${countComputer} match<br/>Tie`;
                 }
             } else {
-                winnerU.innerHTML = `${countHuman} matches<br/>Tie!`;
+                winnerU.innerHTML = `${countHuman} matches<br/>Tie`;
                 if(multiplier != 1){
-                    winnerC.innerHTML = `${countComputer} matches<br/>Tie!<br/>Penalty +1`;
+                    winnerC.innerHTML = `${countComputer} matches<br/>Tie<br/>Penalty +1`;
                     compPtsCount++;
                 } else { 
-                    winnerC.innerHTML = `${countComputer} matches<br/>Tie!`;
+                    winnerC.innerHTML = `${countComputer} matches<br/>Tie`;
                 }
             };
             scoreComputer.style.textShadow = '1.5px 1.5px white';
