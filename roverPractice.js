@@ -618,15 +618,15 @@ const multiplierCountdown = () => {
     setTimeout(() => {
         countdown = 4;
         multButton.innerHTML = `MULTIPLY x${countdown}`;
-    }, 2000);
+    }, 1800);
     setTimeout(() => {
         countdown = 3;
         multButton.innerHTML = `MULTIPLY x${countdown}`;
-    }, 4000);
+    }, 3600);
     setTimeout(() => {
         countdown = 2;
         multButton.innerHTML = `MULTIPLY x${countdown}`;
-    }, 6000);
+    }, 5400);
 };
 
 const multiply = () => {
@@ -639,7 +639,7 @@ const multiply = () => {
 };
 
 //Calls resetter function which resets values following the initial and subsequent rounds. Calls each box changer function, then the determine winner function, on time delays.
-const runFunctions = () => {
+/*const runFunctions = () => {
     document.getElementById('input-button').disabled = true;
     document.getElementById('mult-button').disabled = false;
     multiplierCountdown();
@@ -659,9 +659,32 @@ const runFunctions = () => {
     setTimeout(() => {
         document.getElementById('mult-button').disabled = true;
     }, 8000);
+};*/
+
+//test code for slightly faster boxes
+const runFunctions = () => {
+    document.getElementById('input-button').disabled = true;
+    document.getElementById('mult-button').disabled = false;
+    multiplierCountdown();
+    resetter();
+    boxOneChange();
+    setTimeout(boxFiveChange, 900);
+    setTimeout(boxTwoChange, 1800);
+    setTimeout(boxSixChange, 2700);
+    setTimeout(boxThreeChange, 3600);
+    setTimeout(boxSevenChange, 4500);
+    setTimeout(boxFourChange, 5400);
+    setTimeout(boxEightChange, 6300);
+    setTimeout(determineWinner, 7200);
+    setTimeout(() => {
+        document.getElementById('input-button').disabled = false;
+    }, 7200);
+    setTimeout(() => {
+        document.getElementById('mult-button').disabled = true;
+    }, 7200);
 };
 
-//test function that will call functions faster
+//test function that will call functions much faster
 /*const runFunctions = () => {
     document.getElementById('input-button').disabled = true;
     document.getElementById('mult-button').disabled = false;
