@@ -496,7 +496,11 @@ const limit50 = () => {
             userPts.innerHTML = userPtsCount;
         }
         difference = userPtsCount - compPtsCount;
-        winnerU.innerHTML = `You won<br/>by ${difference} pts!`;
+        if(difference != 1){
+            winnerU.innerHTML = `You won<br/>by ${difference} pts!`;
+        } else {
+            winnerU.innerHTML = `You won<br/>by ${difference} pt!`;
+        }
         winnerC.innerHTML = '';
         bottomLeft.style.boxShadow = '5px 5px yellow';
         restart = true;
@@ -506,7 +510,11 @@ const limit50 = () => {
             compPts.innerHTML = compPtsCount;
         }
         difference = compPtsCount - userPtsCount;
-        winnerC.innerHTML = `Comp won<br/>by ${difference} pts!`;
+        if(difference != 1){
+            winnerC.innerHTML = `Comp won<br/>by ${difference} pts!`;
+        } else {
+            winnerC.innerHTML = `Comp won<br/>by ${difference} pt!`;
+        }
         winnerU.innerHTML = '';
         bottomRight.style.boxShadow = '5px 5px yellow';
         restart = true;
