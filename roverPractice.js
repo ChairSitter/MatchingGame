@@ -8,18 +8,13 @@ const boxOne = document.getElementById('div1');
 const boxTwo = document.getElementById('div2');
 const boxThree = document.getElementById('div3');
 const boxFour = document.getElementById('div4');
-
 const boxFive = document.getElementById('div5');
 const boxSix = document.getElementById('div6');
 const boxSeven = document.getElementById('div7');
 const boxEight = document.getElementById('div8');
-const scoreHuman = document.getElementById('your-score');
-const scoreComputer = document.getElementById('computer-score');
 
 const userPts = document.getElementById('user-pts');
 const compPts = document.getElementById('comp-pts');
-const yourMatches = document.getElementById('your-matches');
-const compMatches = document.getElementById('comp-matches');
 
 const userChanger = document.getElementById('changer');
 const compChanger = document.getElementById('changer2');
@@ -49,8 +44,6 @@ multButton.innerHTML = `MULTIPLY x${countdown}`;
 let multipliedScore;
 
 //sets original 0 number for score and win numbers, as they are otherwise not defined until assigned by functions
-scoreHuman.innerHTML = 0;
-scoreComputer.innerHTML = 0;
 userPts.innerHTML = 0;
 compPts.innerHTML = 0;
 
@@ -256,8 +249,6 @@ const checkMatches = () => {
             boxEight.style.boxShadow = "3px 3px white";
             countComputer++;
         };
-        scoreHuman.innerHTML = countHuman;
-        scoreComputer.innerHTML = countComputer;
         detectMatch = true;
     }
 };
@@ -403,8 +394,6 @@ const determineWinner = () => {
         }
     } else if(detectMatch === true){
         if (countHuman > countComputer){
-            scoreHuman.style.textShadow = '1.5px 1.5px white';
-            yourMatches.style.textShadow = '1px 1px white';
             if(multiplier != 1){
                 if(countHuman === 1){
                     multipliedScore = multiplier;
@@ -433,8 +422,6 @@ const determineWinner = () => {
             }
             userPtsCount = userPtsCount + multiplier;
         } else if (countHuman < countComputer){
-            scoreComputer.style.textShadow = '1.5px 1.5px white';
-            compMatches.style.textShadow = '1px 1px white';
             if(multiplier != 1){
                 if(countComputer === 1){
                     multipliedScore = multiplier;
@@ -480,8 +467,6 @@ const determineWinner = () => {
                     winnerC.innerHTML = `${countComputer} matches<br/>Tie`;
                 }
             };
-            scoreComputer.style.textShadow = '1.5px 1.5px white';
-            scoreHuman.style.textShadow = '1.5px 1.5px white';
         }  
     }
     compPts.innerHTML = compPtsCount;
@@ -525,8 +510,6 @@ const limit50 = () => {
 const resetter = () => {
     countComputer = 0;
     countHuman = 0;
-    scoreHuman.innerHTML = countHuman;
-    scoreComputer.innerHTML = countComputer;
     countdown = 5;
     multButton.style.display = 'block';
     multButton.innerHTML = `MULTIPLY x${countdown}`;
@@ -550,11 +533,6 @@ const resetter = () => {
     userLoose = false;
     compLoose = false;
     detectMatch = false;
-
-    scoreHuman.style.textShadow = 'none';
-    yourMatches.style.textShadow = 'none';
-    scoreComputer.style.textShadow = 'none';
-    compMatches.style.textShadow = 'none';
 
     bottomLeft.style.boxShadow = 'none';
     bottomRight.style.boxShadow = 'none';
@@ -641,7 +619,7 @@ const multiply = () => {
     document.getElementById('mult-button').disabled = true;
     multButton.style.display = 'none';
     multiplier = countdown;
-    multMessage.style.display = 'flex';
+    multMessage.style.display = 'block';
     multMessage.innerHTML = `Multiplied x${multiplier}`;
     multMessage.style.fontFamily = 'Arial, Helvetica, sans-serif'
 };
@@ -670,7 +648,7 @@ const multiply = () => {
 };*/
 
 //test code for slightly faster boxes
-/*const runFunctions = () => {
+const runFunctions = () => {
     document.getElementById('input-button').disabled = true;
     document.getElementById('mult-button').disabled = false;
     multiplierCountdown();
@@ -690,10 +668,10 @@ const multiply = () => {
     setTimeout(() => {
         document.getElementById('mult-button').disabled = true;
     }, 7200);
-};*/
+};
 
 //test function that will call functions much faster
-const runFunctions = () => {
+/*const runFunctions = () => {
     document.getElementById('input-button').disabled = true;
     document.getElementById('mult-button').disabled = false;
     resetter();
@@ -712,7 +690,7 @@ const runFunctions = () => {
         setTimeout(() => {
         document.getElementById('mult-button').disabled = true;
     }, 800);
-}
+}*/
 
 //Sets the Play button to call the main function
 inputButton.onclick = runFunctions;
