@@ -177,6 +177,7 @@ h1 {
     text-align: center;
     height: 16px;
     padding: 10px;
+    font-size: .9rem;
 }
 
 #winnerU, #winnerC {
