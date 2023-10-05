@@ -171,7 +171,7 @@ h1 {
     color: white;
     text-align: center;
     height: 16px;
-    padding: 11.75px;
+    padding: 11.5px;
 }
 
 #score-human, #score-computer {
@@ -251,7 +251,7 @@ h3 {
         height: 202px;
     }
     #bottom {
-        margin-top: 58px;
+        margin-top: 53px;
     }
 }
 
