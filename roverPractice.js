@@ -502,7 +502,7 @@ const limit50 = () => {
             winnerU.innerHTML = `You won<br/>by ${difference} pt!`;
         }
         winnerC.innerHTML = '';
-        bottomLeft.style.boxShadow = '5px 5px yellow';
+        bottomLeft.style.boxShadow = '5px 5px rgb(197 179 20)';
         restart = true;
     } else if (compPtsCount >= 50){
         if(compPtsCount > 50){
@@ -516,7 +516,7 @@ const limit50 = () => {
             winnerC.innerHTML = `Comp won<br/>by ${difference} pt!`;
         }
         winnerU.innerHTML = '';
-        bottomRight.style.boxShadow = '5px 5px yellow';
+        bottomRight.style.boxShadow = '5px 5px rgb(197 179 20)';
         restart = true;
     };
 };
@@ -670,7 +670,7 @@ const multiply = () => {
 };*/
 
 //test code for slightly faster boxes
-const runFunctions = () => {
+/*const runFunctions = () => {
     document.getElementById('input-button').disabled = true;
     document.getElementById('mult-button').disabled = false;
     multiplierCountdown();
@@ -690,10 +690,10 @@ const runFunctions = () => {
     setTimeout(() => {
         document.getElementById('mult-button').disabled = true;
     }, 7200);
-};
+};*/
 
 //test function that will call functions much faster
-/*const runFunctions = () => {
+const runFunctions = () => {
     document.getElementById('input-button').disabled = true;
     document.getElementById('mult-button').disabled = false;
     resetter();
@@ -712,7 +712,7 @@ const runFunctions = () => {
         setTimeout(() => {
         document.getElementById('mult-button').disabled = true;
     }, 800);
-}*/
+}
 
 //Sets the Play button to call the main function
 inputButton.onclick = runFunctions;
