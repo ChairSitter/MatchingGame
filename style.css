@@ -157,14 +157,18 @@ h1 {
     padding: 10px;
     margin: 2px 5px;
     appearance: none;
-    border-radius: 8px;
+    /*border-radius: 8px;*/
+    background-color: rgb(225, 225, 225);
+    border: none;
 }
 
 #mult-button {
     padding: 10px;
     margin: 0 5px;
     appearance: none;
-    border-radius: 8px;
+    /*border-radius: 8px;*/
+    background-color: rgb(225, 225, 225);
+    border: none;
 }
 
 #mult-message {
