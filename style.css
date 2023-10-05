@@ -154,10 +154,14 @@ h1 {
 
 #input-button {
     padding: 10px;
+    margin: 2px 5px;
+    appearance: none;
 }
 
 #mult-button {
     padding: 10px;
+    margin: 0 5px;
+    appearance: none;
 }
 
 #mult-message {
@@ -244,7 +248,7 @@ h3 {
         background-color: rgb(0, 0, 90);
         border: solid 2px black;
         border-radius: 5px;
-        height: 200px;
+        height: 202px;
     }
     #bottom {
         margin-top: 58px;
