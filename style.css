@@ -156,12 +156,14 @@ h1 {
     padding: 10px;
     margin: 2px 5px;
     appearance: none;
+    border-radius: 8px;
 }
 
 #mult-button {
     padding: 10px;
     margin: 0 5px;
     appearance: none;
+    border-radius: 8px;
 }
 
 #mult-message {
