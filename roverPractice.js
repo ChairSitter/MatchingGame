@@ -2,6 +2,8 @@
 const inputButton = document.getElementById('input-button');
 const multButton = document.getElementById('mult-button');
 const multMessage = document.getElementById('mult-message');
+multMessage.style.display = 'none';
+document.getElementById('mult-message').disabled = true;
 document.getElementById('mult-button').disabled = true;
 
 const boxOne = document.getElementById('div1');
@@ -620,7 +622,7 @@ const multiply = () => {
     multButton.style.display = 'none';
     multiplier = countdown;
     multMessage.style.display = 'block';
-    multMessage.innerHTML = `Multiplied x${multiplier}`;
+    multMessage.innerHTML = `MULTIPLIED x${multiplier}`;
     multMessage.style.fontFamily = 'Arial, Helvetica, sans-serif'
 };
 
@@ -648,7 +650,7 @@ const multiply = () => {
 };*/
 
 //test code for slightly faster boxes
-/*const runFunctions = () => {
+const runFunctions = () => {
     document.getElementById('input-button').disabled = true;
     document.getElementById('mult-button').disabled = false;
     multiplierCountdown();
@@ -668,10 +670,10 @@ const multiply = () => {
     setTimeout(() => {
         document.getElementById('mult-button').disabled = true;
     }, 7200);
-};*/
+};
 
 //test function that will call functions much faster
-const runFunctions = () => {
+/*const runFunctions = () => {
     document.getElementById('input-button').disabled = true;
     document.getElementById('mult-button').disabled = false;
     resetter();
@@ -690,7 +692,7 @@ const runFunctions = () => {
         setTimeout(() => {
         document.getElementById('mult-button').disabled = true;
     }, 800);
-}
+}*/
 
 //Sets the Play button to call the main function
 inputButton.onclick = runFunctions;
