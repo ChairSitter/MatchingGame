@@ -229,6 +229,7 @@ h3 {
     justify-content: center;
     text-align: center;
     flex-wrap: wrap;
+    border-radius: 5px;
 }
 
 @media only screen and (max-width: 500px) {
