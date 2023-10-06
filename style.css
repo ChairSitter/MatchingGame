@@ -177,7 +177,7 @@ h1 {
     appearance: none;
     border: none;
     border-radius: 18px;
-    color: white;
+    color: darkblue;
 }
 
 /* Might need to remove this to improve user interaction (looks more like a button)
