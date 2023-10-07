@@ -23,7 +23,7 @@ h1 {
     padding: 5px;
     margin-top: 0;
     opacity: .85;
-    text-shadow: 1px 1px lightgray;
+    text-shadow: 1px 1px white;
 }
 
 @media only screen and (max-width: 500px) {
