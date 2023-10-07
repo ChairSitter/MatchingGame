@@ -42,7 +42,9 @@ let detectMatch = false;
 
 let countdown = 5;
 let multiplier = 1;
-multButton.innerHTML = `MULTIPLY x${countdown}`;
+multButton.innerHTML = "MULTIPLY";
+multButton.style.color = 'lightgray';
+multButton.style.opacity = '.75';
 let multipliedScore;
 
 //sets original 0 number for score and win numbers, as they are otherwise not defined until assigned by functions
@@ -604,6 +606,8 @@ const resetter = () => {
 
 //.9 second timin
 const multiplierCountdown = () => {
+    multButton.style.color = 'white';
+    multButton.style.opacity = '100';
     setTimeout(() => {
         countdown = 4;
         multButton.innerHTML = `MULTIPLY x${countdown}`;
