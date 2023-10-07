@@ -475,6 +475,11 @@ const determineWinner = () => {
     }
     compPts.innerHTML = compPtsCount;
     userPts.innerHTML = userPtsCount;
+    if(multiplier = 1){
+        multButton.innerHTML = 'MULTIPLY x1';
+        multButton.style.opacity = ".75";
+        multButton.style.color = "light gray";
+    }
     limit50();
 }
 
