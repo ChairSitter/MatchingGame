@@ -602,6 +602,7 @@ const resetter = () => {
     boxEight.style.boxShadow = 'none';
 }
 
+//.9 second timin
 const multiplierCountdown = () => {
     setTimeout(() => {
         countdown = 4;
@@ -616,6 +617,22 @@ const multiplierCountdown = () => {
         multButton.innerHTML = `MULTIPLY x${countdown}`;
     }, 5400);
 };
+
+//1 second timing
+/*const multiplierCountdown = () => {
+    setTimeout(() => {
+        countdown = 4;
+        multButton.innerHTML = `MULTIPLY x${countdown}`;
+    }, 2000);
+    setTimeout(() => {
+        countdown = 3;
+        multButton.innerHTML = `MULTIPLY x${countdown}`;
+    }, 4000);
+    setTimeout(() => {
+        countdown = 2;
+        multButton.innerHTML = `MULTIPLY x${countdown}`;
+    }, 6000);
+};*/
 
 const multiply = () => {
     document.getElementById('mult-button').disabled = true;
@@ -649,7 +666,7 @@ const multiply = () => {
     }, 8000);
 };*/
 
-//test code for slightly faster boxes
+//code for slightly faster boxes
 const runFunctions = () => {
     document.getElementById('input-button').disabled = true;
     document.getElementById('mult-button').disabled = false;
@@ -671,6 +688,29 @@ const runFunctions = () => {
         document.getElementById('mult-button').disabled = true;
     }, 7200);
 };
+
+//code for simultaneous boxes
+/*const runFunctions = () => {
+    document.getElementById('input-button').disabled = true;
+    document.getElementById('mult-button').disabled = false;
+    multiplierCountdown();
+    resetter();
+    boxOneChange();
+    boxFiveChange();
+    setTimeout(boxTwoChange, 1800);
+    setTimeout(boxSixChange, 1800);
+    setTimeout(boxThreeChange, 3600);
+    setTimeout(boxSevenChange, 3600);
+    setTimeout(boxFourChange, 5400);
+    setTimeout(boxEightChange, 5400);
+    setTimeout(determineWinner, 7200);
+    setTimeout(() => {
+        document.getElementById('input-button').disabled = false;
+    }, 7200);
+    setTimeout(() => {
+        document.getElementById('mult-button').disabled = true;
+    }, 7200);
+};*/
 
 //test function that will call functions much faster
 /*const runFunctions = () => {
