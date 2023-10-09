@@ -44,7 +44,7 @@ let countdown = 5;
 let multiplier = 1;
 multButton.innerHTML = "MULTIPLY";
 multButton.style.color = 'lightgray';
-multButton.style.opacity = '.75';
+multButton.style.opacity = '.60';
 let multipliedScore;
 
 //sets original 0 number for score and win numbers, as they are otherwise not defined until assigned by functions
@@ -453,7 +453,7 @@ const determineWinner = () => {
                 };
             }
             compPtsCount = compPtsCount + multiplier;
-        } else { 
+        } else { //TIE
             if(countHuman === 1){
                 winnerU.innerHTML = `${countHuman} match<br/>Tie`;
                 if(multiplier != 1){
@@ -477,7 +477,7 @@ const determineWinner = () => {
     userPts.innerHTML = userPtsCount;
     if(multiplier = 1){
         multButton.innerHTML = 'MULTIPLY';
-        multButton.style.opacity = ".75";
+        multButton.style.opacity = ".60";
         multButton.style.color = "light gray";
     }
     limit50();
