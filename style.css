@@ -301,11 +301,11 @@ h3 {
 }
 
 #explanation {
-    color: rgb(170, 170, 170);
-    margin: 0 45px;
+    color: rgb(212, 212, 212);
     font-size: 1rem;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     padding: 4px;
+    border: 20px solid rgb(0, 0, 90);
 }
 
 #multiplier-explanation {

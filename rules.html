@@ -8,20 +8,39 @@
 </head>
 <body>
      <h1>
-          <a href="./index.html">Return to the Game</a>
+          <a href="./index.html">Return to Rainbow Multi-Match</a>
      </h1>
+     <section id="changerEx2">        
+          <div id="Ex2box1" class="ExBox"><p class="ExP">red</p></div>
+          <div id="Ex2box2" class="ExBox"><p class="ExP">orange</p></div>
+          <div id="Ex2box3" class="ExBox"><p class="ExP">green</p></div>
+          <div id="Ex2box4" class="ExBox"><p class="ExP">blue</p></div>
+     </section>
      <h2 id="rules">
           Rules:
      </h2>
      <div id="explanation-container">
-          <ul id="explanation">
-               <li>Press "Play" and hope for luck in this race to 50 pts!</li>
-               <li>You have 4 boxes and so does the computer.</li>
-               <li>Each round, boxes are assigned a random background color and text color.</li>
-               <li>The side with the single most valuable scoring combination receives the corresponding point value each round.</li>
-               <li>Use the multiply button to boost your score, but be careful not to boost the computer's score!</li>
-          </ul>
+          <div id="explanation">
+               <p>It's is a race against the computer to 50 pts!</p>
+               <p>You have 4 boxes, and so does the computer.</p>
+               <p>Clicking "PLAY" starts a round. Each round, boxes are randomly assigned a background color and text color.</p>
+               <p>The side with the most valuable scoring combination receives the corresponding points each round. Read about the scoring combinations below and reference the cheat sheet during the game.</p>
+               <p>The "MULTIPLY" button lets you bet on the outcome to win points and beat the computer. Multiply to boost the score when you win, but be careful not to boost the computer's when you lose! <p>
+          </div>
      </div>
+     <section id="multiplier-explanation">
+          <h2 id="rules">
+               The Multiply Button:
+          </h2>
+          <button id="mult-button-ex" name="mult-ex">MULTIPLY x5</button>
+          <p class="rule-list">
+               The multiply button adds a betting challenge to the game. When the round starts, it will count down from x5 to x2 as more boxes are shown.
+               <br/>If you click it, any points scored during the round by you or the computer will be multiplied by the number shown on the button. 
+               <br/>If you win the round this will boost your score, but be careful- if you lose this will boost the computer's score instead! 
+               <br/>Click earlier to guess the outcome and place a big, risky bet on your side to win the round. Click later to utilize your comparison skills and score some sure-shot points... unless you're wrong!
+               <br/><br/>One more thing: if you multiply and the round ends in a tie, the computer gets 1 "penalty" point. Try not to multiply a tie! 
+          </p>
+     </section>
      <h2 id="rules">
           Scoring Combinations:
      </h2>
@@ -87,17 +106,5 @@
           <div id="Ex6box4" class="ExBox"><p class="ExP">blue</p></div>
      </section>
      <p class="rule-list">Computer wins this round 2 matches to 1, winning 1 point.</p><br/>
-     <section id="multiplier-explanation">
-          <h2 id="rules">
-               The Multiply Button:
-          </h2>
-          <button id="mult-button-ex" name="mult-ex">MULTIPLY x5</button>
-          <p class="rule-list">
-               The multiply button adds a betting challenge to the game.
-               <br/>If you click it, any points scored during the round will be multiplied by the number shown on the button. 
-               <br/>If you win the round this will boost your score, but be careful- if you lose you will boost the computer's score instead! 
-               <br/><br/>One more thing: if you multiply and the round ends in a tie, the computer gets 1 point. Click carefully to avoid this penalty!
-          </p>
-     </section>
 </body>
 </html>
