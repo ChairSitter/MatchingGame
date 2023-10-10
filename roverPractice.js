@@ -843,7 +843,7 @@ const tieBreak = () => {
                     winnerC.innerHTML = `${countComputer} matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                     winnerU.innerHTML = `${countHuman} matches`;
                 };
-                userPtsCount = userPtsCount + multiplier;
+                compPtsCount = compPtsCount + multiplier;
             } else if(multiplier === 1){
                 if(countHuman === 1){
                     multipliedScore = multiplier;
@@ -984,7 +984,7 @@ const tieBreak = () => {
                         winnerC.innerHTML = `${countComputer} matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                         winnerU.innerHTML = `${countHuman} matches`;
                     };
-                    userPtsCount = userPtsCount + multiplier;
+                    compPtsCount = compPtsCount + multiplier;
                 } else if(multiplier === 1){
                     if(countHuman === 1){
                         multipliedScore = multiplier;
@@ -1125,7 +1125,7 @@ const tieBreak = () => {
                             winnerC.innerHTML = `${countComputer} matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                             winnerU.innerHTML = `${countHuman} matches`;
                         };
-                        userPtsCount = userPtsCount + multiplier;
+                        compPtsCount = compPtsCount + multiplier;
                     } else if(multiplier === 1){
                         if(countHuman === 1){
                             multipliedScore = multiplier;
@@ -1266,7 +1266,7 @@ const tieBreak = () => {
                                 winnerC.innerHTML = `${countComputer} matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                                 winnerU.innerHTML = `${countHuman} matches`;
                             };
-                            userPtsCount = userPtsCount + multiplier;
+                            compPtsCount = compPtsCount + multiplier;
                         } else if(multiplier === 1){
                             if(countHuman === 1){
                                 multipliedScore = multiplier;
@@ -1548,7 +1548,7 @@ const tieBreak = () => {
                                         winnerC.innerHTML = `${countComputer} matches<br/>Double<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                                         winnerU.innerHTML = `${countHuman} matches`;
                                     };
-                                    userPtsCount = userPtsCount + multiplier;
+                                    compPtsCount = compPtsCount + multiplier;
                                 } else if(multiplier === 1){
                                     if(countHuman === 1){
                                         multipliedScore = multiplier;
