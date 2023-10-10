@@ -23,9 +23,9 @@
           <div id="explanation">
                <p>It's a race against the computer to 100 pts!</p>
                <p>You have 4 boxes, and so does the computer.</p>
-               <p>Clicking "PLAY" starts a round. Each round, boxes are randomly assigned a background color and text color.</p>
-               <p>The side with the most valuable scoring combination receives the corresponding points each round. Read about the scoring combinations below and reference the cheat sheet during the game.</p>
-               <p>The "MULTIPLY" button lets you bet on the outcome to win points and beat the computer. Multiply to boost the score when you win, but be careful not to boost the computer's when you lose! <p>
+               <p>Click "PLAY" to start a round. Each round, boxes are randomly assigned a background color and text color.</p>
+               <p>The side with the most valuable scoring combination receives the corresponding points each round.</p>
+               <p>Use the "MULTIPLY" button to bet on the outcome and win points to beat the computer.<p>
           </div>
      </div>
      <section id="multiplier-explanation">
@@ -34,7 +34,7 @@
           </h2>
           <button id="mult-button-ex" name="mult-ex">MULTIPLY x5</button>
           <p class="rule-list">
-               The multiply button adds a betting challenge to the game. When the round starts, it will count down from x5 to x2 as more boxes are shown.
+               When the round starts, the multiply button will count down from x5 to x2 as more boxes are shown.
                <br/>If you click it, any points scored during the round by you or the computer will be multiplied by the number shown on the button. 
                <br/>If you win the round this will boost your score, but be careful- if you lose this will boost the computer's score instead! 
                <br/>Click earlier to guess the outcome and place a big, risky bet on your side to win the round. Click later to utilize your comparison skills and score some sure-shot points... unless you're wrong!
@@ -105,12 +105,12 @@
           <div id="Ex6box4" class="ExBox"><p class="ExP">blue</p></div>
      </section>
      <p class="rule-list">Computer wins this round 2 matches to 1, winning 2 points.</p><br/>
-     <p class="rule-list">Tiebreaker (1 pt): <br/>
-          A tiebreaker is used if both sides have the same best scoring combination or the same number of matches.<br/>
-          The most common color on each side is compared, and the one with more occurrences wins 1 pt.<br/>
-          If still tied, the second-most common colors are compared, and so on. <br/>
-          If a tie remains, the side with more colors near the red end of the spectrum (red-orange-yellow-green-blue-purple) wins.<br/>
-          After that, it's just a tie. 
+     <p class="rule-list">Tiebreak (1 pt): <br/>
+          If both sides have the same combination or number of matches, a tiebreak is used.<br/>
+          The most common color of each side is compared, for example 4 purples would beat 3 greens.<br/>
+          This continues down the list of most common colors until a winner is found.<br/><br/>
+          Double Tiebreak (1 pt): <br/>If a tie remains, the side with more colors near the RED end of the spectrum (red-orange-yellow-green-blue-purple) wins.<br/><br/>
+          If both sides have the exact same colors, it's a tie. 
      </p>
      <p class="rule-list">YOUR BOXES:</p>
      <section id="changerEx7">        
@@ -126,9 +126,7 @@
           <div id="Ex8box3" class="ExBox"><p class="ExP">yellow</p></div>
           <div id="Ex8box4" class="ExBox"><p class="ExP">purple</p></div>
      </section>
-     <p class="rule-list">In this example, you have 4 green, 2 orange, 1 red, and 1 purple.<br/>
-     The computer has 3 yellow, 1 blue, 1 orange, 1 red, 1 purple, and 1 green.<br/>
-     4 green beats 3 yellow and you win 1 point.</p>
+     <p class="rule-list">In this example, there are no combos or matches so a tiebreak compares the most common colors.<br/> You have 4 greens and the computer has 3 yellows. You win 1 point.
 
 </body>
 </html>

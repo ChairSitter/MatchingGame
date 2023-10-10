@@ -1421,7 +1421,7 @@ const tieBreak = () => {
                                 compPtsCount++;
                             };
                         };
-                    } else if (userColorNumbers[4] === compColorNumbers[4]){ //further tiebreaker
+                    } else if (userColorNumbers[4] === compColorNumbers[4]){ //further tiebreak
                         if(userWarms > compWarms){
                             if(userPerfectRound === true){
                                 if(multiplier != 1){
@@ -1496,7 +1496,7 @@ const tieBreak = () => {
                             if(userPerfectRound === true){
                                 if(multiplier != 1){
                                     multipliedScore = multiplier;
-                                    winnerC.innerHTML = `Perfect<br/>Round<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
+                                    winnerC.innerHTML = `Perfect<br/>Round<br/>Double<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                                     winnerU.innerHTML = 'Perfect<br/>Round';
                                     compPtsCount = compPtsCount + multiplier; 
                                 } else if(multiplier === 1){
@@ -1507,7 +1507,7 @@ const tieBreak = () => {
                             } else if(userAllMatches === true){
                                 if(multiplier != 1){
                                     multipliedScore = multiplier;
-                                    winnerC.innerHTML = `4 Matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
+                                    winnerC.innerHTML = `4 Matches<br/>Double<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                                     winnerU.innerHTML = '4 Matches';
                                     compPtsCount = compPtsCount + multiplier;
                                 } else if(multiplier === 1){
@@ -1518,7 +1518,7 @@ const tieBreak = () => {
                             } else if(userStrict === true){
                                 if(multiplier != 1){
                                     multipliedScore = multiplier;
-                                    winnerC.innerHTML = `Strict<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
+                                    winnerC.innerHTML = `Strict<br/>Straight<br/>Double<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                                     winnerU.innerHTML = 'Strict<br/>Straight';
                                     compPtsCount = compPtsCount + multiplier;
                                 } else if(multiplier === 1){
@@ -1529,11 +1529,11 @@ const tieBreak = () => {
                             } else if(userLoose === true){
                                 if(multiplier != 1){
                                     multipliedScore = multiplier;
-                                    winnerC.innerHTML = `Loose<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
+                                    winnerC.innerHTML = `Loose<br/>Straight<br/>Double<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                                     winnerU.innerHTML = 'Loose<br/>Straight';
                                     compPtsCount = compPtsCount + multiplier;
                                 } else if(multiplier === 1){
-                                    winnerC.innerHTML = 'Loose<br/>Straight<br/>Tiebreak<br/>+1';
+                                    winnerC.innerHTML = 'Loose<br/>Straight<br/>Double<br/>Tiebreak<br/>+1';
                                     winnerU.innerHTML = 'Loose<br/>Straight';
                                     compPtsCount++;
                                 }
@@ -1541,22 +1541,22 @@ const tieBreak = () => {
                                 if(multiplier != 1){
                                     if(countHuman === 1){
                                         multipliedScore = multiplier;
-                                        winnerC.innerHTML = `${countComputer} match<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
+                                        winnerC.innerHTML = `${countComputer} match<br/>Double<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                                         winnerU.innerHTML = `${countHuman} match`;
                                     } else {
                                         multipliedScore = multiplier;
-                                        winnerC.innerHTML = `${countComputer} matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
+                                        winnerC.innerHTML = `${countComputer} matches<br/>Double<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                                         winnerU.innerHTML = `${countHuman} matches`;
                                     };
                                     userPtsCount = userPtsCount + multiplier;
                                 } else if(multiplier === 1){
                                     if(countHuman === 1){
                                         multipliedScore = multiplier;
-                                        winnerC.innerHTML = `${countComputer} match<br/>Tiebreak<br/>+1`;
+                                        winnerC.innerHTML = `${countComputer} match<br/>Double<br/>Tiebreak<br/>+1`;
                                         winnerU.innerHTML = `${countHuman} match`;
                                     } else {
                                         multipliedScore = multiplier;
-                                        winnerC.innerHTML = `${countComputer} matches<br/>Tiebreak<br/>+1`;
+                                        winnerC.innerHTML = `${countComputer} matches<br/>Double<br/>Tiebreak<br/>+1`;
                                         winnerU.innerHTML = `${countHuman} matches`;
                                     }
                                     compPtsCount++;
@@ -1617,7 +1617,7 @@ const tieBreak = () => {
 };*/
 
 //code for slightly faster boxes
-const runFunctions = () => {
+/*const runFunctions = () => {
     document.getElementById('input-button').disabled = true;
     document.getElementById('mult-button').disabled = false;
     multiplierCountdown();
@@ -1637,7 +1637,7 @@ const runFunctions = () => {
     setTimeout(() => {
         document.getElementById('mult-button').disabled = true;
     }, 7200);
-};
+};*/
 
 //code to alternate between which side is displayed first
 /*const runFunctions = () => {
@@ -1814,7 +1814,7 @@ const runFunctions = () => {
 };*/
 
 //test function that will call functions much faster
-/*const runFunctions = () => {
+const runFunctions = () => {
     document.getElementById('input-button').disabled = true;
     document.getElementById('mult-button').disabled = false;
     resetter();
@@ -1833,7 +1833,7 @@ const runFunctions = () => {
         setTimeout(() => {
         document.getElementById('mult-button').disabled = true;
     }, 800);
-}*/
+}
 
 //Sets the Play button to call the main function
 inputButton.onclick = runFunctions;
