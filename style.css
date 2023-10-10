@@ -152,7 +152,7 @@ h1 {
         text-align: center;
         color: rgb(197 179 20);
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        margin-top: 8px;
+        margin-top: 3px;
     }
 }
 
@@ -327,7 +327,7 @@ a {
 }
 
 /*example changers and boxes*/
-#changerEx1, #changerEx2, #changerEx3, #changerEx32, #changerEx4, #changerEx5, #changerEx6 {
+#changerEx1, #changerEx2, #changerEx3, #changerEx32, #changerEx4, #changerEx5, #changerEx6, #changerEx7, #changerEx8{
     display: flex;
     justify-content: space-around;
     margin: 20px;
@@ -356,7 +356,7 @@ a {
 }
 
 @media only screen and (max-width: 850px){
-    #changerEx1, #changerEx2, #changerEx3, #changerEx32, #changerEx4, #changerEx5, #changerEx6 {
+    #changerEx1, #changerEx2, #changerEx3, #changerEx32, #changerEx4, #changerEx5, #changerEx6, #changerEx7, #changerEx8 {
         justify-content: space-between;
     }
     .ExBox {
@@ -461,8 +461,30 @@ a {
 #Ex6box4 {
     background-color: orange;
 }
-
-
+#Ex7box1 {
+    background-color: red;
+}
+#Ex7box2 {
+    background-color: purple;
+}
+#Ex7box3 {
+    background-color: green;
+}
+#Ex7box4 {
+    background-color: orange;
+}
+#Ex8box1 {
+    background-color: red;
+}
+#Ex8box2 {
+    background-color: orange;
+}
+#Ex8box3 {
+    background-color: yellow;
+}
+#Ex8box4 {
+    background-color: green;
+}
 
 
 

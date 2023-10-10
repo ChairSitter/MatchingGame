@@ -21,7 +21,7 @@
      </h2>
      <div id="explanation-container">
           <div id="explanation">
-               <p>It's is a race against the computer to 50 pts!</p>
+               <p>It's is a race against the computer to 100 pts!</p>
                <p>You have 4 boxes, and so does the computer.</p>
                <p>Clicking "PLAY" starts a round. Each round, boxes are randomly assigned a background color and text color.</p>
                <p>The side with the most valuable scoring combination receives the corresponding points each round. Read about the scoring combinations below and reference the cheat sheet during the game.</p>
@@ -38,14 +38,13 @@
                <br/>If you click it, any points scored during the round by you or the computer will be multiplied by the number shown on the button. 
                <br/>If you win the round this will boost your score, but be careful- if you lose this will boost the computer's score instead! 
                <br/>Click earlier to guess the outcome and place a big, risky bet on your side to win the round. Click later to utilize your comparison skills and score some sure-shot points... unless you're wrong!
-               <br/><br/>One more thing: if you multiply and the round ends in a tie, the computer gets 1 "penalty" point. Try not to multiply a tie! 
           </p>
      </section>
      <h2 id="rules">
           Scoring Combinations:
      </h2>
     <p class="rule-list">
-        Perfect Round (25 pts):<br/>
+        Perfect Round (30 pts):<br/>
         The text and background color is the exact same color across all of your boxes
     </p>
      <section id="changerEx1">        
@@ -54,7 +53,7 @@
           <div id="Ex1box3" class="ExBox"><p class="ExP">red</p></div>
           <div id="Ex1box4" class="ExBox"><p class="ExP">red</p></div>
      </section>
-     <p class="rule-list">Four Matches (10 pts):<br/>
+     <p class="rule-list">Four Matches (20 pts):<br/>
           The text color matches the background color in all of your boxes
      </p>
      <section id="changerEx2">        
@@ -63,7 +62,7 @@
           <div id="Ex2box3" class="ExBox"><p class="ExP">green</p></div>
           <div id="Ex2box4" class="ExBox"><p class="ExP">blue</p></div>
      </section>
-     <p class="rule-list">Strict Straight (5 pts):<br/>
+     <p class="rule-list">Strict Straight (10 pts):<br/>
           All of your boxes have the same background color, or all of your boxes have the same text color
      </p>
      <section id="changerEx3">        
@@ -79,7 +78,7 @@
           <div id="Ex32box3" class="ExBox"><p class="ExP">purple</p></div>
           <div id="Ex32box4" class="ExBox"><p class="ExP">purple</p></div>
      </section>
-     <p class="rule-list">Loose Straight (3 pts):<br/>
+     <p class="rule-list">Loose Straight (5 pts):<br/>
           All of your boxes have a background OR text color in common
      </p>
      <section id="changerEx4">        
@@ -88,8 +87,8 @@
           <div id="Ex4box3" class="ExBox"><p class="ExP">yellow</p></div>
           <div id="Ex4box4" class="ExBox"><p class="ExP">orange</p></div>
      </section>
-     <p class="rule-list">More Matches (1 pt): <br/>
-          If no larger combination is scored, the side with more  matches receives a point.
+     <p class="rule-list">More Matches (1 pt per match): <br/>
+          If no larger combination is scored, the side with more  matches receives a point for each of their matches.
      </p>
      <p class="rule-list">YOUR BOXES:</p>
      <section id="changerEx5">        
@@ -105,6 +104,31 @@
           <div id="Ex6box3" class="ExBox"><p class="ExP">purple</p></div>
           <div id="Ex6box4" class="ExBox"><p class="ExP">blue</p></div>
      </section>
-     <p class="rule-list">Computer wins this round 2 matches to 1, winning 1 point.</p><br/>
+     <p class="rule-list">Computer wins this round 2 matches to 1, winning 2 points.</p><br/>
+     <p class="rule-list">Tiebreaker (1 pt): <br/>
+          A tie can occur if both sides have the same scoring combination or the same number of matches.<br/>
+          In case of a tie, the most common color on each side is compared, and the one with more occurrences wins 1 pt.<br/>
+          If still tied, the second-most common colors are compared, and so on. <br/>
+          If a tie remains, The side with the most warm colors (red, orange, yellow) wins 1 pt.<br/>
+          After that, it's just a tie. 
+     </p>
+     <p class="rule-list">YOUR BOXES:</p>
+     <section id="changerEx7">        
+          <div id="Ex7box1" class="ExBox"><p class="ExP">orange</p></div>
+          <div id="Ex7box2" class="ExBox"><p class="ExP">green</p></div>
+          <div id="Ex7box3" class="ExBox"><p class="ExP">green</p></div>
+          <div id="Ex7box4" class="ExBox"><p class="ExP">green</p></div>
+     </section>
+     <p class="rule-list">COMPUTER BOXES:</p>
+     <section id="changerEx8">        
+          <div id="Ex8box1" class="ExBox"><p class="ExP">blue</p></div>
+          <div id="Ex8box2" class="ExBox"><p class="ExP">yellow</p></div>
+          <div id="Ex8box3" class="ExBox"><p class="ExP">yellow</p></div>
+          <div id="Ex8box4" class="ExBox"><p class="ExP">purple</p></div>
+     </section>
+     <p class="rule-list">In this example, you have 4 green, 2 orange, 1 red, and 1 purple.<br/>
+     The computer has 3 yellow, 1 blue, 1 orange, 1 red, 1 purple, and 1 green.<br/>
+     4 green beats 3 yellow and you win 1 point.</p>
+
 </body>
 </html>
