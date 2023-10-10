@@ -586,7 +586,7 @@ const resetter = () => {
     boxEight.style.boxShadow = 'none';
 }
 
-//.9 second timin
+//.9 second timing
 const multiplierCountdown = () => {
     multButton.style.color = 'white';
     multButton.style.opacity = '100';
@@ -603,6 +603,40 @@ const multiplierCountdown = () => {
         multButton.innerHTML = `MULTIPLY x${countdown}`;
     }, 5400);
 };
+
+//experimental function for .5 level multiplication
+/*const multiplierCountdown = () => {
+    multButton.style.color = 'white';
+    multButton.style.opacity = '100';
+    setTimeout(() => {
+        countdown = 4.5;
+        multButton.innerHTML = `MULTIPLY x${countdown}`;
+    }, 900);
+    setTimeout(() => {
+        countdown = 4;
+        multButton.innerHTML = `MULTIPLY x${countdown}`;
+    }, 1800);
+    setTimeout(() => {
+        countdown = 3.5;
+        multButton.innerHTML = `MULTIPLY x${countdown}`;
+    }, 2700);
+    setTimeout(() => {
+        countdown = 3;
+        multButton.innerHTML = `MULTIPLY x${countdown}`;
+    }, 3600);
+    setTimeout(() => {
+        countdown = 2.5;
+        multButton.innerHTML = `MULTIPLY x${countdown}`;
+    }, 4500);
+    setTimeout(() => {
+        countdown = 2;
+        multButton.innerHTML = `MULTIPLY x${countdown}`;
+    }, 5400);
+    setTimeout(() => {
+        countdown = 1.5;
+        multButton.innerHTML = `MULTIPLY x${countdown}`;
+    }, 6300);
+};*/
 
 //1 second timing multiplierCountdown
 /*const multiplierCountdown = () => {
