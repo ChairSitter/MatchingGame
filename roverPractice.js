@@ -30,6 +30,7 @@ const winnerC = document.getElementById('winnerC');
 let difference = 0;
 let restart = false;
 
+
 let userPerfectRound = false;
 let compPerfectRound = false;
 let userAllMatches = false;
@@ -55,6 +56,10 @@ let countHuman = 0;
 let countComputer = 0;
 let userPtsCount = 0;
 let compPtsCount = 0;
+
+//for alternate reveals
+let topDown = 1
+//let topDown = Math.ceil(Math.random()*9);
 
 //chooses a random color from a list of 6 possible colors
 const chooseColor = () => {
@@ -676,7 +681,7 @@ const multiply = () => {
 };*/
 
 //code for slightly faster boxes
-const runFunctions = () => {
+/*const runFunctions = () => {
     document.getElementById('input-button').disabled = true;
     document.getElementById('mult-button').disabled = false;
     multiplierCountdown();
@@ -696,7 +701,158 @@ const runFunctions = () => {
     setTimeout(() => {
         document.getElementById('mult-button').disabled = true;
     }, 7200);
+};*/
+
+//code to alternate between which side is displayed first
+const runFunctions = () => {
+    document.getElementById('input-button').disabled = true;
+    document.getElementById('mult-button').disabled = false;
+    multiplierCountdown();
+    resetter();
+    if(topDown === 1){
+        boxOneChange();
+        setTimeout(boxFiveChange, 900);
+        setTimeout(boxTwoChange, 1800);
+        setTimeout(boxSixChange, 2700);
+        setTimeout(boxThreeChange, 3600);
+        setTimeout(boxSevenChange, 4500);
+        setTimeout(boxFourChange, 5400);
+        setTimeout(boxEightChange, 6300);
+        setTimeout(determineWinner, 7200);
+        topDown = 2;
+    } else if(topDown === 2){
+        boxFiveChange();
+        setTimeout(boxOneChange, 900);
+        setTimeout(boxSixChange, 1800);
+        setTimeout(boxTwoChange, 2700);
+        setTimeout(boxSevenChange, 3600);
+        setTimeout(boxThreeChange, 4500);
+        setTimeout(boxEightChange, 5400);
+        setTimeout(boxFourChange, 6300);
+        setTimeout(determineWinner, 7200);
+        topDown = 1;
+    };
+    setTimeout(() => {
+        document.getElementById('input-button').disabled = false;
+    }, 7200);
+    setTimeout(() => {
+        document.getElementById('mult-button').disabled = true;
+    }, 7200);
 };
+
+//code that will create 9 different styles of the order of box reveals
+/*const runFunctions = () => {
+    document.getElementById('input-button').disabled = true;
+    document.getElementById('mult-button').disabled = false;
+    multiplierCountdown();
+    resetter();
+    if(topDown === 1){ //You first, alternate from left
+        boxOneChange();
+        setTimeout(boxFiveChange, 900);
+        setTimeout(boxTwoChange, 1800);
+        setTimeout(boxSixChange, 2700);
+        setTimeout(boxThreeChange, 3600);
+        setTimeout(boxSevenChange, 4500);
+        setTimeout(boxFourChange, 5400);
+        setTimeout(boxEightChange, 6300);
+        setTimeout(determineWinner, 7200);
+        topDown = Math.ceil(Math.random()*9);
+    } else if(topDown === 2){//Them first, alternate from left
+        boxFiveChange();
+        setTimeout(boxOneChange, 900);
+        setTimeout(boxSixChange, 1800);
+        setTimeout(boxTwoChange, 2700);
+        setTimeout(boxSevenChange, 3600);
+        setTimeout(boxThreeChange, 4500);
+        setTimeout(boxEightChange, 5400);
+        setTimeout(boxFourChange, 6300);
+        setTimeout(determineWinner, 7200);
+        topDown = Math.ceil(Math.random()*9);
+    } else if(topDown === 3){ //Both at a time, from left
+        boxFiveChange();
+        boxOneChange();
+        setTimeout(boxSixChange, 1800);
+        setTimeout(boxTwoChange, 1800);
+        setTimeout(boxSevenChange, 3600);
+        setTimeout(boxThreeChange, 3600);
+        setTimeout(boxEightChange, 5400);
+        setTimeout(boxFourChange, 5400);
+        setTimeout(determineWinner, 7200);
+        topDown = Math.ceil(Math.random()*9);
+    } else if(topDown === 4){ //You first, 2 at a time, from left
+        boxOneChange();
+        setTimeout(boxTwoChange, 900);
+        setTimeout(boxFiveChange, 1800);
+        setTimeout(boxSixChange, 2700);
+        setTimeout(boxThreeChange, 3600);
+        setTimeout(boxFourChange, 4500);
+        setTimeout(boxSevenChange, 5400);
+        setTimeout(boxEightChange, 6300);
+        setTimeout(determineWinner, 7200);
+        topDown = Math.ceil(Math.random()*9);
+    } else if(topDown === 5){ //Them first, 2 at a time, from left
+        boxFiveChange();
+        setTimeout(boxSixChange, 900);
+        setTimeout(boxOneChange, 1800);
+        setTimeout(boxTwoChange, 2700);
+        setTimeout(boxSevenChange, 3600);
+        setTimeout(boxEightChange, 4500);
+        setTimeout(boxThreeChange, 5400);
+        setTimeout(boxFourChange, 6300);
+        setTimeout(determineWinner, 7200);
+        topDown = Math.ceil(Math.random()*9);
+    } else if(topDown === 6){  //You first, 4 and 4, from left
+        boxOneChange();
+        setTimeout(boxTwoChange, 900);
+        setTimeout(boxThreeChange, 1800);
+        setTimeout(boxFourChange, 2700);
+        setTimeout(boxFiveChange, 3600);
+        setTimeout(boxSixChange, 4500);
+        setTimeout(boxSevenChange, 5400);
+        setTimeout(boxEightChange, 6300);
+        setTimeout(determineWinner, 7200);
+        topDown = Math.ceil(Math.random()*9);
+    } else if(topDown === 7){  //Them first, 4 and 4, from left
+        boxFiveChange();
+        setTimeout(boxSixChange, 900);
+        setTimeout(boxSevenChange, 1800);
+        setTimeout(boxEightChange, 2700);
+        setTimeout(boxOneChange, 3600);
+        setTimeout(boxTwoChange, 4500);
+        setTimeout(boxThreeChange, 5400);
+        setTimeout(boxFourChange, 6300);
+        setTimeout(determineWinner, 7200);
+        topDown = Math.ceil(Math.random()*9);
+    } else if(topDown === 8){ //Left half, right half
+        boxOneChange();
+        boxTwoChange();
+        boxFiveChange();
+        boxSixChange();
+        setTimeout(boxThreeChange, 3600);
+        setTimeout(boxFourChange, 3600);
+        setTimeout(boxSevenChange, 3600);
+        setTimeout(boxEightChange, 3600);
+        setTimeout(determineWinner, 7200);
+        topDown = Math.ceil(Math.random()*9);
+    } else if(topDown === 9){ //All at once
+        boxOneChange();
+        boxTwoChange();
+        boxThreeChange();
+        boxFourChange();
+        boxFiveChange();
+        boxSixChange();
+        boxSevenChange();
+        boxEightChange();
+        setTimeout(determineWinner, 7200);
+        topDown = Math.ceiling(Math.random()*9);
+    }
+    setTimeout(() => {
+        document.getElementById('input-button').disabled = false;
+    }, 7200);
+    setTimeout(() => {
+        document.getElementById('mult-button').disabled = true;
+    }, 7200);
+};*/
 
 //code for simultaneous boxes
 /*const runFunctions = () => {
