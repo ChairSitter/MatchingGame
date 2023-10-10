@@ -653,7 +653,7 @@ const tieBreak = () => {
             userPurples++;
         } 
     };    
-    let userWarms = userReds + userOranges + userYellows;
+    let userWarms = (userReds*6) + (userOranges*5) + (userYellows*4) + (userGreens*3) + (userBlues*2) + (userPurples);
     let userColorNumbers = [userReds, userOranges, userYellows, userGreens, userBlues, userPurples];
     userColorNumbers.sort(function(a, b){return b-a});
 
@@ -679,417 +679,862 @@ const tieBreak = () => {
             compPurples++;
         } 
     };
-    let compWarms = compReds + compOranges + compYellows;
+    let compWarms = (compReds*6) + (compOranges*5) + (compYellows*4) + (compGreens*3) + (compBlues*2) + (compPurples);
     let compColorNumbers = [compReds, compOranges, compYellows, compGreens, compBlues, compPurples];
     compColorNumbers.sort(function(a, b){return b-a});
+
     if(userColorNumbers[0] > compColorNumbers[0]){
         if(userPerfectRound === true){
-            multipliedScore = multiplier;
-            winnerU.innerHTML = `Perfect<br/>Round<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-            winnerC.innerHTML = 'Perfect<br/>Round';
-            userPtsCount = userPtsCount + multiplier;
-        } else if(userAllMatches === true){
-            multipliedScore = multiplier;
-            winnerU.innerHTML = `4 Matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-            winnerC.innerHTML = '4 Matches';
-            userPtsCount = userPtsCount + multiplier;
-        } else if(userStrict === true){
-            multipliedScore = multiplier;
-            winnerU.innerHTML = `Strict<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-            winnerC.innerHTML = 'Strict<br/>Straight';
-            userPtsCount = userPtsCount + multiplier;
-        } else if(userLoose === true){
-            multipliedScore = multiplier;
-            winnerU.innerHTML = `Loose<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-            winnerC.innerHTML = 'Loose<br/>Straight';
-            userPtsCount = userPtsCount + multiplier;
-        } else if(detectMatch === true){
-            if(countHuman === 1){
-                multipliedScore = multiplier;
-                winnerU.innerHTML = `${countHuman} match<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-                winnerC.innerHTML = `${countComputer} match<br/>Tie`;
-            } else {
-                multipliedScore = multiplier;
-                winnerU.innerHTML = `${countHuman} matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-                winnerC.innerHTML = `${countComputer} matches<br/>Tie`;
-            };
-            userPtsCount = userPtsCount + multiplier;
-        };
-    } else if(compColorNumbers[0] > userColorNumbers[0]){
-        if(userPerfectRound === true){
-            multipliedScore = multiplier;
-            winnerC.innerHTML = `Perfect<br/>Round<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-            winnerU.innerHTML = 'Perfect<br/>Round';
-            compPtsCount = compPtsCount + multiplier;
-        } else if(userAllMatches === true){
-            multipliedScore = multiplier;
-            winnerC.innerHTML = `4 Matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-            winnerU.innerHTML = '4 Matches';
-            compPtsCount = compPtsCount + multiplier;
-        } else if(userStrict === true){
-            multipliedScore = multiplier;
-            winnerC.innerHTML = `Strict<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-            winnerU.innerHTML = 'Strict<br/>Straight';
-            compPtsCount = compPtsCount + multiplier;
-        } else if(userLoose === true){
-            multipliedScore = multiplier;
-            winnerC.innerHTML = `Loose<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-            winnerU.innerHTML = 'Loose<br/>Straight';
-            compPtsCount = compPtsCount + multiplier;
-        } else if(detectMatch === true){
-            if(countHuman === 1){
-                multipliedScore = multiplier;
-                winnerC.innerHTML = `${countComputer} match<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-                winnerU.innerHTML = `${countHuman} match<br/>Tie`;
-            } else {
-                multipliedScore = multiplier;
-                winnerC.innerHTML = `${countComputer} matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-                winnerU.innerHTML = `${countHuman} matches<br/>Tie`;
-            };
-            compPtsCount = compPtsCount + multiplier;
-        };
-    } else if (userColorNumbers[0] === compColorNumbers[0]){ //then go to second number
-        if(userColorNumbers[1] > compColorNumbers[1]){
-            if(userPerfectRound === true){
+            if(multiplier != 1){
                 multipliedScore = multiplier;
                 winnerU.innerHTML = `Perfect<br/>Round<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                 winnerC.innerHTML = 'Perfect<br/>Round';
-                userPtsCount = userPtsCount + multiplier;
-            } else if(userAllMatches === true){
+                userPtsCount = userPtsCount + multiplier; 
+            } else if(multiplier === 1){
+                winnerU.innerHTML = `Perfect<br/>Round<br/>Tiebreak<br/>+1`;
+                winnerC.innerHTML = `Perfect<br/>Round`;
+                userPtsCount++;
+            }
+        } else if(userAllMatches === true){
+            if(multiplier != 1){
                 multipliedScore = multiplier;
                 winnerU.innerHTML = `4 Matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                 winnerC.innerHTML = '4 Matches';
                 userPtsCount = userPtsCount + multiplier;
-            } else if(userStrict === true){
+            } else if(multiplier === 1){
+                winnerU.innerHTML = '4 Matches<br/>Tiebreak<br/>+1';
+                winnerC.innerHTML = '4 Matches';
+                userPtsCount++;
+            }
+        } else if(userStrict === true){
+            if(multiplier != 1){
                 multipliedScore = multiplier;
                 winnerU.innerHTML = `Strict<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                 winnerC.innerHTML = 'Strict<br/>Straight';
                 userPtsCount = userPtsCount + multiplier;
-            } else if(userLoose === true){
+            } else if(multiplier === 1){
+                winnerU.innerHTML = `Strict<br/>Straight<br/>Tiebreak<br/>+1`;
+                winnerC.innerHTML = 'Strict<br/>Straight';
+                userPtsCount++;
+            }
+        } else if(userLoose === true){
+            if(multiplier != 1){
                 multipliedScore = multiplier;
                 winnerU.innerHTML = `Loose<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                 winnerC.innerHTML = 'Loose<br/>Straight';
                 userPtsCount = userPtsCount + multiplier;
-            } else if(detectMatch === true){
+            } else if(multiplier === 1){
+                winnerU.innerHTML = 'Loose<br/>Straight<br/>Tiebreak<br/>+1';
+                winnerC.innerHTML = 'Loose<br/>Straight';
+                userPtsCount++;
+            }
+        } else if(detectMatch === true){
+            if(multiplier != 1){
                 if(countHuman === 1){
                     multipliedScore = multiplier;
                     winnerU.innerHTML = `${countHuman} match<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-                    winnerC.innerHTML = `${countComputer} match<br/>Tie`;
+                    winnerC.innerHTML = `${countComputer} match`;
                 } else {
                     multipliedScore = multiplier;
                     winnerU.innerHTML = `${countHuman} matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-                    winnerC.innerHTML = `${countComputer} matches<br/>Tie`;
+                    winnerC.innerHTML = `${countComputer} matches`;
                 };
                 userPtsCount = userPtsCount + multiplier;
+            } else if(multiplier === 1){
+                if(countHuman === 1){
+                    multipliedScore = multiplier;
+                    winnerU.innerHTML = `${countHuman} match<br/>Tiebreak<br/>+1`;
+                    winnerC.innerHTML = `${countComputer} match`;
+                } else {
+                    multipliedScore = multiplier;
+                    winnerU.innerHTML = `${countHuman} matches<br/>Tiebreak<br/>+1`;
+                    winnerC.innerHTML = `${countComputer} matches`;
+                }
+                userPtsCount++;
             };
-        } else if(compColorNumbers[1] > userColorNumbers[1]){
-            if(userPerfectRound === true){
+        };
+    } else if(compColorNumbers[0] > userColorNumbers[0]){
+        if(userPerfectRound === true){
+            if(multiplier != 1){
                 multipliedScore = multiplier;
                 winnerC.innerHTML = `Perfect<br/>Round<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                 winnerU.innerHTML = 'Perfect<br/>Round';
-                compPtsCount = compPtsCount + multiplier;
-            } else if(userAllMatches === true){
+                compPtsCount = compPtsCount + multiplier; 
+            } else if(multiplier === 1){
+                winnerC.innerHTML = `Perfect<br/>Round<br/>Tiebreak<br/>+1`;
+                winnerU.innerHTML = `Perfect<br/>Round`;
+                compPtsCount++;
+            }
+        } else if(userAllMatches === true){
+            if(multiplier != 1){
                 multipliedScore = multiplier;
                 winnerC.innerHTML = `4 Matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                 winnerU.innerHTML = '4 Matches';
                 compPtsCount = compPtsCount + multiplier;
-            } else if(userStrict === true){
+            } else if(multiplier === 1){
+                winnerC.innerHTML = '4 Matches<br/>Tiebreak<br/>+1';
+                winnerU.innerHTML = '4 Matches';
+                compPtsCount++;
+            }
+        } else if(userStrict === true){
+            if(multiplier != 1){
                 multipliedScore = multiplier;
                 winnerC.innerHTML = `Strict<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                 winnerU.innerHTML = 'Strict<br/>Straight';
                 compPtsCount = compPtsCount + multiplier;
-            } else if(userLoose === true){
+            } else if(multiplier === 1){
+                winnerC.innerHTML = `Strict<br/>Straight<br/>Tiebreak<br/>+1`;
+                winnerU.innerHTML = 'Strict<br/>Straight';
+                compPtsCount++;
+            }
+        } else if(userLoose === true){
+            if(multiplier != 1){
                 multipliedScore = multiplier;
                 winnerC.innerHTML = `Loose<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                 winnerU.innerHTML = 'Loose<br/>Straight';
                 compPtsCount = compPtsCount + multiplier;
-            } else if(detectMatch === true){
+            } else if(multiplier === 1){
+                winnerC.innerHTML = 'Loose<br/>Straight<br/>Tiebreak<br/>+1';
+                winnerU.innerHTML = 'Loose<br/>Straight';
+                compPtsCount++;
+            }
+        } else if(detectMatch === true){
+            if(multiplier != 1){
                 if(countHuman === 1){
                     multipliedScore = multiplier;
                     winnerC.innerHTML = `${countComputer} match<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-                    winnerU.innerHTML = `${countHuman} match<br/>Tie`;
+                    winnerU.innerHTML = `${countHuman} match`;
                 } else {
                     multipliedScore = multiplier;
                     winnerC.innerHTML = `${countComputer} matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-                    winnerU.innerHTML = `${countHuman} matches<br/>Tie`;
+                    winnerU.innerHTML = `${countHuman} matches`;
                 };
-                compPtsCount = compPtsCount + multiplier;
+                userPtsCount = userPtsCount + multiplier;
+            } else if(multiplier === 1){
+                if(countHuman === 1){
+                    multipliedScore = multiplier;
+                    winnerC.innerHTML = `${countComputer} match<br/>Tiebreak<br/>+1`;
+                    winnerU.innerHTML = `${countHuman} match`;
+                } else {
+                    multipliedScore = multiplier;
+                    winnerC.innerHTML = `${countComputer} matches<br/>Tiebreak<br/>+1`;
+                    winnerU.innerHTML = `${countHuman} matches`;
+                }
+                compPtsCount++;
             };
-        } else if (userColorNumbers[1] === compColorNumbers[1]){ //then go to third number
-            if(userColorNumbers[2] > compColorNumbers[2]){
-                if(userPerfectRound === true){
+        };
+    } else if (userColorNumbers[0] === compColorNumbers[0]){ //then go to second number
+        if(userColorNumbers[1] > compColorNumbers[1]){
+            if(userPerfectRound === true){
+                if(multiplier != 1){
                     multipliedScore = multiplier;
                     winnerU.innerHTML = `Perfect<br/>Round<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                     winnerC.innerHTML = 'Perfect<br/>Round';
-                    userPtsCount = userPtsCount + multiplier;
-                } else if(userAllMatches === true){
+                    userPtsCount = userPtsCount + multiplier; 
+                } else if(multiplier === 1){
+                    winnerU.innerHTML = `Perfect<br/>Round<br/>Tiebreak<br/>+1`;
+                    winnerC.innerHTML = `Perfect<br/>Round`;
+                    userPtsCount++;
+                }
+            } else if(userAllMatches === true){
+                if(multiplier != 1){
                     multipliedScore = multiplier;
                     winnerU.innerHTML = `4 Matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                     winnerC.innerHTML = '4 Matches';
                     userPtsCount = userPtsCount + multiplier;
-                } else if(userStrict === true){
+                } else if(multiplier === 1){
+                    winnerU.innerHTML = '4 Matches<br/>Tiebreak<br/>+1';
+                    winnerC.innerHTML = '4 Matches';
+                    userPtsCount++;
+                }
+            } else if(userStrict === true){
+                if(multiplier != 1){
                     multipliedScore = multiplier;
                     winnerU.innerHTML = `Strict<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                     winnerC.innerHTML = 'Strict<br/>Straight';
                     userPtsCount = userPtsCount + multiplier;
-                } else if(userLoose === true){
+                } else if(multiplier === 1){
+                    winnerU.innerHTML = `Strict<br/>Straight<br/>Tiebreak<br/>+1`;
+                    winnerC.innerHTML = 'Strict<br/>Straight';
+                    userPtsCount++;
+                }
+            } else if(userLoose === true){
+                if(multiplier != 1){
                     multipliedScore = multiplier;
                     winnerU.innerHTML = `Loose<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                     winnerC.innerHTML = 'Loose<br/>Straight';
                     userPtsCount = userPtsCount + multiplier;
-                } else if(detectMatch === true){
+                } else if(multiplier === 1){
+                    winnerU.innerHTML = 'Loose<br/>Straight<br/>Tiebreak<br/>+1';
+                    winnerC.innerHTML = 'Loose<br/>Straight';
+                    userPtsCount++;
+                }
+            } else if(detectMatch === true){
+                if(multiplier != 1){
                     if(countHuman === 1){
                         multipliedScore = multiplier;
                         winnerU.innerHTML = `${countHuman} match<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-                        winnerC.innerHTML = `${countComputer} match<br/>Tie`;
+                        winnerC.innerHTML = `${countComputer} match`;
                     } else {
                         multipliedScore = multiplier;
                         winnerU.innerHTML = `${countHuman} matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-                        winnerC.innerHTML = `${countComputer} matches<br/>Tie`;
+                        winnerC.innerHTML = `${countComputer} matches`;
                     };
                     userPtsCount = userPtsCount + multiplier;
+                } else if(multiplier === 1){
+                    if(countHuman === 1){
+                        multipliedScore = multiplier;
+                        winnerU.innerHTML = `${countHuman} match<br/>Tiebreak<br/>+1`;
+                        winnerC.innerHTML = `${countComputer} match`;
+                    } else {
+                        multipliedScore = multiplier;
+                        winnerU.innerHTML = `${countHuman} matches<br/>Tiebreak<br/>+1`;
+                        winnerC.innerHTML = `${countComputer} matches`;
+                    }
+                    userPtsCount++;
                 };
-            } else if(compColorNumbers[2] > userColorNumbers[2]){
-                if(userPerfectRound === true){
+            };
+        } else if(compColorNumbers[1] > userColorNumbers[1]){
+            if(userPerfectRound === true){
+                if(multiplier != 1){
                     multipliedScore = multiplier;
                     winnerC.innerHTML = `Perfect<br/>Round<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                     winnerU.innerHTML = 'Perfect<br/>Round';
-                    compPtsCount = compPtsCount + multiplier;
-                } else if(userAllMatches === true){
+                    compPtsCount = compPtsCount + multiplier; 
+                } else if(multiplier === 1){
+                    winnerC.innerHTML = `Perfect<br/>Round<br/>Tiebreak<br/>+1`;
+                    winnerU.innerHTML = `Perfect<br/>Round`;
+                    compPtsCount++;
+                }
+            } else if(userAllMatches === true){
+                if(multiplier != 1){
                     multipliedScore = multiplier;
                     winnerC.innerHTML = `4 Matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                     winnerU.innerHTML = '4 Matches';
                     compPtsCount = compPtsCount + multiplier;
-                } else if(userStrict === true){
+                } else if(multiplier === 1){
+                    winnerC.innerHTML = '4 Matches<br/>Tiebreak<br/>+1';
+                    winnerU.innerHTML = '4 Matches';
+                    compPtsCount++;
+                }
+            } else if(userStrict === true){
+                if(multiplier != 1){
                     multipliedScore = multiplier;
                     winnerC.innerHTML = `Strict<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                     winnerU.innerHTML = 'Strict<br/>Straight';
                     compPtsCount = compPtsCount + multiplier;
-                } else if(userLoose === true){
+                } else if(multiplier === 1){
+                    winnerC.innerHTML = `Strict<br/>Straight<br/>Tiebreak<br/>+1`;
+                    winnerU.innerHTML = 'Strict<br/>Straight';
+                    compPtsCount++;
+                }
+            } else if(userLoose === true){
+                if(multiplier != 1){
                     multipliedScore = multiplier;
                     winnerC.innerHTML = `Loose<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                     winnerU.innerHTML = 'Loose<br/>Straight';
                     compPtsCount = compPtsCount + multiplier;
-                } else if(detectMatch === true){
+                } else if(multiplier === 1){
+                    winnerC.innerHTML = 'Loose<br/>Straight<br/>Tiebreak<br/>+1';
+                    winnerU.innerHTML = 'Loose<br/>Straight';
+                    compPtsCount++;
+                }
+            } else if(detectMatch === true){
+                if(multiplier != 1){
                     if(countHuman === 1){
                         multipliedScore = multiplier;
                         winnerC.innerHTML = `${countComputer} match<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-                        winnerU.innerHTML = `${countHuman} match<br/>Tie`;
+                        winnerU.innerHTML = `${countHuman} match`;
                     } else {
                         multipliedScore = multiplier;
                         winnerC.innerHTML = `${countComputer} matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-                        winnerU.innerHTML = `${countHuman} matches<br/>Tie`;
+                        winnerU.innerHTML = `${countHuman} matches`;
                     };
-                    compPtsCount = compPtsCount + multiplier;
+                    userPtsCount = userPtsCount + multiplier;
+                } else if(multiplier === 1){
+                    if(countHuman === 1){
+                        multipliedScore = multiplier;
+                        winnerC.innerHTML = `${countComputer} match<br/>Tiebreak<br/>+1`;
+                        winnerU.innerHTML = `${countHuman} match`;
+                    } else {
+                        multipliedScore = multiplier;
+                        winnerC.innerHTML = `${countComputer} matches<br/>Tiebreak<br/>+1`;
+                        winnerU.innerHTML = `${countHuman} matches`;
+                    }
+                    compPtsCount++;
                 };
-            } else if (userColorNumbers[2] === compColorNumbers[2]){ //then go to fourth number
-                if(userColorNumbers[3] > compColorNumbers[3]){
-                    if(userPerfectRound === true){
+            };
+        } else if (userColorNumbers[1] === compColorNumbers[1]){ //then go to third number
+            if(userColorNumbers[2] > compColorNumbers[2]){
+                if(userPerfectRound === true){
+                    if(multiplier != 1){
                         multipliedScore = multiplier;
                         winnerU.innerHTML = `Perfect<br/>Round<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                         winnerC.innerHTML = 'Perfect<br/>Round';
-                        userPtsCount = userPtsCount + multiplier;
-                    } else if(userAllMatches === true){
+                        userPtsCount = userPtsCount + multiplier; 
+                    } else if(multiplier === 1){
+                        winnerU.innerHTML = `Perfect<br/>Round<br/>Tiebreak<br/>+1`;
+                        winnerC.innerHTML = `Perfect<br/>Round`;
+                        userPtsCount++;
+                    }
+                } else if(userAllMatches === true){
+                    if(multiplier != 1){
                         multipliedScore = multiplier;
                         winnerU.innerHTML = `4 Matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                         winnerC.innerHTML = '4 Matches';
                         userPtsCount = userPtsCount + multiplier;
-                    } else if(userStrict === true){
+                    } else if(multiplier === 1){
+                        winnerU.innerHTML = '4 Matches<br/>Tiebreak<br/>+1';
+                        winnerC.innerHTML = '4 Matches';
+                        userPtsCount++;
+                    }
+                } else if(userStrict === true){
+                    if(multiplier != 1){
                         multipliedScore = multiplier;
                         winnerU.innerHTML = `Strict<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                         winnerC.innerHTML = 'Strict<br/>Straight';
                         userPtsCount = userPtsCount + multiplier;
-                    } else if(userLoose === true){
+                    } else if(multiplier === 1){
+                        winnerU.innerHTML = `Strict<br/>Straight<br/>Tiebreak<br/>+1`;
+                        winnerC.innerHTML = 'Strict<br/>Straight';
+                        userPtsCount++;
+                    }
+                } else if(userLoose === true){
+                    if(multiplier != 1){
                         multipliedScore = multiplier;
                         winnerU.innerHTML = `Loose<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                         winnerC.innerHTML = 'Loose<br/>Straight';
                         userPtsCount = userPtsCount + multiplier;
-                    } else if(detectMatch === true){
+                    } else if(multiplier === 1){
+                        winnerU.innerHTML = 'Loose<br/>Straight<br/>Tiebreak<br/>+1';
+                        winnerC.innerHTML = 'Loose<br/>Straight';
+                        userPtsCount++;
+                    }
+                } else if(detectMatch === true){
+                    if(multiplier != 1){
                         if(countHuman === 1){
                             multipliedScore = multiplier;
                             winnerU.innerHTML = `${countHuman} match<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-                            winnerC.innerHTML = `${countComputer} match<br/>Tie`;
+                            winnerC.innerHTML = `${countComputer} match`;
                         } else {
                             multipliedScore = multiplier;
                             winnerU.innerHTML = `${countHuman} matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-                            winnerC.innerHTML = `${countComputer} matches<br/>Tie`;
+                            winnerC.innerHTML = `${countComputer} matches`;
                         };
                         userPtsCount = userPtsCount + multiplier;
+                    } else if(multiplier === 1){
+                        if(countHuman === 1){
+                            multipliedScore = multiplier;
+                            winnerU.innerHTML = `${countHuman} match<br/>Tiebreak<br/>+1`;
+                            winnerC.innerHTML = `${countComputer} match`;
+                        } else {
+                            multipliedScore = multiplier;
+                            winnerU.innerHTML = `${countHuman} matches<br/>Tiebreak<br/>+1`;
+                            winnerC.innerHTML = `${countComputer} matches`;
+                        }
+                        userPtsCount++;
                     };
-                } else if(compColorNumbers[3] > userColorNumbers[3]){
-                    if(userPerfectRound === true){
+                };
+            } else if(compColorNumbers[2] > userColorNumbers[2]){
+                if(userPerfectRound === true){
+                    if(multiplier != 1){
                         multipliedScore = multiplier;
                         winnerC.innerHTML = `Perfect<br/>Round<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                         winnerU.innerHTML = 'Perfect<br/>Round';
-                        compPtsCount = compPtsCount + multiplier;
-                    } else if(userAllMatches === true){
+                        compPtsCount = compPtsCount + multiplier; 
+                    } else if(multiplier === 1){
+                        winnerC.innerHTML = `Perfect<br/>Round<br/>Tiebreak<br/>+1`;
+                        winnerU.innerHTML = `Perfect<br/>Round`;
+                        compPtsCount++;
+                    }
+                } else if(userAllMatches === true){
+                    if(multiplier != 1){
                         multipliedScore = multiplier;
                         winnerC.innerHTML = `4 Matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                         winnerU.innerHTML = '4 Matches';
                         compPtsCount = compPtsCount + multiplier;
-                    } else if(userStrict === true){
+                    } else if(multiplier === 1){
+                        winnerC.innerHTML = '4 Matches<br/>Tiebreak<br/>+1';
+                        winnerU.innerHTML = '4 Matches';
+                        compPtsCount++;
+                    }
+                } else if(userStrict === true){
+                    if(multiplier != 1){
                         multipliedScore = multiplier;
                         winnerC.innerHTML = `Strict<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                         winnerU.innerHTML = 'Strict<br/>Straight';
                         compPtsCount = compPtsCount + multiplier;
-                    } else if(userLoose === true){
+                    } else if(multiplier === 1){
+                        winnerC.innerHTML = `Strict<br/>Straight<br/>Tiebreak<br/>+1`;
+                        winnerU.innerHTML = 'Strict<br/>Straight';
+                        compPtsCount++;
+                    }
+                } else if(userLoose === true){
+                    if(multiplier != 1){
                         multipliedScore = multiplier;
                         winnerC.innerHTML = `Loose<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                         winnerU.innerHTML = 'Loose<br/>Straight';
                         compPtsCount = compPtsCount + multiplier;
-                    } else if(detectMatch === true){
+                    } else if(multiplier === 1){
+                        winnerC.innerHTML = 'Loose<br/>Straight<br/>Tiebreak<br/>+1';
+                        winnerU.innerHTML = 'Loose<br/>Straight';
+                        compPtsCount++;
+                    }
+                } else if(detectMatch === true){
+                    if(multiplier != 1){
                         if(countHuman === 1){
                             multipliedScore = multiplier;
                             winnerC.innerHTML = `${countComputer} match<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-                            winnerU.innerHTML = `${countHuman} match<br/>Tie`;
+                            winnerU.innerHTML = `${countHuman} match`;
                         } else {
                             multipliedScore = multiplier;
                             winnerC.innerHTML = `${countComputer} matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-                            winnerU.innerHTML = `${countHuman} matches<br/>Tie`;
+                            winnerU.innerHTML = `${countHuman} matches`;
                         };
-                        compPtsCount = compPtsCount + multiplier;
+                        userPtsCount = userPtsCount + multiplier;
+                    } else if(multiplier === 1){
+                        if(countHuman === 1){
+                            multipliedScore = multiplier;
+                            winnerC.innerHTML = `${countComputer} match<br/>Tiebreak<br/>+1`;
+                            winnerU.innerHTML = `${countHuman} match`;
+                        } else {
+                            multipliedScore = multiplier;
+                            winnerC.innerHTML = `${countComputer} matches<br/>Tiebreak<br/>+1`;
+                            winnerU.innerHTML = `${countHuman} matches`;
+                        }
+                        compPtsCount++;
                     };
-                } else if (userColorNumbers[3] === compColorNumbers[3]){ //then go to fifth number
-                    if(userColorNumbers[4] > compColorNumbers[4]){
-                        if(userPerfectRound === true){
+                };
+            } else if (userColorNumbers[2] === compColorNumbers[2]){ //then go to fourth number
+                if(userColorNumbers[3] > compColorNumbers[3]){
+                    if(userPerfectRound === true){
+                        if(multiplier != 1){
                             multipliedScore = multiplier;
                             winnerU.innerHTML = `Perfect<br/>Round<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                             winnerC.innerHTML = 'Perfect<br/>Round';
-                            userPtsCount = userPtsCount + multiplier;
-                        } else if(userAllMatches === true){
+                            userPtsCount = userPtsCount + multiplier; 
+                        } else if(multiplier === 1){
+                            winnerU.innerHTML = `Perfect<br/>Round<br/>Tiebreak<br/>+1`;
+                            winnerC.innerHTML = `Perfect<br/>Round`;
+                            userPtsCount++;
+                        }
+                    } else if(userAllMatches === true){
+                        if(multiplier != 1){
                             multipliedScore = multiplier;
                             winnerU.innerHTML = `4 Matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                             winnerC.innerHTML = '4 Matches';
                             userPtsCount = userPtsCount + multiplier;
-                        } else if(userStrict === true){
+                        } else if(multiplier === 1){
+                            winnerU.innerHTML = '4 Matches<br/>Tiebreak<br/>+1';
+                            winnerC.innerHTML = '4 Matches';
+                            userPtsCount++;
+                        }
+                    } else if(userStrict === true){
+                        if(multiplier != 1){
                             multipliedScore = multiplier;
                             winnerU.innerHTML = `Strict<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                             winnerC.innerHTML = 'Strict<br/>Straight';
                             userPtsCount = userPtsCount + multiplier;
-                        } else if(userLoose === true){
+                        } else if(multiplier === 1){
+                            winnerU.innerHTML = `Strict<br/>Straight<br/>Tiebreak<br/>+1`;
+                            winnerC.innerHTML = 'Strict<br/>Straight';
+                            userPtsCount++;
+                        }
+                    } else if(userLoose === true){
+                        if(multiplier != 1){
                             multipliedScore = multiplier;
                             winnerU.innerHTML = `Loose<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                             winnerC.innerHTML = 'Loose<br/>Straight';
                             userPtsCount = userPtsCount + multiplier;
-                        } else if(detectMatch === true){
+                        } else if(multiplier === 1){
+                            winnerU.innerHTML = 'Loose<br/>Straight<br/>Tiebreak<br/>+1';
+                            winnerC.innerHTML = 'Loose<br/>Straight';
+                            userPtsCount++;
+                        }
+                    } else if(detectMatch === true){
+                        if(multiplier != 1){
                             if(countHuman === 1){
                                 multipliedScore = multiplier;
                                 winnerU.innerHTML = `${countHuman} match<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-                                winnerC.innerHTML = `${countComputer} match<br/>Tie`;
+                                winnerC.innerHTML = `${countComputer} match`;
                             } else {
                                 multipliedScore = multiplier;
                                 winnerU.innerHTML = `${countHuman} matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-                                winnerC.innerHTML = `${countComputer} matches<br/>Tie`;
+                                winnerC.innerHTML = `${countComputer} matches`;
                             };
                             userPtsCount = userPtsCount + multiplier;
+                        } else if(multiplier === 1){
+                            if(countHuman === 1){
+                                multipliedScore = multiplier;
+                                winnerU.innerHTML = `${countHuman} match<br/>Tiebreak<br/>+1`;
+                                winnerC.innerHTML = `${countComputer} match`;
+                            } else {
+                                multipliedScore = multiplier;
+                                winnerU.innerHTML = `${countHuman} matches<br/>Tiebreak<br/>+1`;
+                                winnerC.innerHTML = `${countComputer} matches`;
+                            }
+                            userPtsCount++;
                         };
-                    } else if(compColorNumbers[4] > userColorNumbers[4]){
-                        if(userPerfectRound === true){
+                    };
+                } else if(compColorNumbers[3] > userColorNumbers[3]){
+                    if(userPerfectRound === true){
+                        if(multiplier != 1){
                             multipliedScore = multiplier;
                             winnerC.innerHTML = `Perfect<br/>Round<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                             winnerU.innerHTML = 'Perfect<br/>Round';
-                            compPtsCount = compPtsCount + multiplier;
-                        } else if(userAllMatches === true){
+                            compPtsCount = compPtsCount + multiplier; 
+                        } else if(multiplier === 1){
+                            winnerC.innerHTML = `Perfect<br/>Round<br/>Tiebreak<br/>+1`;
+                            winnerU.innerHTML = `Perfect<br/>Round`;
+                            compPtsCount++;
+                        }
+                    } else if(userAllMatches === true){
+                        if(multiplier != 1){
                             multipliedScore = multiplier;
                             winnerC.innerHTML = `4 Matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                             winnerU.innerHTML = '4 Matches';
                             compPtsCount = compPtsCount + multiplier;
-                        } else if(userStrict === true){
+                        } else if(multiplier === 1){
+                            winnerC.innerHTML = '4 Matches<br/>Tiebreak<br/>+1';
+                            winnerU.innerHTML = '4 Matches';
+                            compPtsCount++;
+                        }
+                    } else if(userStrict === true){
+                        if(multiplier != 1){
                             multipliedScore = multiplier;
                             winnerC.innerHTML = `Strict<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                             winnerU.innerHTML = 'Strict<br/>Straight';
                             compPtsCount = compPtsCount + multiplier;
-                        } else if(userLoose === true){
+                        } else if(multiplier === 1){
+                            winnerC.innerHTML = `Strict<br/>Straight<br/>Tiebreak<br/>+1`;
+                            winnerU.innerHTML = 'Strict<br/>Straight';
+                            compPtsCount++;
+                        }
+                    } else if(userLoose === true){
+                        if(multiplier != 1){
                             multipliedScore = multiplier;
                             winnerC.innerHTML = `Loose<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                             winnerU.innerHTML = 'Loose<br/>Straight';
                             compPtsCount = compPtsCount + multiplier;
-                        } else if(detectMatch === true){
+                        } else if(multiplier === 1){
+                            winnerC.innerHTML = 'Loose<br/>Straight<br/>Tiebreak<br/>+1';
+                            winnerU.innerHTML = 'Loose<br/>Straight';
+                            compPtsCount++;
+                        }
+                    } else if(detectMatch === true){
+                        if(multiplier != 1){
                             if(countHuman === 1){
                                 multipliedScore = multiplier;
                                 winnerC.innerHTML = `${countComputer} match<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-                                winnerU.innerHTML = `${countHuman} match<br/>Tie`;
+                                winnerU.innerHTML = `${countHuman} match`;
                             } else {
                                 multipliedScore = multiplier;
                                 winnerC.innerHTML = `${countComputer} matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-                                winnerU.innerHTML = `${countHuman} matches<br/>Tie`;
+                                winnerU.innerHTML = `${countHuman} matches`;
                             };
-                            compPtsCount = compPtsCount + multiplier;
+                            userPtsCount = userPtsCount + multiplier;
+                        } else if(multiplier === 1){
+                            if(countHuman === 1){
+                                multipliedScore = multiplier;
+                                winnerC.innerHTML = `${countComputer} match<br/>Tiebreak<br/>+1`;
+                                winnerU.innerHTML = `${countHuman} match`;
+                            } else {
+                                multipliedScore = multiplier;
+                                winnerC.innerHTML = `${countComputer} matches<br/>Tiebreak<br/>+1`;
+                                winnerU.innerHTML = `${countHuman} matches`;
+                            }
+                            compPtsCount++;
                         };
-                    } else if (userColorNumbers[4] === compColorNumbers[4]){ //further tiebreaker
-                        if(userWarms > compWarms){
-                            if(userPerfectRound === true){
+                    };
+                } else if (userColorNumbers[3] === compColorNumbers[3]){ //then go to fifth number
+                    if(userColorNumbers[4] > compColorNumbers[4]){
+                        if(userPerfectRound === true){
+                            if(multiplier != 1){
                                 multipliedScore = multiplier;
                                 winnerU.innerHTML = `Perfect<br/>Round<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                                 winnerC.innerHTML = 'Perfect<br/>Round';
-                                userPtsCount = userPtsCount + multiplier;
-                            } else if(userAllMatches === true){
+                                userPtsCount = userPtsCount + multiplier; 
+                            } else if(multiplier === 1){
+                                winnerU.innerHTML = `Perfect<br/>Round<br/>Tiebreak<br/>+1`;
+                                winnerC.innerHTML = `Perfect<br/>Round`;
+                                userPtsCount++;
+                            }
+                        } else if(userAllMatches === true){
+                            if(multiplier != 1){
                                 multipliedScore = multiplier;
                                 winnerU.innerHTML = `4 Matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                                 winnerC.innerHTML = '4 Matches';
                                 userPtsCount = userPtsCount + multiplier;
-                            } else if(userStrict === true){
+                            } else if(multiplier === 1){
+                                winnerU.innerHTML = '4 Matches<br/>Tiebreak<br/>+1';
+                                winnerC.innerHTML = '4 Matches';
+                                userPtsCount++;
+                            }
+                        } else if(userStrict === true){
+                            if(multiplier != 1){
                                 multipliedScore = multiplier;
                                 winnerU.innerHTML = `Strict<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                                 winnerC.innerHTML = 'Strict<br/>Straight';
                                 userPtsCount = userPtsCount + multiplier;
-                            } else if(userLoose === true){
+                            } else if(multiplier === 1){
+                                winnerU.innerHTML = `Strict<br/>Straight<br/>Tiebreak<br/>+1`;
+                                winnerC.innerHTML = 'Strict<br/>Straight';
+                                userPtsCount++;
+                            }
+                        } else if(userLoose === true){
+                            if(multiplier != 1){
                                 multipliedScore = multiplier;
                                 winnerU.innerHTML = `Loose<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                                 winnerC.innerHTML = 'Loose<br/>Straight';
                                 userPtsCount = userPtsCount + multiplier;
-                            } else if(detectMatch === true){
+                            } else if(multiplier === 1){
+                                winnerU.innerHTML = 'Loose<br/>Straight<br/>Tiebreak<br/>+1';
+                                winnerC.innerHTML = 'Loose<br/>Straight';
+                                userPtsCount++;
+                            }
+                        } else if(detectMatch === true){
+                            if(multiplier != 1){
                                 if(countHuman === 1){
                                     multipliedScore = multiplier;
                                     winnerU.innerHTML = `${countHuman} match<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-                                    winnerC.innerHTML = `${countComputer} match<br/>Tie`;
+                                    winnerC.innerHTML = `${countComputer} match`;
                                 } else {
                                     multipliedScore = multiplier;
                                     winnerU.innerHTML = `${countHuman} matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-                                    winnerC.innerHTML = `${countComputer} matches<br/>Tie`;
+                                    winnerC.innerHTML = `${countComputer} matches`;
                                 };
                                 userPtsCount = userPtsCount + multiplier;
+                            } else if(multiplier === 1){
+                                if(countHuman === 1){
+                                    multipliedScore = multiplier;
+                                    winnerU.innerHTML = `${countHuman} match<br/>Tiebreak<br/>+1`;
+                                    winnerC.innerHTML = `${countComputer} match`;
+                                } else {
+                                    multipliedScore = multiplier;
+                                    winnerU.innerHTML = `${countHuman} matches<br/>Tiebreak<br/>+1`;
+                                    winnerC.innerHTML = `${countComputer} matches`;
+                                }
+                                userPtsCount++;
                             };
-                        } else if(compWarms > userWarms){
-                            if(userPerfectRound === true){
+                        };
+                    } else if(compColorNumbers[4] > userColorNumbers[4]){
+                        if(userPerfectRound === true){
+                            if(multiplier != 1){
                                 multipliedScore = multiplier;
                                 winnerC.innerHTML = `Perfect<br/>Round<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                                 winnerU.innerHTML = 'Perfect<br/>Round';
-                                compPtsCount = compPtsCount + multiplier;
-                            } else if(userAllMatches === true){
+                                compPtsCount = compPtsCount + multiplier; 
+                            } else if(multiplier === 1){
+                                winnerC.innerHTML = `Perfect<br/>Round<br/>Tiebreak<br/>+1`;
+                                winnerU.innerHTML = `Perfect<br/>Round`;
+                                compPtsCount++;
+                            }
+                        } else if(userAllMatches === true){
+                            if(multiplier != 1){
                                 multipliedScore = multiplier;
                                 winnerC.innerHTML = `4 Matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                                 winnerU.innerHTML = '4 Matches';
                                 compPtsCount = compPtsCount + multiplier;
-                            } else if(userStrict === true){
+                            } else if(multiplier === 1){
+                                winnerC.innerHTML = '4 Matches<br/>Tiebreak<br/>+1';
+                                winnerU.innerHTML = '4 Matches';
+                                compPtsCount++;
+                            }
+                        } else if(userStrict === true){
+                            if(multiplier != 1){
                                 multipliedScore = multiplier;
                                 winnerC.innerHTML = `Strict<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                                 winnerU.innerHTML = 'Strict<br/>Straight';
                                 compPtsCount = compPtsCount + multiplier;
-                            } else if(userLoose === true){
+                            } else if(multiplier === 1){
+                                winnerC.innerHTML = `Strict<br/>Straight<br/>Tiebreak<br/>+1`;
+                                winnerU.innerHTML = 'Strict<br/>Straight';
+                                compPtsCount++;
+                            }
+                        } else if(userLoose === true){
+                            if(multiplier != 1){
                                 multipliedScore = multiplier;
                                 winnerC.innerHTML = `Loose<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                                 winnerU.innerHTML = 'Loose<br/>Straight';
                                 compPtsCount = compPtsCount + multiplier;
-                            } else if(detectMatch === true){
+                            } else if(multiplier === 1){
+                                winnerC.innerHTML = 'Loose<br/>Straight<br/>Tiebreak<br/>+1';
+                                winnerU.innerHTML = 'Loose<br/>Straight';
+                                compPtsCount++;
+                            }
+                        } else if(detectMatch === true){
+                            if(multiplier != 1){
                                 if(countHuman === 1){
                                     multipliedScore = multiplier;
                                     winnerC.innerHTML = `${countComputer} match<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-                                    winnerU.innerHTML = `${countHuman} match<br/>Tie`;
+                                    winnerU.innerHTML = `${countHuman} match`;
                                 } else {
                                     multipliedScore = multiplier;
                                     winnerC.innerHTML = `${countComputer} matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
-                                    winnerU.innerHTML = `${countHuman} matches<br/>Tie`;
+                                    winnerU.innerHTML = `${countHuman} matches`;
                                 };
-                                compPtsCount = compPtsCount + multiplier;
+                                userPtsCount = userPtsCount + multiplier;
+                            } else if(multiplier === 1){
+                                if(countHuman === 1){
+                                    multipliedScore = multiplier;
+                                    winnerC.innerHTML = `${countComputer} match<br/>Tiebreak<br/>+1`;
+                                    winnerU.innerHTML = `${countHuman} match`;
+                                } else {
+                                    multipliedScore = multiplier;
+                                    winnerC.innerHTML = `${countComputer} matches<br/>Tiebreak<br/>+1`;
+                                    winnerU.innerHTML = `${countHuman} matches`;
+                                }
+                                compPtsCount++;
+                            };
+                        };
+                    } else if (userColorNumbers[4] === compColorNumbers[4]){ //further tiebreaker
+                        if(userWarms > compWarms){
+                            if(userPerfectRound === true){
+                                if(multiplier != 1){
+                                    multipliedScore = multiplier;
+                                    winnerU.innerHTML = `Perfect<br/>Round<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
+                                    winnerC.innerHTML = 'Perfect<br/>Round';
+                                    userPtsCount = userPtsCount + multiplier; 
+                                } else if(multiplier === 1){
+                                    winnerU.innerHTML = `Perfect<br/>Round<br/>Tiebreak<br/>+1`;
+                                    winnerC.innerHTML = `Perfect<br/>Round`;
+                                    userPtsCount++;
+                                }
+                            } else if(userAllMatches === true){
+                                if(multiplier != 1){
+                                    multipliedScore = multiplier;
+                                    winnerU.innerHTML = `4 Matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
+                                    winnerC.innerHTML = '4 Matches';
+                                    userPtsCount = userPtsCount + multiplier;
+                                } else if(multiplier === 1){
+                                    winnerU.innerHTML = '4 Matches<br/>Tiebreak<br/>+1';
+                                    winnerC.innerHTML = '4 Matches';
+                                    userPtsCount++;
+                                }
+                            } else if(userStrict === true){
+                                if(multiplier != 1){
+                                    multipliedScore = multiplier;
+                                    winnerU.innerHTML = `Strict<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
+                                    winnerC.innerHTML = 'Strict<br/>Straight';
+                                    userPtsCount = userPtsCount + multiplier;
+                                } else if(multiplier === 1){
+                                    winnerU.innerHTML = `Strict<br/>Straight<br/>Tiebreak<br/>+1`;
+                                    winnerC.innerHTML = 'Strict<br/>Straight';
+                                    userPtsCount++;
+                                }
+                            } else if(userLoose === true){
+                                if(multiplier != 1){
+                                    multipliedScore = multiplier;
+                                    winnerU.innerHTML = `Loose<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
+                                    winnerC.innerHTML = 'Loose<br/>Straight';
+                                    userPtsCount = userPtsCount + multiplier;
+                                } else if(multiplier === 1){
+                                    winnerU.innerHTML = 'Loose<br/>Straight<br/>Tiebreak<br/>+1';
+                                    winnerC.innerHTML = 'Loose<br/>Straight';
+                                    userPtsCount++;
+                                }
+                            } else if(detectMatch === true){
+                                if(multiplier != 1){
+                                    if(countHuman === 1){
+                                        multipliedScore = multiplier;
+                                        winnerU.innerHTML = `${countHuman} match<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
+                                        winnerC.innerHTML = `${countComputer} match`;
+                                    } else {
+                                        multipliedScore = multiplier;
+                                        winnerU.innerHTML = `${countHuman} matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
+                                        winnerC.innerHTML = `${countComputer} matches`;
+                                    };
+                                    userPtsCount = userPtsCount + multiplier;
+                                } else if(multiplier === 1){
+                                    if(countHuman === 1){
+                                        multipliedScore = multiplier;
+                                        winnerU.innerHTML = `${countHuman} match<br/>Tiebreak<br/>+1`;
+                                        winnerC.innerHTML = `${countComputer} match`;
+                                    } else {
+                                        multipliedScore = multiplier;
+                                        winnerU.innerHTML = `${countHuman} matches<br/>Tiebreak<br/>+1`;
+                                        winnerC.innerHTML = `${countComputer} matches`;
+                                    }
+                                    userPtsCount++;
+                                };
+                            };
+                        } else if(compWarms > userWarms){
+                            if(userPerfectRound === true){
+                                if(multiplier != 1){
+                                    multipliedScore = multiplier;
+                                    winnerC.innerHTML = `Perfect<br/>Round<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
+                                    winnerU.innerHTML = 'Perfect<br/>Round';
+                                    compPtsCount = compPtsCount + multiplier; 
+                                } else if(multiplier === 1){
+                                    winnerC.innerHTML = `Perfect<br/>Round<br/>Tiebreak<br/>+1`;
+                                    winnerU.innerHTML = `Perfect<br/>Round`;
+                                    compPtsCount++;
+                                }
+                            } else if(userAllMatches === true){
+                                if(multiplier != 1){
+                                    multipliedScore = multiplier;
+                                    winnerC.innerHTML = `4 Matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
+                                    winnerU.innerHTML = '4 Matches';
+                                    compPtsCount = compPtsCount + multiplier;
+                                } else if(multiplier === 1){
+                                    winnerC.innerHTML = '4 Matches<br/>Tiebreak<br/>+1';
+                                    winnerU.innerHTML = '4 Matches';
+                                    compPtsCount++;
+                                }
+                            } else if(userStrict === true){
+                                if(multiplier != 1){
+                                    multipliedScore = multiplier;
+                                    winnerC.innerHTML = `Strict<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
+                                    winnerU.innerHTML = 'Strict<br/>Straight';
+                                    compPtsCount = compPtsCount + multiplier;
+                                } else if(multiplier === 1){
+                                    winnerC.innerHTML = `Strict<br/>Straight<br/>Tiebreak<br/>+1`;
+                                    winnerU.innerHTML = 'Strict<br/>Straight';
+                                    compPtsCount++;
+                                }
+                            } else if(userLoose === true){
+                                if(multiplier != 1){
+                                    multipliedScore = multiplier;
+                                    winnerC.innerHTML = `Loose<br/>Straight<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
+                                    winnerU.innerHTML = 'Loose<br/>Straight';
+                                    compPtsCount = compPtsCount + multiplier;
+                                } else if(multiplier === 1){
+                                    winnerC.innerHTML = 'Loose<br/>Straight<br/>Tiebreak<br/>+1';
+                                    winnerU.innerHTML = 'Loose<br/>Straight';
+                                    compPtsCount++;
+                                }
+                            } else if(detectMatch === true){
+                                if(multiplier != 1){
+                                    if(countHuman === 1){
+                                        multipliedScore = multiplier;
+                                        winnerC.innerHTML = `${countComputer} match<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
+                                        winnerU.innerHTML = `${countHuman} match`;
+                                    } else {
+                                        multipliedScore = multiplier;
+                                        winnerC.innerHTML = `${countComputer} matches<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
+                                        winnerU.innerHTML = `${countHuman} matches`;
+                                    };
+                                    userPtsCount = userPtsCount + multiplier;
+                                } else if(multiplier === 1){
+                                    if(countHuman === 1){
+                                        multipliedScore = multiplier;
+                                        winnerC.innerHTML = `${countComputer} match<br/>Tiebreak<br/>+1`;
+                                        winnerU.innerHTML = `${countHuman} match`;
+                                    } else {
+                                        multipliedScore = multiplier;
+                                        winnerC.innerHTML = `${countComputer} matches<br/>Tiebreak<br/>+1`;
+                                        winnerU.innerHTML = `${countHuman} matches`;
+                                    }
+                                    compPtsCount++;
+                                };
                             };
                         } else if(compWarms === userWarms){
                             if(userPerfectRound === true){
                                 winnerC.innerHTML = 'Perfect<br/>Round<br/>Tie';
                                 winnerU.innerHTML = 'Perfect<br/>Round<br/>Tie';
                             } else if(userAllMatches === true){
-                                winnerC.innerHTML = '4 Matches';
-                                winnerU.innerHTML = '4 Matches';
+                                winnerC.innerHTML = '4 Matches<br/>Tie';
+                                winnerU.innerHTML = '4 Matches<br/>Tie';
                             } else if(userStrict === true){
                                 winnerC.innerHTML = 'Strict<br/>Straight<br/>Tie';
                                 winnerU.innerHTML = 'Strict<br/>Straight<br/>Tie';
@@ -1105,14 +1550,15 @@ const tieBreak = () => {
                                     winnerU.innerHTML = `${countComputer} matches<br/>Tie`;
                                 };
                             };
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
+                        };
+                    };
+                };
+            };
+        };
+    };
+};
 
+//Functions that control the display of boxes
 //Calls resetter function which resets values following the initial and subsequent rounds. Calls each box changer function, then the determine winner function, on time delays.
 /*const runFunctions = () => {
     document.getElementById('input-button').disabled = true;
