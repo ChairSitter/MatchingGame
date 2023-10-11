@@ -148,11 +148,11 @@ h1 {
 
 @media only screen and (max-width: 640px){
     .input-field2 {
-        font-size: .55rem;
+        font-size: .65rem;
         text-align: center;
         color: rgb(197 179 20);
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        margin-top: 1.5px;
+        margin-top: 6px;
     }
 }
 

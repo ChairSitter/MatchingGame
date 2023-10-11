@@ -24,7 +24,7 @@
                <p>It's a race against the computer to 100 pts!</p>
                <p>You have 4 boxes, and so does the computer.</p>
                <p>Click "PLAY" to start a round. Each round, boxes are randomly assigned a background color and text color.</p>
-               <p>The side with the most valuable scoring combination receives the corresponding points each round.</p>
+               <p>The side with the most valuable scoring combination receives the corresponding points each round; ties are decided by a tiebreaker.</p>
                <p>Use the "MULTIPLY" button to bet on the outcome and win points to beat the computer.<p>
           </div>
      </div>
@@ -105,12 +105,12 @@
           <div id="Ex6box4" class="ExBox"><p class="ExP">blue</p></div>
      </section>
      <p class="rule-list">Computer wins this round 2 matches to 1, winning 2 points.</p><br/>
-     <p class="rule-list">Tiebreak (1 pt): <br/>
-          If both sides have the same combination or number of matches, a tiebreak is used.<br/>
-          The most common color of each side is compared, for example 4 purples would beat 3 greens.<br/>
+     <p class="rule-list">Tiebreaker: <br/>
+          If both sides have the same combination or number of matches, a tiebreaker determines who wins the appropriate payout, or a 1-point payout in the case of no combos and 0 matches.<br/><br/>
+          In a tiebreaker, the number of each side's most common color is compared, for example 4 purples will beat 3 greens.<br/>
           This continues down the list of most common colors until a winner is found.<br/><br/>
-          Double Tiebreak (1 pt): <br/>If a tie remains, the side with more colors near the RED end of the spectrum (red-orange-yellow-green-blue-purple) wins.<br/><br/>
-          If this is still even, it's a tie. 
+          Double Tiebreaker: If a tie remains, the side with more colors near the RED end of the spectrum (red-orange-yellow-green-blue-purple) wins<br/><br/>
+          If a decision is still not reached, the round ends in a 0-0 tie. 
      </p>
      <p class="rule-list">YOUR BOXES:</p>
      <section id="changerEx7">        
@@ -126,7 +126,7 @@
           <div id="Ex8box3" class="ExBox"><p class="ExP">yellow</p></div>
           <div id="Ex8box4" class="ExBox"><p class="ExP">purple</p></div>
      </section>
-     <p class="rule-list">In this example, there are no combos or matches so a tiebreak compares the most common colors.<br/> You have 4 greens and the computer has 3 yellows. You win 1 point.
+     <p class="rule-list">In this example, both sides have 1 match so a tiebreaker compares the most common colors.<br/> You have 4 greens and the computer has 3 yellows. You win 1 point.
 
 </body>
 </html>
