@@ -469,6 +469,8 @@ a {
 }
 #Ex7box3 {
     background-color: green;
+    box-shadow: 3px 3px white;
+    border: 5px black dashed;
 }
 #Ex7box4 {
     background-color: orange;
@@ -481,6 +483,8 @@ a {
 }
 #Ex8box3 {
     background-color: yellow;
+    box-shadow: 3px 3px white;
+    border: 5px black dashed;
 }
 #Ex8box4 {
     background-color: green;
