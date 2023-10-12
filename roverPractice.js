@@ -1788,7 +1788,7 @@ const tieBreak = () => {
 };*/
 
 //code for slightly faster boxes
-/*const runFunctions = () => {
+const runFunctions = () => {
     document.getElementById('input-button').disabled = true;
     document.getElementById('mult-button').disabled = false;
     multiplierCountdown();
@@ -1808,7 +1808,7 @@ const tieBreak = () => {
     setTimeout(() => {
         document.getElementById('mult-button').disabled = true;
     }, 7200);
-};*/
+};
 
 //code to alternate between which side is displayed first
 /*const runFunctions = () => {
@@ -1985,7 +1985,7 @@ const tieBreak = () => {
 };*/
 
 //test function that will call functions much faster
-const runFunctions = () => {
+/*const runFunctions = () => {
     document.getElementById('input-button').disabled = true;
     document.getElementById('mult-button').disabled = false;
     resetter();
@@ -2004,7 +2004,7 @@ const runFunctions = () => {
         setTimeout(() => {
         document.getElementById('mult-button').disabled = true;
     }, 800);
-}
+}*/
 
 //Sets the Play button to call the main function
 inputButton.onclick = runFunctions;
