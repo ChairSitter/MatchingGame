@@ -704,14 +704,14 @@ const tieBreak = () => {
         };
     };
     let userWarms = 0;
-    userWarms = userWarms + userColorCodes[0] * 10000000;
-    userWarms = userWarms + userColorCodes[1] * 1000000;
-    userWarms = userWarms + userColorCodes[2] * 100000;
-    userWarms = userWarms + userColorCodes[3] * 10000;
-    userWarms = userWarms + userColorCodes[4] * 1000;
-    userWarms = userWarms + userColorCodes[5] * 100;
-    userWarms = userWarms + userColorCodes[6] * 10;
-    userWarms = userWarms + userColorCodes[7];
+    userWarms = userWarms + userColorCodes[6] * 10000000;
+    userWarms = userWarms + userColorCodes[7] * 1000000;
+    userWarms = userWarms + userColorCodes[4] * 100000;
+    userWarms = userWarms + userColorCodes[5] * 10000;
+    userWarms = userWarms + userColorCodes[2] * 1000;
+    userWarms = userWarms + userColorCodes[3] * 100;
+    userWarms = userWarms + userColorCodes[0] * 10;
+    userWarms = userWarms + userColorCodes[1];
 
     let userColorNumbers = [userReds, userOranges, userYellows, userGreens, userBlues, userPurples];
     userColorNumbers.sort(function(a, b){return b-a});
@@ -756,14 +756,14 @@ const tieBreak = () => {
         };
     };
     let compWarms = 0;
-    compWarms = compWarms + compColorCodes[0] * 10000000;
-    compWarms = compWarms + compColorCodes[1] * 1000000;
-    compWarms = compWarms + compColorCodes[2] * 100000;
-    compWarms = compWarms + compColorCodes[3] * 10000;
-    compWarms = compWarms + compColorCodes[4] * 1000;
-    compWarms = compWarms + compColorCodes[5] * 100;
-    compWarms = compWarms + compColorCodes[6] * 10;
-    compWarms = compWarms + compColorCodes[7];
+    compWarms = compWarms + compColorCodes[6] * 10000000;
+    compWarms = compWarms + compColorCodes[7] * 1000000;
+    compWarms = compWarms + compColorCodes[4] * 100000;
+    compWarms = compWarms + compColorCodes[5] * 10000;
+    compWarms = compWarms + compColorCodes[2] * 1000;
+    compWarms = compWarms + compColorCodes[3] * 100;
+    compWarms = compWarms + compColorCodes[0] * 10;
+    compWarms = compWarms + compColorCodes[1];
 
     let compColorNumbers = [compReds, compOranges, compYellows, compGreens, compBlues, compPurples];
     compColorNumbers.sort(function(a, b){return b-a});
@@ -1788,7 +1788,7 @@ const tieBreak = () => {
 };*/
 
 //code for slightly faster boxes
-const runFunctions = () => {
+/*const runFunctions = () => {
     document.getElementById('input-button').disabled = true;
     document.getElementById('mult-button').disabled = false;
     multiplierCountdown();
@@ -1808,7 +1808,7 @@ const runFunctions = () => {
     setTimeout(() => {
         document.getElementById('mult-button').disabled = true;
     }, 7200);
-};
+};*/
 
 //code to alternate between which side is displayed first
 /*const runFunctions = () => {
@@ -1985,7 +1985,7 @@ const runFunctions = () => {
 };*/
 
 //test function that will call functions much faster
-/*const runFunctions = () => {
+const runFunctions = () => {
     document.getElementById('input-button').disabled = true;
     document.getElementById('mult-button').disabled = false;
     resetter();
@@ -2004,7 +2004,7 @@ const runFunctions = () => {
         setTimeout(() => {
         document.getElementById('mult-button').disabled = true;
     }, 800);
-}*/
+}
 
 //Sets the Play button to call the main function
 inputButton.onclick = runFunctions;
