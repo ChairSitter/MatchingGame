@@ -687,7 +687,32 @@ const tieBreak = () => {
             userPurples++;
         } 
     };    
-    let userWarms = (userReds*6) + (userOranges*5) + (userYellows*4) + (userGreens*3) + (userBlues*2) + (userPurples);
+    let userColorCodes = [];
+    for(let j = 0; j < userColorsArray.length; j++){
+        if(userColorsArray[j] === 'red'){
+            userColorCodes.push(6);
+        } else if(userColorsArray[j] === 'orange'){
+            userColorCodes.push(5);
+        } else if(userColorsArray[j] === 'yellow'){
+            userColorCodes.push(4);
+        } else if(userColorsArray[j] === 'green'){
+            userColorCodes.push(3);
+        } else if(userColorsArray[j] === 'blue'){
+            userColorCodes.push(2);
+        } else if(userColorsArray[j] === 'purple'){
+            userColorCodes.push(1);
+        };
+    };
+    let userWarms = 0;
+    userWarms = userWarms + userColorCodes[0] * 10000000;
+    userWarms = userWarms + userColorCodes[1] * 1000000;
+    userWarms = userWarms + userColorCodes[2] * 100000;
+    userWarms = userWarms + userColorCodes[3] * 10000;
+    userWarms = userWarms + userColorCodes[4] * 1000;
+    userWarms = userWarms + userColorCodes[5] * 100;
+    userWarms = userWarms + userColorCodes[6] * 10;
+    userWarms = userWarms + userColorCodes[7];
+
     let userColorNumbers = [userReds, userOranges, userYellows, userGreens, userBlues, userPurples];
     userColorNumbers.sort(function(a, b){return b-a});
 
@@ -713,7 +738,33 @@ const tieBreak = () => {
             compPurples++;
         } 
     };
-    let compWarms = (compReds*6) + (compOranges*5) + (compYellows*4) + (compGreens*3) + (compBlues*2) + (compPurples);
+
+    let compColorCodes = [];
+    for(let j = 0; j < compColorsArray.length; j++){
+        if(compColorsArray[j] === 'red'){
+            compColorCodes.push(6);
+        } else if(compColorsArray[j] === 'orange'){
+            compColorCodes.push(5);
+        } else if(compColorsArray[j] === 'yellow'){
+            compColorCodes.push(4);
+        } else if(compColorsArray[j] === 'green'){
+            compColorCodes.push(3);
+        } else if(compColorsArray[j] === 'blue'){
+            compColorCodes.push(2);
+        } else if(compColorsArray[j] === 'purple'){
+            compColorCodes.push(1);
+        };
+    };
+    let compWarms = 0;
+    compWarms = compWarms + compColorCodes[0] * 10000000;
+    compWarms = compWarms + compColorCodes[1] * 1000000;
+    compWarms = compWarms + compColorCodes[2] * 100000;
+    compWarms = compWarms + compColorCodes[3] * 10000;
+    compWarms = compWarms + compColorCodes[4] * 1000;
+    compWarms = compWarms + compColorCodes[5] * 100;
+    compWarms = compWarms + compColorCodes[6] * 10;
+    compWarms = compWarms + compColorCodes[7];
+
     let compColorNumbers = [compReds, compOranges, compYellows, compGreens, compBlues, compPurples];
     compColorNumbers.sort(function(a, b){return b-a});
 

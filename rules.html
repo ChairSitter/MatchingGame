@@ -21,11 +21,11 @@
      </h2>
      <div id="explanation-container">
           <div id="explanation">
-               <p>It's a race against the computer to 100 pts!</p>
-               <p>You have 4 boxes, and so does the computer.</p>
+               <p>It's a race to 100 pts!</p>
+               <p>You have 4 boxes, and so does your opponent.</p>
                <p>Click "PLAY" to start a round. Each round, boxes are randomly assigned a background color and text color.</p>
                <p>The side with the most valuable scoring combination receives the corresponding points each round; ties are decided by a tiebreaker.</p>
-               <p>Use the "MULTIPLY" button to bet on the outcome and win points to beat the computer.<p>
+               <p>Use the "MULTIPLY" button to bet on the outcome and win points to beat your opponent.<p>
           </div>
      </div>
      <section id="multiplier-explanation">
@@ -106,11 +106,12 @@
      </section>
      <p class="rule-list">Computer wins this round 2 matches to 1, winning 2 points.</p><br/>
      <p class="rule-list">Tiebreaker: <br/>
-          If both sides have the same combination or number of matches, a tiebreaker determines who wins the appropriate payout, or a 1-point payout in the case of no combos and 0 matches.<br/><br/>
-          In a tiebreaker, the number of each side's most common color is compared, for example 4 purples will beat 3 greens.<br/>
-          This continues down the list of most common colors until a winner is found.<br/><br/>
-          Double Tiebreaker: If a tie remains, the side with more colors near the RED end of the spectrum (red-orange-yellow-green-blue-purple) wins<br/><br/>
-          If a decision is still not reached, the round ends in a 0-0 tie. 
+          If both sides have the same combination or number of matches, a tiebreaker determines who wins the appropriate payout, or a 1-point payout in the case of 0 combos and 0 matches.<br/><br/>
+          In a tiebreaker, the most numerous color on each side is compared, for example 4 purples will beat 3 greens.<br/>
+          This continues down the list of most numerous colors until a winner is found.<br/><br/>
+          Double Tiebreaker: If a tie remains, colors are compared from left to right, alternating from background to text color. 
+          <br/>The color closest to RED on the spectrum (red-orange-yellow-green-blue-purple) will win. The tie is broken by the first difference found by this comparison method.<br/><br/>
+          If a decision is not reached by the double tiebreaker, both sets of boxes are identical, resulting in a 0-0 tie. 
      </p>
      <p class="rule-list">YOUR BOXES:</p>
      <section id="changerEx7">        
