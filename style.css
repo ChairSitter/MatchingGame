@@ -127,7 +127,6 @@ h1 {
 #input {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     text-align: center;
 }
 
@@ -156,12 +155,35 @@ h1 {
     }
 }
 
+#buttons1p2p {
+    display: flex;
+    justify-content: center;
+}
+
+#button1p {
+    padding: 10px;
+    margin: 0 5px 5px 5px;
+    appearance: none;
+    border: none;
+    border-radius: 18px;
+}
+
+#button2p {
+    padding: 10px;
+    margin: 0 5px 5px 5px;
+    appearance: none;
+    border: none;
+    border-radius: 18px;
+}
+
+
 #input-button {
     padding: 10px;
     margin: 0 5px 5px 5px;
     appearance: none;
     border: none;
     border-radius: 18px;
+    display: none;
 }
 
 #mult-button {
@@ -260,6 +282,7 @@ h3 {
 #comp-pts-label, #user-pts-label {
     margin: 0;
     opacity: .75;
+    border-radius: 10px;
 }
 
 #user-pts, #comp-pts {

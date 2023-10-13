@@ -1,5 +1,7 @@
 //Declare constants for input button, boxes, and containers for scores and winner declaration
 const inputButton = document.getElementById('input-button');
+document.getElementById('input-button').disabled = true;
+
 const multButton = document.getElementById('mult-button');
 const multMessage = document.getElementById('mult-message');
 multMessage.style.display = 'none';
@@ -26,6 +28,16 @@ const bottomRight = document.getElementById('bottom-right');
 
 const winnerU = document.getElementById('winnerU');
 const winnerC = document.getElementById('winnerC');
+
+const button1p = document.getElementById('button1p');
+const button2p = document.getElementById('button2p');
+const userPtsLabel = document.getElementById('user-pts-label');
+const compPtsLabel = document.getElementById('comp-pts-label');
+const humanLabel = document.getElementById('human-label');
+const computerLabel = document.getElementById('computer-label');
+const userSmallLabel = document.getElementById('user-small-label');
+const compSmallLabel = document.getElementById('comp-small-label');
+
 
 let difference = 0;
 let restart = false;
@@ -70,7 +82,7 @@ let userPtsCount = 0;
 let compPtsCount = 0;
 
 //for alternate reveals
-let topDown = 1
+let topDown = 1;
 //let topDown = Math.ceil(Math.random()*9);
 
 //chooses a random color from a list of 6 possible colors
@@ -901,7 +913,7 @@ const tieBreak = () => {
                     winnerU.innerHTML = `${countHuman} match`;
                 } else if(countHuman === 0){
                     multipliedScore = multiplier;
-                    winnerC.innerHTML = `0 matches<br/>tiebreak<br/>1x ${multiplier} = ${multipliedScore}`;
+                    winnerC.innerHTML = `0 matches<br/>tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                     winnerU.innerHTML = '0 matches';
                 } else {
                     multipliedScore = multiplier * countHuman;
@@ -1062,7 +1074,7 @@ const tieBreak = () => {
                         winnerU.innerHTML = `${countHuman} match`;
                     } else if(countHuman === 0){
                         multipliedScore = multiplier;
-                        winnerC.innerHTML = `0 matches<br/>tiebreak<br/>1x ${multiplier} = ${multipliedScore}`;
+                        winnerC.innerHTML = `0 matches<br/>tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                         winnerU.innerHTML = '0 matches';
                     } else {
                         multipliedScore = multiplier * countHuman;
@@ -1223,7 +1235,7 @@ const tieBreak = () => {
                             winnerU.innerHTML = `${countHuman} match`;
                         } else if(countHuman === 0){
                             multipliedScore = multiplier;
-                            winnerC.innerHTML = `0 matches<br/>tiebreak<br/>1x ${multiplier} = ${multipliedScore}`;
+                            winnerC.innerHTML = `0 matches<br/>tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                             winnerU.innerHTML = '0 matches';
                         } else {
                             multipliedScore = multiplier * countHuman;
@@ -1384,7 +1396,7 @@ const tieBreak = () => {
                                 winnerU.innerHTML = `${countHuman} match`;
                             } else if(countHuman === 0){
                                 multipliedScore = multiplier;
-                                winnerC.innerHTML = `0 matches<br/>tiebreak<br/>1x ${multiplier} = ${multipliedScore}`;
+                                winnerC.innerHTML = `0 matches<br/>tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                                 winnerU.innerHTML = '0 matches';
                             } else {
                                 multipliedScore = multiplier * countHuman;
@@ -1545,7 +1557,7 @@ const tieBreak = () => {
                                     winnerU.innerHTML = `${countHuman} match`;
                                 } else if(countHuman === 0){
                                     multipliedScore = multiplier;
-                                    winnerC.innerHTML = `0 matches<br/>tiebreak<br/>1x ${multiplier} = ${multipliedScore}`;
+                                    winnerC.innerHTML = `0 matches<br/>tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                                     winnerU.innerHTML = '0 matches';
                                 } else {
                                     multipliedScore = multiplier * countHuman;
@@ -1706,7 +1718,7 @@ const tieBreak = () => {
                                         winnerU.innerHTML = `${countHuman} match`;
                                     } else if(countHuman === 0){
                                         multipliedScore = multiplier;
-                                        winnerC.innerHTML = `0 matches<br/>Double<br/>Tiebreak<br/>1x ${multiplier} = ${multipliedScore}`;
+                                        winnerC.innerHTML = `0 matches<br/>Double<br/>Tiebreak<br/>1 x ${multiplier} = ${multipliedScore}`;
                                         winnerU.innerHTML = '0 matches';
                                     } else {
                                         multipliedScore = multiplier * countHuman;
@@ -1811,11 +1823,19 @@ const runFunctions = () => {
 };
 
 //code to alternate between which side is displayed first
-/*const runFunctions = () => {
+const runFunctions2p = () => {
     document.getElementById('input-button').disabled = true;
     document.getElementById('mult-button').disabled = false;
     multiplierCountdown();
     resetter();
+    if(topDown === 1){
+        userPtsLabel.style.backgroundColor = 'yellow';
+        compPtsLabel.style.backgroundColor = 'transparent';
+    }
+    if(topDown === 2){
+        userPtsLabel.style.backgroundColor = 'transparent';
+        compPtsLabel.style.backgroundColor = 'yellow';
+    }
     if(topDown === 1){
         boxOneChange();
         setTimeout(boxFiveChange, 900);
@@ -1845,7 +1865,7 @@ const runFunctions = () => {
     setTimeout(() => {
         document.getElementById('mult-button').disabled = true;
     }, 7200);
-};*/
+};
 
 //code that will create 9 different styles of the order of box reveals
 /*const runFunctions = () => {
@@ -2007,5 +2027,37 @@ const runFunctions = () => {
 }*/
 
 //Sets the Play button to call the main function
-inputButton.onclick = runFunctions;
+//inputButton.onclick = runFunctions;
 multButton.onclick = multiply;
+
+//code for 1-2 player update. Can comment out and comment in "input button onclick" for regular function
+const button1 = () => {
+    document.getElementById('input-button').disabled = false;
+    document.getElementById('button1p').disabled = true;
+    document.getElementById('button2p').disabled = true;
+    button1p.style.display = 'none';
+    button2p.style.display = 'none';
+    inputButton.style.display = 'block';
+    inputButton.onclick = runFunctions;
+}
+
+const button2 = () => {
+    document.getElementById('input-button').disabled = false;
+    button1p.style.display = 'none';
+    button2p.style.display = 'none';
+    inputButton.style.display = 'block';
+    userPtsLabel.innerHTML = 'plr 1 pts:';
+    compPtsLabel.innerHTML = 'plr 2 pts:';
+    humanLabel.innerHTML = '1p<br/>boxes:';
+    computerLabel.innerHTML = '2p<br/>boxes:';
+    humanLabel.style.fontSize = '1.5em';
+    computerLabel.style.fontSize = '1.5em';
+    humanLabel.style.fontWeight = 'bold';
+    computerLabel.style.fontWeight = 'bold';
+    userSmallLabel.innerHTML = 'Player 1 boxes';
+    compSmallLabel.innerHTML = 'Player 2 boxes';
+    inputButton.onclick = runFunctions2p;
+}
+    
+button1p.onclick = button1;
+button2p.onclick = button2;
