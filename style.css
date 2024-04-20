@@ -123,6 +123,35 @@ h1 {
     }
 }
 
+@media only screen and (min-width: 1200px){
+    .box {
+        height: 145px;
+        width: 145px;
+        margin-right: 20px;
+    }
+    #changer, #changer2 {
+        justify-content: center;
+    }
+    #human-label, #computer-label {
+        margin-right: 150px;
+    }
+}
+
+@media only screen and (min-width: 1600px){
+    .box {
+        height: 240px;
+        width: 240px;
+        margin-right: 20px;
+        font-size: 5em;
+    }
+    #changer, #changer2 {
+        justify-content: center;
+    }
+    #human-label, #computer-label {
+        margin-right: 150px;
+    }
+}
+
 /*Bottom section*/
 #input {
     display: flex;
