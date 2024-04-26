@@ -118,8 +118,12 @@ h1 {
 }
 @media only screen and (max-width: 500px){
     .box {
-        height: 50px;
-        width: 50px;
+        height: 60px;
+        width: 60px;
+        margin: 1px;
+    }
+    #changer, #changer2 {
+        margin: 14px 0 14px 0;
     }
 }
 
